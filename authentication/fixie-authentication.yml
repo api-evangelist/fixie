@@ -1,0 +1,20 @@
+generated: '2026-07-19'
+method: searched
+source: openapi/fixie-ultravox-openapi-original.yml
+docs: https://docs.ultravox.ai/gettingstarted/quickstart/api-key
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+  notes: >-
+    Single auth model — a 41-character API key (8 chars + '.' + 32 chars) sent
+    in the X-API-Key request header. No OAuth or OIDC; there is no scope surface.
+schemes:
+- name: apiKeyAuth
+  type: apiKey
+  in: header
+  parameter: X-API-Key
+  description: API key
+  sources:
+  - openapi/fixie-ultravox-openapi-original.yml
