@@ -1,0 +1,264 @@
+openapi: 3.0.3
+info:
+  title: Ultravox accounts api_keys API
+  version: 0.1.0
+  description: API for the Ultravox service.
+servers:
+- url: https://api.ultravox.ai
+tags:
+- name: api_keys
+paths:
+  /api/api_keys:
+    get:
+      operationId: api_keys_list
+      description: Gets the current user's API keys.
+      parameters:
+      - name: cursor
+        required: false
+        in: query
+        description: The pagination cursor value.
+        schema:
+          type: string
+      - name: pageSize
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      tags:
+      - api_keys
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAPIKeyList'
+          description: ''
+    post:
+      operationId: api_keys_create
+      description: Creates a new API key.
+      tags:
+      - api_keys
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/APIKeyCreate'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIKeyCreate'
+          description: ''
+  /api/api_keys/{api_key_prefix}:
+    get:
+      operationId: api_keys_retrieve
+      description: Gets an API key.
+      parameters:
+      - in: path
+        name: api_key_prefix
+        schema:
+          type: string
+        required: true
+      tags:
+      - api_keys
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIKey'
+          description: ''
+    put:
+      operationId: api_keys_update
+      description: Updates an API key.
+      parameters:
+      - in: path
+        name: api_key_prefix
+        schema:
+          type: string
+        required: true
+      tags:
+      - api_keys
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/APIKey'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIKey'
+          description: ''
+    patch:
+      operationId: api_keys_partial_update
+      description: Updates an API key.
+      parameters:
+      - in: path
+        name: api_key_prefix
+        schema:
+          type: string
+        required: true
+      tags:
+      - api_keys
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAPIKey'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIKey'
+          description: ''
+    delete:
+      operationId: api_keys_destroy
+      description: Deletes an API key.
+      parameters:
+      - in: path
+        name: api_key_prefix
+        schema:
+          type: string
+        required: true
+      tags:
+      - api_keys
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    PatchedAPIKey:
+      type: object
+      properties:
+        prefix:
+          type: string
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        creator:
+          type: string
+          readOnly: true
+          nullable: true
+        name:
+          type: string
+          readOnly: true
+          description: A free-form name for the API key. Need not be unique. 50 characters max.
+        expiryDate:
+          type: string
+          format: date-time
+          readOnly: true
+          nullable: true
+          title: Expires
+          description: Once API key expires, clients cannot use it anymore.
+        revoked:
+          type: boolean
+          description: If the API key is revoked, clients cannot use it anymore. (This cannot be undone.)
+    APIKeyCreate:
+      type: object
+      properties:
+        prefix:
+          type: string
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        creator:
+          type: string
+          readOnly: true
+          nullable: true
+        secret:
+          type: string
+          readOnly: true
+          description: The API key itself. Will be generated on creation but not returned in future requests.
+        revoked:
+          type: boolean
+          readOnly: true
+          description: If the API key is revoked, clients cannot use it anymore. (This cannot be undone.)
+        name:
+          type: string
+          description: A free-form name for the API key. Need not be unique. 50 characters max.
+          maxLength: 50
+        expiryDate:
+          type: string
+          format: date-time
+          nullable: true
+          title: Expires
+          description: Once API key expires, clients cannot use it anymore.
+      required:
+      - created
+      - creator
+      - name
+      - prefix
+      - revoked
+      - secret
+    PaginatedAPIKeyList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/APIKey'
+        total:
+          type: integer
+          example: 123
+    APIKey:
+      type: object
+      properties:
+        prefix:
+          type: string
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        creator:
+          type: string
+          readOnly: true
+          nullable: true
+        name:
+          type: string
+          readOnly: true
+          description: A free-form name for the API key. Need not be unique. 50 characters max.
+        expiryDate:
+          type: string
+          format: date-time
+          readOnly: true
+          nullable: true
+          title: Expires
+          description: Once API key expires, clients cannot use it anymore.
+        revoked:
+          type: boolean
+          description: If the API key is revoked, clients cannot use it anymore. (This cannot be undone.)
+      required:
+      - created
+      - creator
+      - expiryDate
+      - name
+      - prefix
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+      description: API key
