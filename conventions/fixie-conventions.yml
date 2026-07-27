@@ -1,0 +1,51 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/fixie-ultravox-openapi-original.yml
+docs: https://docs.ultravox.ai/api-reference/overview
+summary: >-
+  Cross-cutting request/response semantics for the Ultravox Realtime REST API
+  (api.ultravox.ai/api). Derived from the published OpenAPI plus the API
+  reference docs.
+authentication:
+  style: api-key
+  header: X-API-Key
+  scheme_name: apiKeyAuth
+  docs: https://docs.ultravox.ai/gettingstarted/quickstart/api-key
+  notes: 41-character key (8 chars + '.' + 32 chars) sent on every request.
+idempotency:
+  supported: false
+  notes: >-
+    No idempotency-key header or parameter is documented or present in the
+    OpenAPI. Writes are not advertised as idempotent.
+pagination:
+  style: cursor
+  request_params: [cursor, pageSize]
+  response_fields: [next, previous, results, total]
+  notes: >-
+    List endpoints return a paginated envelope. `next`/`previous` carry full
+    cursor URLs; `results` holds the page items; `total` the overall count.
+versioning:
+  style: uri-path
+  base_path: /api
+  current: v0.1.0
+  notes: Endpoints are served under the /api path prefix; no dated or header versioning.
+error_envelope:
+  format: json
+  problem_json: false
+  notes: >-
+    Errors return JSON with validation detail; the API does not use
+    application/problem+json (RFC 9457).
+rate_limit_signaling:
+  documented: true
+  docs: https://docs.ultravox.ai/api-reference/overview
+  limits:
+    account: 500 requests/second
+    api_key: 200 requests/second
+    call_creation_free_paygo: 5/sec or 30/min
+    call_creation_pro: 10/sec or 120/min
+    call_creation_scale: 30/sec or 360/min
+  status_code: 429
+cross_links:
+  errors: errors/fixie-problem-types.yml
+  lifecycle: lifecycle/fixie-lifecycle.yml
+  authentication: authentication/fixie-authentication.yml

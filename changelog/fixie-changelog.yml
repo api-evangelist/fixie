@@ -1,0 +1,42 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.ultravox.ai/changelog/news
+scheme: dated-news
+current_model: GLM 4.6 (default from 2025-12-22)
+entries:
+- date: '2025-12-03'
+  breaking: false
+  highlights: >-
+    Default model switches to GLM 4.6 on Dec 22 for superior instruction
+    following and tool calling; Llama remains available via ultravox-v0.6.
+- date: '2025-01-03'
+  breaking: false
+  highlights: >-
+    Model upgraded to Llama 3.3; improved tool performance via updated vLLM
+    parser; new Call History dashboard.
+- date: '2024-12-10'
+  breaking: true
+  highlights: >-
+    WebSocket server-side integration; Telnyx and Plivo telephony providers
+    added; languageHint parameter. Breaking: initiator deprecated in favor of
+    firstSpeaker.
+- date: '2024-11-14'
+  breaking: false
+  highlights: >-
+    Ultravox v0.4.1 adds six languages; web console at app.ultravox.ai;
+    initialOutputMedium enables text-based agent responses.
+- date: '2024-10-18'
+  breaking: false
+  highlights: >-
+    Call Stages for multi-stage conversations; client-implemented tools;
+    webhooks added for call.started and call.ended.
+- date: '2024-09-30'
+  breaking: false
+  highlights: >-
+    Ultravox 70B model default; tools support introduced; new Flutter, Kotlin,
+    and Python SDKs released.
+- date: '2024-09-04'
+  breaking: false
+  highlights: >-
+    Pricing reduced to $0.05/min; resume conversations via priorCallId; voice
+    cloning added; model v0.4 released.

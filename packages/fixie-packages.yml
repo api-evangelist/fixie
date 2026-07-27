@@ -1,0 +1,47 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.ultravox.ai/apps/sdks
+note: >-
+  Fixie (fixie.ai) operates as Ultravox Realtime; first-party client SDKs are
+  published under the fixie-ai GitHub organization and public package registries.
+packages:
+- language: javascript
+  registry: npm
+  name: ultravox-client
+  url: https://www.npmjs.com/package/ultravox-client
+  install: npm install ultravox-client
+  repo: https://github.com/fixie-ai/ultravox-client-sdk-js
+  official: true
+- language: python
+  registry: pypi
+  name: ultravox-client
+  url: https://pypi.org/project/ultravox-client/
+  install: pip install ultravox-client
+  repo: https://github.com/fixie-ai/ultravox-client-sdk-python
+  official: true
+- language: dart
+  registry: pub.dev
+  name: ultravox_client
+  url: https://pub.dev/packages/ultravox_client
+  install: flutter pub add ultravox_client
+  repo: https://github.com/fixie-ai/ultravox-client-sdk-flutter
+  official: true
+- language: javascript
+  registry: npm
+  name: ultravox-react-native
+  url: https://www.npmjs.com/package/ultravox-react-native
+  install: npm install ultravox-react-native
+  repo: https://github.com/fixie-ai/ultravox-client-sdk-react-native
+  official: true
+- language: kotlin
+  registry: maven-central
+  name: ultravox-client-sdk-android
+  url: https://github.com/fixie-ai/ultravox-client-sdk-android
+  repo: https://github.com/fixie-ai/ultravox-client-sdk-android
+  official: true
+- language: swift
+  registry: swift-package-index
+  name: ultravox-client-sdk-ios
+  url: https://github.com/fixie-ai/ultravox-client-sdk-ios
+  repo: https://github.com/fixie-ai/ultravox-client-sdk-ios
+  official: true

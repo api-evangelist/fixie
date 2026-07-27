@@ -1,0 +1,27 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.ultravox.ai/changelog/deprecation
+versioning:
+  scheme: uri-path
+  base_path: /api
+  current: v0.1.0
+  docs: https://docs.ultravox.ai/api-reference/overview
+deprecation:
+  policy_url: https://docs.ultravox.ai/changelog/deprecation
+  window: minimum 30-day window before removal
+  process:
+  - Initial announcement with migration documentation
+  - Deprecation period with reminders and direct user communications
+  - Final removal with documented fallback behaviors
+  security_exception: Critical security issues may bypass standard timelines.
+  sunset_header: unknown
+  recent:
+  - item: fixie-ai/ultravox-qwen3-32b-preview model
+    deprecated: '2025-12-03'
+    removed: '2025-12-22'
+  - item: initiator parameter (replaced by firstSpeaker)
+    deprecated: '2024-10-01'
+    removed: '2024-12-31'
+status_page: https://status.ultravox.ai
+changelog: https://docs.ultravox.ai/changelog/news
+deprecated_operations: []

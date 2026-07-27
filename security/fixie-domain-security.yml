@@ -1,0 +1,28 @@
+generated: '2026-07-19'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.fixie.ai
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 23 09:41:45 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: api.ultravox.ai
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 30 07:04:09 2026 GMT
+  hsts: false
+domains:
+- domain: fixie.ai
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
+- domain: ultravox.ai
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none

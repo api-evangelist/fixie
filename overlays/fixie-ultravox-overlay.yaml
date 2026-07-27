@@ -1,0 +1,20 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Ultravox (Fixie)
+  version: 1.0.0
+extends: openapi/fixie-ultravox-openapi-original.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: fixie
+    x-apievangelist-product: Ultravox Realtime
+    x-apievangelist-review-date: '2026-07-19'
+    x-authentication: api-key (X-API-Key header)
+    x-pagination: cursor (next/previous/results/total)
+    x-webhooks: call.started, call.joined, call.ended, call.billed
+    x-status-page: https://status.ultravox.ai
+    x-deprecation-policy: https://docs.ultravox.ai/changelog/deprecation
+- target: $.servers
+  update:
+  - url: https://api.ultravox.ai
+    description: Ultravox Realtime production API

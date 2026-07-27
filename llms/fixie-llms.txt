@@ -1,0 +1,186 @@
+# Ultravox Docs
+
+## Docs
+
+- [Building & Editing Agents](https://docs.ultravox.ai/agents/building-and-editing-agents.md): Create and manage reusable voice assistant templates for consistent experiences.
+- [Call Management](https://docs.ultravox.ai/agents/call-management.md): Retrieve call information, from active conversation monitoring to historical data analysis and cleanup.
+- [Call Stages](https://docs.ultravox.ai/agents/call-stages.md): Create dynamic, multi-stage conversations.
+- [Guiding Agents](https://docs.ultravox.ai/agents/guiding-agents.md): A guide to steering your agent toward good experiences
+- [Making Calls](https://docs.ultravox.ai/agents/making-calls.md): Start conversations using agents or direct call configuration.
+- [Overview: Agents & Calls](https://docs.ultravox.ai/agents/overview.md): Create consistent, reusable voice AI experience with agents or direct call configuration.
+- [Testing & Debugging](https://docs.ultravox.ai/agents/testing-and-debugging.md): Monitor, troubleshoot, and optimize your voice conversations for production quality.
+- [Threads](https://docs.ultravox.ai/agents/threads.md): Run parallel agent conversations alongside your main call.
+- [Get Account](https://docs.ultravox.ai/api-reference/accounts/accounts-me-get.md): Returns account details for a single account
+- [Set Telephony Credentials](https://docs.ultravox.ai/api-reference/accounts/accounts-me-telephony-config-partial-update.md): Allows adding or updating telephony provider credentials to an account
+- [Get Telephony Credentials](https://docs.ultravox.ai/api-reference/accounts/accounts-me-telephony-config-retrieve.md): Returns the telephony credentials associated with the active account
+- [Set TTS API keys](https://docs.ultravox.ai/api-reference/accounts/accounts-me-tts-api-keys-partial-update.md): Allows adding or updating TTS provider API keys to an account, enabling ExternalVoices
+- [Get Account TTS API Keys](https://docs.ultravox.ai/api-reference/accounts/accounts-me-tts-api-keys-retrieve.md): Returns the TTS provider API keys associated with the active account
+- [Get Call Usage](https://docs.ultravox.ai/api-reference/accounts/accounts-me-usage-calls-get.md): Returns aggregated and per-day call usage data
+- [Get Concurrency Usage](https://docs.ultravox.ai/api-reference/accounts/accounts-me-usage-concurrency-get.md): Gets historical call concurrency for the account
+- [List Agent Calls](https://docs.ultravox.ai/api-reference/agents/agents-calls-list.md): Lists all calls that were created using the specified agent
+- [Create Agent Call](https://docs.ultravox.ai/api-reference/agents/agents-calls-post.md): Creates a new call using the the specified agent
+- [Delete Agent](https://docs.ultravox.ai/api-reference/agents/agents-delete.md): Deletes the specified agent
+- [Get Agent](https://docs.ultravox.ai/api-reference/agents/agents-get.md): Gets details for the specified agent
+- [List Agents](https://docs.ultravox.ai/api-reference/agents/agents-list.md): Returns details for all agents
+- [Update Agent](https://docs.ultravox.ai/api-reference/agents/agents-patch.md): Updates the specified agent
+- [Create Agent](https://docs.ultravox.ai/api-reference/agents/agents-post.md): Creates a new agent using the specified name and call template
+- [List Scheduled Call Batch Created Calls](https://docs.ultravox.ai/api-reference/agents/agents-scheduled-batches-created-calls-list.md): Returns details for all created calls in a scheduled call batch
+- [Delete Scheduled Call Batch](https://docs.ultravox.ai/api-reference/agents/agents-scheduled-batches-delete.md): Deletes a scheduled call batch
+- [Get Scheduled Call Batch](https://docs.ultravox.ai/api-reference/agents/agents-scheduled-batches-get.md): Returns details for a scheduled call batch
+- [List Scheduled Call Batches](https://docs.ultravox.ai/api-reference/agents/agents-scheduled-batches-list.md): Returns details for all an agent's scheduled call batches
+- [Update Scheduled Call Batch](https://docs.ultravox.ai/api-reference/agents/agents-scheduled-batches-patch.md): Updates a scheduled call batch
+- [Create Scheduled Call Batch](https://docs.ultravox.ai/api-reference/agents/agents-scheduled-batches-post.md): Creates a new scheduled call batch using the the specified agent
+- [List Scheduled Call Batch Scheduled Calls](https://docs.ultravox.ai/api-reference/agents/agents-scheduled-batches-scheduled-calls-list.md): Returns details for all scheduled calls in a scheduled call batch
+- [Delete Call Throttle](https://docs.ultravox.ai/api-reference/call-throttles/call-throttles-delete.md): Deletes a call throttle
+- [Get Call Throttle](https://docs.ultravox.ai/api-reference/call-throttles/call-throttles-get.md): Gets a call throttle
+- [List Call Throttles](https://docs.ultravox.ai/api-reference/call-throttles/call-throttles-list.md): Lists call throttles for the current account
+- [Patch Call Throttle](https://docs.ultravox.ai/api-reference/call-throttles/call-throttles-patch.md): Partially updates a call throttle
+- [Create Call Throttle](https://docs.ultravox.ai/api-reference/call-throttles/call-throttles-post.md): Creates a new call throttle
+- [Update Call Throttle](https://docs.ultravox.ai/api-reference/call-throttles/call-throttles-put.md): Updates a call throttle
+- [Delete Call](https://docs.ultravox.ai/api-reference/calls/calls-delete.md): Deletes the specified call
+- [Get Deleted Call](https://docs.ultravox.ai/api-reference/calls/calls-deleted-calls-get.md): Gets details for the specified deleted call
+- [List Deleted Calls](https://docs.ultravox.ai/api-reference/calls/calls-deleted-calls-list.md): Returns details for all deleted calls
+- [List Call Events](https://docs.ultravox.ai/api-reference/calls/calls-events-list.md): Returns any events logged during the call
+- [Get Call](https://docs.ultravox.ai/api-reference/calls/calls-get.md): Gets details for the specified call
+- [List Calls](https://docs.ultravox.ai/api-reference/calls/calls-list.md): Returns details for all calls
+- [List Call Messages](https://docs.ultravox.ai/api-reference/calls/calls-messages-list.md): Returns all messages generated during the given call
+- [Create Call](https://docs.ultravox.ai/api-reference/calls/calls-post.md): Creates a new call using the specified system prompt and other properties
+- [Get Call Recording](https://docs.ultravox.ai/api-reference/calls/calls-recording-get.md): Returns a link to the recording of the call
+- [Send Data Message to Call](https://docs.ultravox.ai/api-reference/calls/calls-send-data-message-post.md): Sends a data message to a live call
+- [Get Sip Logs for a call](https://docs.ultravox.ai/api-reference/calls/calls-sip-logs-get.md): Redirects to the SIP logs for a call, if available. This is only available for calls with sip medium and only after the call has ended.
+- [Get Call Stage](https://docs.ultravox.ai/api-reference/calls/calls-stages-get.md): Retrieves details for a specific stage of a call
+- [List Call Stages](https://docs.ultravox.ai/api-reference/calls/calls-stages-list.md): Lists all stages that occurred during the specified call
+- [Get Call Stage Message Audio](https://docs.ultravox.ai/api-reference/calls/calls-stages-message-audio-get.md): Gets the audio for the specified message
+- [List Call Stage Messages](https://docs.ultravox.ai/api-reference/calls/calls-stages-messages-list.md): Returns all messages that were exchanged during a specific stage of a call
+- [List Call Stage Tools](https://docs.ultravox.ai/api-reference/calls/calls-stages-tools-list.md): Returns all tools that were available during a specific stage of a call
+- [List Call Tools](https://docs.ultravox.ai/api-reference/calls/calls-tools-list.md): Returns all tools that were available at any point during the call
+- [Calls Overview](https://docs.ultravox.ai/api-reference/calls/overview.md): Understanding Calls in Ultravox
+- [Delete Corpus](https://docs.ultravox.ai/api-reference/corpora/corpora-delete.md): Deletes the specified corpus
+- [Get Corpus](https://docs.ultravox.ai/api-reference/corpora/corpora-get.md): Gets details for the specified corpus
+- [List Corpora](https://docs.ultravox.ai/api-reference/corpora/corpora-list.md): Returns details for all corpora
+- [Update Corpus](https://docs.ultravox.ai/api-reference/corpora/corpora-patch.md): Updates the specified corpus
+- [Create Corpus](https://docs.ultravox.ai/api-reference/corpora/corpora-post.md): Creates a new corpus using the specified name and description
+- [Delete Corpus Source](https://docs.ultravox.ai/api-reference/corpora/corpora-sources-delete.md): Deletes the specified source
+- [Get Corpus Source Document](https://docs.ultravox.ai/api-reference/corpora/corpora-sources-documents-get.md): Retrieves details for the specified source document
+- [List Corpus Source Documents](https://docs.ultravox.ai/api-reference/corpora/corpora-sources-documents-list.md): Returns details for all documents contained in the source
+- [Get Corpus Source](https://docs.ultravox.ai/api-reference/corpora/corpora-sources-get.md): Retrieves details for the specified source
+- [List Corpus Sources](https://docs.ultravox.ai/api-reference/corpora/corpora-sources-list.md): Lists all sources that are part of the specified corpus
+- [Update Corpus Source](https://docs.ultravox.ai/api-reference/corpora/corpora-sources-patch.md): Updates the specified source
+- [Create Corpus Source](https://docs.ultravox.ai/api-reference/corpora/corpora-sources-post.md): Creates a new source for the specified corpus
+- [Create Corpus File Upload](https://docs.ultravox.ai/api-reference/corpora/corpora-uploads-post.md): Creates a new URL and document ID to use for uploading a static file
+- [Query Corpus](https://docs.ultravox.ai/api-reference/corpora/corpus-query.md): Queries the specified corpus and returns the specified number of results
+- [Corpus Service (RAG) Overview](https://docs.ultravox.ai/api-reference/corpora/overview.md): Understanding Retrieval Augmented Generation in Ultravox
+- [Ultravox REST API Overview](https://docs.ultravox.ai/api-reference/introduction.md)
+- [List Models](https://docs.ultravox.ai/api-reference/other/models-get.md): Retrieves the list of all available models that can be used for inference
+- [Get OpenAPI Schema](https://docs.ultravox.ai/api-reference/other/schema-get.md): Gets the OpenAPI schema for the Ultravox REST API
+- [Base Tool Definition](https://docs.ultravox.ai/api-reference/schema/base-tool-definition.md)
+- [Call Definition](https://docs.ultravox.ai/api-reference/schema/call-definition.md)
+- [Ultravox Data Message Protocol](https://docs.ultravox.ai/api-reference/schema/datamessages.md): Protocol documentation for messages exchanged between client and server during Ultravox calls.
+- [SIP Fallback Handler Response](https://docs.ultravox.ai/api-reference/schema/sip-fallback-handler-response.md): The response your fallback handler returns when Ultravox forwards an unmatched incoming SIP call to it.
+- [Get Account SIP configuration](https://docs.ultravox.ai/api-reference/sip/sip-get.md): Returns the SIP configuration for your account
+- [Update Account SIP configuration](https://docs.ultravox.ai/api-reference/sip/sip-partial-update.md): Allows updating your account's SIP configuration
+- [Create SIP Registration](https://docs.ultravox.ai/api-reference/sip/sip-registrations-create.md): Creates a new SIP registration using the given properties
+- [Delete SIP Registration](https://docs.ultravox.ai/api-reference/sip/sip-registrations-delete.md): Deletes the specified registration
+- [Get SIP Registration](https://docs.ultravox.ai/api-reference/sip/sip-registrations-get.md): Gets details for the specified registration
+- [List SIP Registrations](https://docs.ultravox.ai/api-reference/sip/sip-registrations-list.md): Lists SIP registrations for your account
+- [Update SIP Registration](https://docs.ultravox.ai/api-reference/sip/sip-registrations-partial-update.md): Updates an existing registration
+- [Delete Plivo Configuration for Account](https://docs.ultravox.ai/api-reference/telephony/plivo-delete.md): Deletes the Plivo configuration for the active account
+- [Get Plivo Configuration for Account](https://docs.ultravox.ai/api-reference/telephony/plivo-get.md): Returns the Plivo configuration associated with the active account, if any
+- [Update Plivo Configuration for Account](https://docs.ultravox.ai/api-reference/telephony/plivo-patch.md): Updates the Plivo configuration for the active account
+- [Create Plivo Configuration for Account](https://docs.ultravox.ai/api-reference/telephony/plivo-post.md): Creates an initial Plivo configuration for the active account
+- [Delete Telnyx Configuration for Account](https://docs.ultravox.ai/api-reference/telephony/telnyx-delete.md): Deletes the Telnyx configuration for the active account
+- [Get Telnyx Configuration for Account](https://docs.ultravox.ai/api-reference/telephony/telnyx-get.md): Returns the Telnyx configuration associated with the active account, if any
+- [Update Telnyx Configuration for Account](https://docs.ultravox.ai/api-reference/telephony/telnyx-patch.md): Updates the Telnyx configuration for the active account
+- [Create Telnyx Configuration for Account](https://docs.ultravox.ai/api-reference/telephony/telnyx-post.md): Creates an initial Telnyx configuration for the active account
+- [Delete Twilio Configuration for Account](https://docs.ultravox.ai/api-reference/telephony/twilio-delete.md): Deletes the Twilio configuration for the active account
+- [Get Twilio Configuration for Account](https://docs.ultravox.ai/api-reference/telephony/twilio-get.md): Returns the Twilio configuration associated with the active account, if any
+- [Update Twilio Configuration for Account](https://docs.ultravox.ai/api-reference/telephony/twilio-patch.md): Updates the Twilio configuration for the active account
+- [Create Twilio Configuration for Account](https://docs.ultravox.ai/api-reference/telephony/twilio-post.md): Creates an initial Twilio configuration for the active account
+- [Delete Tool](https://docs.ultravox.ai/api-reference/tools/tools-delete.md): Deletes the specified tool
+- [Get Tool](https://docs.ultravox.ai/api-reference/tools/tools-get.md): Gets details for the specified tool
+- [Get Tool History](https://docs.ultravox.ai/api-reference/tools/tools-history-get.md): Gets all calls that have used the specified tool
+- [List Tools](https://docs.ultravox.ai/api-reference/tools/tools-list.md): Retrieves all available tools
+- [Create Tool](https://docs.ultravox.ai/api-reference/tools/tools-post.md): Creates a new tool
+- [Update Tool](https://docs.ultravox.ai/api-reference/tools/tools-put.md): Replaces an existing tool
+- [Test Tool](https://docs.ultravox.ai/api-reference/tools/tools-test-post.md): Tests a tool by executing it with the provided parameters
+- [Preview Voice](https://docs.ultravox.ai/api-reference/voices/voice-preview-post.md): Performs a test generation of a voice, returning the resulting audio or error.
+- [Delete Voice](https://docs.ultravox.ai/api-reference/voices/voices-delete.md): Deletes the specified voice
+- [Get Voice](https://docs.ultravox.ai/api-reference/voices/voices-get.md): Gets details for the specified voice
+- [List Voices](https://docs.ultravox.ai/api-reference/voices/voices-list.md): Retrieves all available voices
+- [Update Voice](https://docs.ultravox.ai/api-reference/voices/voices-patch.md): Updates the specified voice
+- [Create (Clone) Voice](https://docs.ultravox.ai/api-reference/voices/voices-post.md): Create a new cloned voice
+- [Get Voice Sample](https://docs.ultravox.ai/api-reference/voices/voices-preview-get.md): Provides an audio sample for a voice, or the error caused by using it.
+- [Replace Voice](https://docs.ultravox.ai/api-reference/voices/voices-put.md): Replaces the specified voice
+- [Delete Webhook](https://docs.ultravox.ai/api-reference/webhooks/webhooks-delete.md): Deletes the specified webhook configuration
+- [Get Webhook](https://docs.ultravox.ai/api-reference/webhooks/webhooks-get.md): Gets details for the specified webhook configuration
+- [List Webhooks](https://docs.ultravox.ai/api-reference/webhooks/webhooks-list.md): Retrieves all webhooks configured on an account
+- [Update Webhook](https://docs.ultravox.ai/api-reference/webhooks/webhooks-patch.md): Updates the specified webhook configuration
+- [Create Webhook](https://docs.ultravox.ai/api-reference/webhooks/webhooks-post.md): Creates a new webhook configuration for an account
+- [Replace Webhook](https://docs.ultravox.ai/api-reference/webhooks/webhooks-put.md): Replaces the specified webhook configuration
+- [Protocol & Data Messages](https://docs.ultravox.ai/apps/datamessages.md): Protocol documentation for messages exchanged between client and server during Ultravox calls.
+- [Overview: Using Ultravox in Apps or via WebSockets.](https://docs.ultravox.ai/apps/overview.md): Add conversational voice AI to any application - from web and mobile apps to custom server integrations using WebSockets.
+- [SDKs](https://docs.ultravox.ai/apps/sdks.md): Ultravox Client SDK for building user-facing experiences.
+- [Securing Data Connections](https://docs.ultravox.ai/apps/securing-data-connections.md): Learn how to verify that data connection WebSocket requests are authentically from Ultravox.
+- [WebSocket Integration](https://docs.ultravox.ai/apps/websockets.md): Integrate with your server via direct WebSocket connections.
+- [Deprecation Guide](https://docs.ultravox.ai/changelog/deprecation.md): Track upcoming breaking changes, migration timelines, and deprecation notices for the Ultravox platform.
+- [News & Updates](https://docs.ultravox.ai/changelog/news.md): Stay informed about Ultravox platform announcements.
+- [Scaling & Call Concurrency](https://docs.ultravox.ai/gettingstarted/concurrency.md): How to scale call volume with Ultravox.
+- [Overview: Example Code](https://docs.ultravox.ai/gettingstarted/examples.md): Explore working code examples and sample applications built with Ultravox.
+- [Inbound Phone Calls](https://docs.ultravox.ai/gettingstarted/examples/inbound-phone-call.md): Connect inbound phone calls to an AI agent in 6 minutes.
+- [Outbound Phone Calls](https://docs.ultravox.ai/gettingstarted/examples/outbound-phone-call.md): Connect outbound Twilio calls to an Ultravox agent in 5 minutes or less.
+- [FAQ](https://docs.ultravox.ai/gettingstarted/faq.md): Answers to common questions
+- [Getting Help](https://docs.ultravox.ai/gettingstarted/getting-help.md): Connect with our community and get support for building voice AI agents
+- [How Ultravox Works](https://docs.ultravox.ai/gettingstarted/how-ultravox-works.md): Understanding the core concepts and architecture of Ultravox Realtime
+- [Prompting Guide](https://docs.ultravox.ai/gettingstarted/prompting.md): A guide to prompting for great voice AI experiences
+- [Agent Quickstart](https://docs.ultravox.ai/gettingstarted/quickstart/agent-console.md): Create your first voice AI agent in 2 minutes with the Ultravox Console.
+- [Creating an API Key](https://docs.ultravox.ai/gettingstarted/quickstart/apikeys.md): Generate authentication keys for REST API access and voice agent deployment.
+- [Inbound Call Quickstart](https://docs.ultravox.ai/gettingstarted/quickstart/telephony-inbound.md): Connect inbound phone calls to an Ultravox agent in under 6 minutes.
+- [Outbound Call Quickstart](https://docs.ultravox.ai/gettingstarted/quickstart/telephony-outbound.md): Create an outbound voice AI call with Ultravox and Twilio in under 3 minutes.
+- [Tools Quickstart](https://docs.ultravox.ai/gettingstarted/quickstart/tools.md): Learn how to start using built-in tools and how to create custom tools.
+- [Web Quickstart](https://docs.ultravox.ai/gettingstarted/quickstart/web-app.md): Create calls with an agent in the browser in under 2 minutes
+- [jambonz](https://docs.ultravox.ai/integrations/jambonz.md): Connecting Ultravox to SIP Using jambonz
+- [LiveKit](https://docs.ultravox.ai/integrations/livekit.md): Connecting Ultravox to LiveKit Agents
+- [Pipecat](https://docs.ultravox.ai/integrations/pipecat.md): Connecting Ultravox to Pipecat
+- [Voximplant](https://docs.ultravox.ai/integrations/voximplant.md): Connecting Ultravox to SIP Using Voximplant
+- [Handling Background Noise](https://docs.ultravox.ai/noise/handling-background-noise.md): Built-in robust noise handling to keep your calls on track and fast.
+- [Handling Background Speakers](https://docs.ultravox.ai/noise/handling-background-speakers.md): Built-in filtering to focus on the primary speaker in multi-speaker environments.
+- [Overview: Noise & VAD](https://docs.ultravox.ai/noise/overview.md): Learn how Ultravox intelligently handles voice activity detection and background noise to create natural, responsive conversations.
+- [Understanding VAD](https://docs.ultravox.ai/noise/understanding-vad.md): Learn how Ultravox's multi-model VAD system works and when to adjust voice activity detection parameters.
+- [Overview: Ultravox Realtime](https://docs.ultravox.ai/overview.md): Build Voice AI Agents That Work Anywhere
+- [Ultravox Client SDK](https://docs.ultravox.ai/sdk-reference/introduction.md)
+- [Call Transfers](https://docs.ultravox.ai/telephony/call-transfers.md): Transfer calls between AI agents and human operators.
+- [Handling IVR Flows](https://docs.ultravox.ai/telephony/ivr-flows.md): Build interactive voice response systems with keypad input and DTMF tones.
+- [Outbound Call Scheduler](https://docs.ultravox.ai/telephony/outbound-call-scheduler.md): Schedule and manage batches of outbound calls automatically with concurrency control and retry handling.
+- [Overview: Telephony](https://docs.ultravox.ai/telephony/overview.md): Connect Ultravox to traditional phone networks for AI-powered voice calls.
+- [SIP Guide](https://docs.ultravox.ai/telephony/sip.md): Create incoming & outgoing SIP calls with Ultravox agents.
+- [Telephony Platforms](https://docs.ultravox.ai/telephony/telephony-platforms.md): Connect Ultravox with telephony platforms for AI-powered voice calls.
+- [Async Tools](https://docs.ultravox.ai/tools/async-tools.md): Handle long-running operations and optimize tool performance for real-time conversations.
+- [Built-in Tools](https://docs.ultravox.ai/tools/built-in-tools.md): Ready-to-use tools for common functionality in voice applications.
+- [Agent Responses to Tools](https://docs.ultravox.ai/tools/custom/agent-responses.md): Configure when and how your agent responds after tool calls - whether to speak immediately, listen for input, or speak conditionally.
+- [Tool Authentication](https://docs.ultravox.ai/tools/custom/authentication.md): How to use auth tokens with tools.
+- [Changing Call State](https://docs.ultravox.ai/tools/custom/changing-call-state.md): Learn how to programmatically end calls or transition between call stages using special tool response types.
+- [Durable vs. Temporary Tools](https://docs.ultravox.ai/tools/custom/durable-vs-temporary-tools.md): Understand when to use durable tools versus temporary tools for different development stages and use cases.
+- [HTTP vs. Client Tools](https://docs.ultravox.ai/tools/custom/http-vs-client-tools.md): Choose the right tool implementation for your use case.
+- [Overview: Custom Tools](https://docs.ultravox.ai/tools/custom/overview.md): Create powerful integrations that enable your agent to communicate with external systems and perform real-world actions.
+- [Parameter Overrides](https://docs.ultravox.ai/tools/custom/parameter-overrides.md): Advanced parameter customization for fine-tuned tool behavior across different agents and calls.
+- [Tool Parameters](https://docs.ultravox.ai/tools/custom/parameters.md): Learn about dynamic, static, and automatic tool parameters.
+- [Overview: Tools](https://docs.ultravox.ai/tools/overview.md): Give your agents additional capabilities while maintaining a natural conversation flow.
+- [Crawling Websites](https://docs.ultravox.ai/tools/rag/crawling-websites.md): Build a corpus source by crawling your website.
+- [Overview: RAG](https://docs.ultravox.ai/tools/rag/overview.md): Give you agent access to product documents, KBs, and more.
+- [Using Static Documents](https://docs.ultravox.ai/tools/rag/using-static-documents.md): Use text, PDF, Word, and other documents in your corpus.
+- [Tutorial: Customer Escalation with Call Stages](https://docs.ultravox.ai/tutorials/callstages.md): Learn how to implement customer service escalation in Ultravox using call stages to handle customer complaints by transferring them to a manager.
+- [Tutorial: Building Interactive UI with Client Tools](https://docs.ultravox.ai/tutorials/clienttools.md): Learn how to implement client-side tools in Ultravox to create dynamic, interactive user interfaces.
+- [Bring Your Own (Key)](https://docs.ultravox.ai/voices/bring-your-own.md): How to use Ultravox with your own text-to-speech provider
+- [Voice Cloning](https://docs.ultravox.ai/voices/cloning.md): Create Custom Voices
+- [Overview: Voices](https://docs.ultravox.ai/voices/overview.md): Voice options available in Ultravox Realtime
+- [Available Webhooks](https://docs.ultravox.ai/webhooks/available-webhooks.md): Complete reference of all webhook events available in Ultravox.
+- [Error Handling & Retries](https://docs.ultravox.ai/webhooks/errors-and-retries.md): Understand how Ultravox automatically retries failed webhook deliveries with exponential backoff to ensure reliable event notifications.
+- [Overview: Webhooks](https://docs.ultravox.ai/webhooks/overview.md): Learn how webhooks work with Ultravox and get started with real-time notifications.
+- [Securing Webhooks](https://docs.ultravox.ai/webhooks/securing-webhooks.md): Learn how to verify webhook authenticity and protect your endpoints from malicious requests.
+
+## OpenAPI Specs
+
+- [schema](https://api.ultravox.ai/api/schema/)
+- [pnpm-lock](https://docs.ultravox.ai/pnpm-lock.yaml)
+- [package](https://docs.ultravox.ai/package.json)
+- [package-lock](https://docs.ultravox.ai/package-lock.json)

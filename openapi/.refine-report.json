@@ -1,0 +1,40 @@
+{
+  "provider": "fixie",
+  "sources": [
+    "fixie-accounts-api-openapi.yml",
+    "fixie-agents-api-openapi.yml",
+    "fixie-api-keys-api-openapi.yml",
+    "fixie-call-throttles-api-openapi.yml",
+    "fixie-calls-api-openapi.yml",
+    "fixie-corpora-api-openapi.yml",
+    "fixie-deleted-calls-api-openapi.yml",
+    "fixie-models-api-openapi.yml",
+    "fixie-schema-api-openapi.yml",
+    "fixie-sip-api-openapi.yml",
+    "fixie-telephony-configs-api-openapi.yml",
+    "fixie-tools-api-openapi.yml",
+    "fixie-voices-api-openapi.yml",
+    "fixie-webhooks-api-openapi.yml"
+  ],
+  "outputs": [
+    "fixie-accounts-api-openapi.yml",
+    "fixie-agents-api-openapi.yml",
+    "fixie-api-keys-api-openapi.yml",
+    "fixie-call-throttles-api-openapi.yml",
+    "fixie-calls-api-openapi.yml",
+    "fixie-corpora-api-openapi.yml",
+    "fixie-deleted-calls-api-openapi.yml",
+    "fixie-models-api-openapi.yml",
+    "fixie-schema-api-openapi.yml",
+    "fixie-sip-api-openapi.yml",
+    "fixie-telephony-configs-api-openapi.yml",
+    "fixie-tools-api-openapi.yml",
+    "fixie-voices-api-openapi.yml",
+    "fixie-webhooks-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

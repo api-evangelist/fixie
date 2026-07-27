@@ -1,0 +1,74 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/fixie-ultravox-openapi-original.yml
+note: >-
+  Entity-relationship graph derived from OpenAPI schema id-reference fields
+  (callId, agentId, callStageId, batchId, toolId, ...).
+entities:
+- name: Account
+  id_field: accountId
+- name: Agent
+  id_field: agentId
+- name: Call
+  id_field: callId
+- name: CallStage
+  id_field: callStageId
+- name: CallEvent
+  id_field: null
+- name: ScheduledCallBatch
+  id_field: batchId
+- name: Tool
+  id_field: toolId
+- name: Voice
+  id_field: voiceId
+- name: Corpus
+  id_field: corpusId
+- name: CorpusSource
+  id_field: null
+- name: Webhook
+  id_field: webhookId
+- name: CallThrottle
+  id_field: throttleId
+- name: SipRegistration
+  id_field: registrationId
+relationships:
+- from: Call
+  to: Agent
+  type: belongs_to
+  via: agentId
+- from: Agent
+  to: Call
+  type: has_many
+  via: agentId
+- from: CallStage
+  to: Call
+  type: belongs_to
+  via: callId
+- from: CallEvent
+  to: Call
+  type: belongs_to
+  via: callId
+- from: CallEvent
+  to: CallStage
+  type: belongs_to
+  via: callStageId
+- from: ScheduledCall
+  to: ScheduledCallBatch
+  type: belongs_to
+  via: batchId
+- from: ScheduledCall
+  to: Call
+  type: has_one
+  via: callId
+- from: CallTool
+  to: Tool
+  type: belongs_to
+  via: toolId
+- from: Webhook
+  to: Agent
+  type: belongs_to
+  via: agentId
+- from: CorpusSource
+  to: Corpus
+  type: belongs_to
+  via: corpusId

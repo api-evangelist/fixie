@@ -1,0 +1,27 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/fixie-ultravox-openapi-original.yml
+standards:
+- id: openapi-3.0
+  conforms: true
+  evidence: Published OpenAPI 3.0.3 document at https://api.ultravox.ai/api/schema
+- id: api-key-auth
+  conforms: true
+  evidence: securitySchemes apiKeyAuth (header X-API-Key)
+- id: oauth2
+  conforms: false
+  evidence: No oauth2 security scheme declared
+- id: oidc
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Error bodies are JSON but not application/problem+json
+- id: webhooks
+  conforms: true
+  evidence: Documented webhook events (call.started/joined/ended/billed) with configurable endpoints
+- id: cursor-pagination
+  conforms: true
+  evidence: Paginated list envelopes with next/previous/results/total
+- id: sip-telephony
+  conforms: true
+  evidence: SIP + telephony (Twilio/Telnyx/Plivo) configuration endpoints

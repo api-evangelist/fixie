@@ -1,0 +1,29 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.ultravox.ai/webhooks/available-webhooks
+type: Webhooks
+transport: https-webhook
+docs:
+  overview: https://docs.ultravox.ai/webhooks/overview
+  available: https://docs.ultravox.ai/webhooks/available-webhooks
+  securing: https://docs.ultravox.ai/webhooks/securing-webhooks
+  errors_and_retries: https://docs.ultravox.ai/webhooks/errors-and-retries
+configuration:
+  managed_via_api: true
+  operations: [webhooks_create, webhooks_list, webhooks_retrieve, webhooks_update, webhooks_partial_update, webhooks_destroy]
+  secrets: Per-webhook secrets configured on the webhook resource for signature verification.
+  retries: Automatic retry with exponential backoff on failed delivery.
+envelope:
+  fields:
+  - event
+  - call
+  note: 'Payload carries the event type and the full Call object, e.g. {"event":"call.started","call":{...}}'
+events:
+- type: call.started
+  description: Fires when a call is created.
+- type: call.joined
+  description: Fires when a client connects to the call.
+- type: call.ended
+  description: Fires when a call ends.
+- type: call.billed
+  description: Fires when a call is billed.

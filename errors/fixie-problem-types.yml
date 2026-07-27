@@ -1,0 +1,32 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/fixie-ultravox-openapi-original.yml
+format: json
+note: >-
+  Derived from the response status codes declared across the Ultravox OpenAPI.
+  The API returns JSON error bodies (not application/problem+json). Titles and
+  remediation are generalized from the docs error/rate-limit reference.
+problems:
+- status: 400
+  title: Bad Request
+  description: >-
+    Request validation failed (malformed body, invalid field, or unsupported
+    parameter combination). The response body carries field-level detail.
+  remediation: Correct the request payload/parameters to match the schema.
+- status: 404
+  title: Not Found
+  description: The referenced resource (agent, call, tool, voice, corpus, webhook) does not exist.
+  remediation: Verify the resource id; it may have been deleted.
+- status: 425
+  title: Too Early
+  description: >-
+    The requested data is not yet available (e.g. call artifacts requested
+    before the call has completed processing).
+  remediation: Retry after the call/resource has finished processing.
+- status: 429
+  title: Too Many Requests
+  description: >-
+    Rate limit exceeded. Account limit 500 req/s, API-key limit 200 req/s;
+    call-creation limits vary by plan.
+  remediation: Back off and retry; reduce request rate or upgrade plan.
+  docs: https://docs.ultravox.ai/api-reference/overview

@@ -1,0 +1,23 @@
+generated: '2026-07-19'
+method: searched
+host: https://api.ultravox.ai
+note: >-
+  Probed the standard /.well-known discovery surface on api.ultravox.ai and
+  ultravox.ai. None are published (all 404). Absence is recorded as valid data;
+  no WellKnown/SecurityTxt pointer is wired because nothing returned 200.
+documents:
+- path: /.well-known/security.txt
+  host: api.ultravox.ai
+  status: 404
+- path: /.well-known/security.txt
+  host: ultravox.ai
+  status: 404
+- path: /.well-known/openid-configuration
+  host: api.ultravox.ai
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  host: api.ultravox.ai
+  status: 404
+- path: /.well-known/api-catalog
+  host: api.ultravox.ai
+  status: 404

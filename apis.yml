@@ -1,25 +1,498 @@
 aid: fixie
 name: Fixie
-description: Fixie is a company surfaced as a portfolio company of redpoint-ventures and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Fixie is the company behind Ultravox Realtime, a speech-native voice AI
+  platform for building natural, low-latency conversational voice agents.
+  Rather than transcribing speech to text first, Ultravox processes audio
+  directly to preserve tone, cadence, and pitch while cutting latency. The
+  Ultravox Realtime REST API (api.ultravox.ai) lets developers create reusable
+  agents, start and manage calls, define custom and built-in tools, clone and
+  manage voices, build RAG corpora, wire telephony (Twilio, Telnyx, Plivo, SIP),
+  and subscribe to call-lifecycle webhooks. Client SDKs ship for JavaScript,
+  Python, Flutter/Dart, React Native, Kotlin/Android, and Swift/iOS. Fixie was
+  backed by Redpoint Ventures; fixie.ai now redirects to ultravox.ai and its
+  open models are published under the fixie-ai organization on Hugging Face.
 url: https://raw.githubusercontent.com/api-evangelist/fixie/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - redpoint-ventures
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enriched-from-public-api
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
+image: https://raw.githubusercontent.com/api-evangelist/fixie/refs/heads/main/openapi/fixie-ultravox-openapi-original.yml
 tags:
 - Company
-apis: []
+- Voice AI
+- Conversational AI
+- Real-time
+- Speech
+- Agents
+- Telephony
+- Machine Learning
+- SIP
+- Webhooks
+apis:
+- aid: fixie:fixie-accounts-api
+  name: Fixie accounts API
+  description: The accounts API from Fixie — 9 operation(s) for accounts.
+  humanURL: https://docs.ultravox.ai/
+  baseURL: https://api.ultravox.ai/api
+  tags:
+  - accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/fixie-accounts-api-openapi.yml
+  - type: Authentication
+    url: authentication/fixie-authentication.yml
+  - type: AgenticAccess
+    url: agentic-access/fixie-agentic-access.yml
+  - type: Conventions
+    url: conventions/fixie-conventions.yml
+  - type: ErrorCatalog
+    url: errors/fixie-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/fixie-lifecycle.yml
+  - type: DataModel
+    url: data-model/fixie-data-model.yml
+  - type: Conformance
+    url: conformance/fixie-conformance.yml
+  - type: AsyncAPI
+    url: asyncapi/fixie-webhooks.yml
+  - type: Webhooks
+    url: asyncapi/fixie-webhooks.yml
+- aid: fixie:fixie-agents-api
+  name: Fixie agents API
+  description: The agents API from Fixie — 9 operation(s) for agents.
+  humanURL: https://docs.ultravox.ai/
+  baseURL: https://api.ultravox.ai/api
+  tags:
+  - agents
+  properties:
+  - type: OpenAPI
+    url: openapi/fixie-agents-api-openapi.yml
+  - type: Authentication
+    url: authentication/fixie-authentication.yml
+  - type: AgenticAccess
+    url: agentic-access/fixie-agentic-access.yml
+  - type: Conventions
+    url: conventions/fixie-conventions.yml
+  - type: ErrorCatalog
+    url: errors/fixie-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/fixie-lifecycle.yml
+  - type: DataModel
+    url: data-model/fixie-data-model.yml
+  - type: Conformance
+    url: conformance/fixie-conformance.yml
+  - type: AsyncAPI
+    url: asyncapi/fixie-webhooks.yml
+  - type: Webhooks
+    url: asyncapi/fixie-webhooks.yml
+- aid: fixie:fixie-api-keys-api
+  name: Fixie api_keys API
+  description: The api_keys API from Fixie — 2 operation(s) for api_keys.
+  humanURL: https://docs.ultravox.ai/
+  baseURL: https://api.ultravox.ai/api
+  tags:
+  - api_keys
+  properties:
+  - type: OpenAPI
+    url: openapi/fixie-api-keys-api-openapi.yml
+  - type: Authentication
+    url: authentication/fixie-authentication.yml
+  - type: AgenticAccess
+    url: agentic-access/fixie-agentic-access.yml
+  - type: Conventions
+    url: conventions/fixie-conventions.yml
+  - type: ErrorCatalog
+    url: errors/fixie-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/fixie-lifecycle.yml
+  - type: DataModel
+    url: data-model/fixie-data-model.yml
+  - type: Conformance
+    url: conformance/fixie-conformance.yml
+  - type: AsyncAPI
+    url: asyncapi/fixie-webhooks.yml
+  - type: Webhooks
+    url: asyncapi/fixie-webhooks.yml
+- aid: fixie:fixie-call-throttles-api
+  name: Fixie call_throttles API
+  description: The call_throttles API from Fixie — 2 operation(s) for call_throttles.
+  humanURL: https://docs.ultravox.ai/
+  baseURL: https://api.ultravox.ai/api
+  tags:
+  - call_throttles
+  properties:
+  - type: OpenAPI
+    url: openapi/fixie-call-throttles-api-openapi.yml
+  - type: Authentication
+    url: authentication/fixie-authentication.yml
+  - type: AgenticAccess
+    url: agentic-access/fixie-agentic-access.yml
+  - type: Conventions
+    url: conventions/fixie-conventions.yml
+  - type: ErrorCatalog
+    url: errors/fixie-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/fixie-lifecycle.yml
+  - type: DataModel
+    url: data-model/fixie-data-model.yml
+  - type: Conformance
+    url: conformance/fixie-conformance.yml
+  - type: AsyncAPI
+    url: asyncapi/fixie-webhooks.yml
+  - type: Webhooks
+    url: asyncapi/fixie-webhooks.yml
+- aid: fixie:fixie-calls-api
+  name: Fixie calls API
+  description: The calls API from Fixie — 13 operation(s) for calls.
+  humanURL: https://docs.ultravox.ai/
+  baseURL: https://api.ultravox.ai/api
+  tags:
+  - calls
+  properties:
+  - type: OpenAPI
+    url: openapi/fixie-calls-api-openapi.yml
+  - type: Authentication
+    url: authentication/fixie-authentication.yml
+  - type: AgenticAccess
+    url: agentic-access/fixie-agentic-access.yml
+  - type: Conventions
+    url: conventions/fixie-conventions.yml
+  - type: ErrorCatalog
+    url: errors/fixie-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/fixie-lifecycle.yml
+  - type: DataModel
+    url: data-model/fixie-data-model.yml
+  - type: Conformance
+    url: conformance/fixie-conformance.yml
+  - type: AsyncAPI
+    url: asyncapi/fixie-webhooks.yml
+  - type: Webhooks
+    url: asyncapi/fixie-webhooks.yml
+- aid: fixie:fixie-corpora-api
+  name: Fixie corpora API
+  description: The corpora API from Fixie — 8 operation(s) for corpora.
+  humanURL: https://docs.ultravox.ai/
+  baseURL: https://api.ultravox.ai/api
+  tags:
+  - corpora
+  properties:
+  - type: OpenAPI
+    url: openapi/fixie-corpora-api-openapi.yml
+  - type: Authentication
+    url: authentication/fixie-authentication.yml
+  - type: AgenticAccess
+    url: agentic-access/fixie-agentic-access.yml
+  - type: Conventions
+    url: conventions/fixie-conventions.yml
+  - type: ErrorCatalog
+    url: errors/fixie-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/fixie-lifecycle.yml
+  - type: DataModel
+    url: data-model/fixie-data-model.yml
+  - type: Conformance
+    url: conformance/fixie-conformance.yml
+  - type: AsyncAPI
+    url: asyncapi/fixie-webhooks.yml
+  - type: Webhooks
+    url: asyncapi/fixie-webhooks.yml
+- aid: fixie:fixie-deleted-calls-api
+  name: Fixie deleted_calls API
+  description: The deleted_calls API from Fixie — 2 operation(s) for deleted_calls.
+  humanURL: https://docs.ultravox.ai/
+  baseURL: https://api.ultravox.ai/api
+  tags:
+  - deleted_calls
+  properties:
+  - type: OpenAPI
+    url: openapi/fixie-deleted-calls-api-openapi.yml
+  - type: Authentication
+    url: authentication/fixie-authentication.yml
+  - type: AgenticAccess
+    url: agentic-access/fixie-agentic-access.yml
+  - type: Conventions
+    url: conventions/fixie-conventions.yml
+  - type: ErrorCatalog
+    url: errors/fixie-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/fixie-lifecycle.yml
+  - type: DataModel
+    url: data-model/fixie-data-model.yml
+  - type: Conformance
+    url: conformance/fixie-conformance.yml
+  - type: AsyncAPI
+    url: asyncapi/fixie-webhooks.yml
+  - type: Webhooks
+    url: asyncapi/fixie-webhooks.yml
+- aid: fixie:fixie-models-api
+  name: Fixie models API
+  description: The models API from Fixie — 1 operation(s) for models.
+  humanURL: https://docs.ultravox.ai/
+  baseURL: https://api.ultravox.ai/api
+  tags:
+  - models
+  properties:
+  - type: OpenAPI
+    url: openapi/fixie-models-api-openapi.yml
+  - type: Authentication
+    url: authentication/fixie-authentication.yml
+  - type: AgenticAccess
+    url: agentic-access/fixie-agentic-access.yml
+  - type: Conventions
+    url: conventions/fixie-conventions.yml
+  - type: ErrorCatalog
+    url: errors/fixie-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/fixie-lifecycle.yml
+  - type: DataModel
+    url: data-model/fixie-data-model.yml
+  - type: Conformance
+    url: conformance/fixie-conformance.yml
+  - type: AsyncAPI
+    url: asyncapi/fixie-webhooks.yml
+  - type: Webhooks
+    url: asyncapi/fixie-webhooks.yml
+- aid: fixie:fixie-schema-api
+  name: Fixie schema API
+  description: The schema API from Fixie — 1 operation(s) for schema.
+  humanURL: https://docs.ultravox.ai/
+  baseURL: https://api.ultravox.ai/api
+  tags:
+  - schema
+  properties:
+  - type: OpenAPI
+    url: openapi/fixie-schema-api-openapi.yml
+  - type: Authentication
+    url: authentication/fixie-authentication.yml
+  - type: AgenticAccess
+    url: agentic-access/fixie-agentic-access.yml
+  - type: Conventions
+    url: conventions/fixie-conventions.yml
+  - type: ErrorCatalog
+    url: errors/fixie-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/fixie-lifecycle.yml
+  - type: DataModel
+    url: data-model/fixie-data-model.yml
+  - type: Conformance
+    url: conformance/fixie-conformance.yml
+  - type: AsyncAPI
+    url: asyncapi/fixie-webhooks.yml
+  - type: Webhooks
+    url: asyncapi/fixie-webhooks.yml
+- aid: fixie:fixie-sip-api
+  name: Fixie sip API
+  description: The sip API from Fixie — 3 operation(s) for sip.
+  humanURL: https://docs.ultravox.ai/
+  baseURL: https://api.ultravox.ai/api
+  tags:
+  - sip
+  properties:
+  - type: OpenAPI
+    url: openapi/fixie-sip-api-openapi.yml
+  - type: Authentication
+    url: authentication/fixie-authentication.yml
+  - type: AgenticAccess
+    url: agentic-access/fixie-agentic-access.yml
+  - type: Conventions
+    url: conventions/fixie-conventions.yml
+  - type: ErrorCatalog
+    url: errors/fixie-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/fixie-lifecycle.yml
+  - type: DataModel
+    url: data-model/fixie-data-model.yml
+  - type: Conformance
+    url: conformance/fixie-conformance.yml
+  - type: AsyncAPI
+    url: asyncapi/fixie-webhooks.yml
+  - type: Webhooks
+    url: asyncapi/fixie-webhooks.yml
+- aid: fixie:fixie-telephony-configs-api
+  name: Fixie telephony_configs API
+  description: The telephony_configs API from Fixie — 3 operation(s) for telephony_configs.
+  humanURL: https://docs.ultravox.ai/
+  baseURL: https://api.ultravox.ai/api
+  tags:
+  - telephony_configs
+  properties:
+  - type: OpenAPI
+    url: openapi/fixie-telephony-configs-api-openapi.yml
+  - type: Authentication
+    url: authentication/fixie-authentication.yml
+  - type: AgenticAccess
+    url: agentic-access/fixie-agentic-access.yml
+  - type: Conventions
+    url: conventions/fixie-conventions.yml
+  - type: ErrorCatalog
+    url: errors/fixie-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/fixie-lifecycle.yml
+  - type: DataModel
+    url: data-model/fixie-data-model.yml
+  - type: Conformance
+    url: conformance/fixie-conformance.yml
+  - type: AsyncAPI
+    url: asyncapi/fixie-webhooks.yml
+  - type: Webhooks
+    url: asyncapi/fixie-webhooks.yml
+- aid: fixie:fixie-tools-api
+  name: Fixie tools API
+  description: The tools API from Fixie — 4 operation(s) for tools.
+  humanURL: https://docs.ultravox.ai/
+  baseURL: https://api.ultravox.ai/api
+  tags:
+  - tools
+  properties:
+  - type: OpenAPI
+    url: openapi/fixie-tools-api-openapi.yml
+  - type: Authentication
+    url: authentication/fixie-authentication.yml
+  - type: AgenticAccess
+    url: agentic-access/fixie-agentic-access.yml
+  - type: Conventions
+    url: conventions/fixie-conventions.yml
+  - type: ErrorCatalog
+    url: errors/fixie-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/fixie-lifecycle.yml
+  - type: DataModel
+    url: data-model/fixie-data-model.yml
+  - type: Conformance
+    url: conformance/fixie-conformance.yml
+  - type: AsyncAPI
+    url: asyncapi/fixie-webhooks.yml
+  - type: Webhooks
+    url: asyncapi/fixie-webhooks.yml
+- aid: fixie:fixie-voices-api
+  name: Fixie voices API
+  description: The voices API from Fixie — 4 operation(s) for voices.
+  humanURL: https://docs.ultravox.ai/
+  baseURL: https://api.ultravox.ai/api
+  tags:
+  - voices
+  properties:
+  - type: OpenAPI
+    url: openapi/fixie-voices-api-openapi.yml
+  - type: Authentication
+    url: authentication/fixie-authentication.yml
+  - type: AgenticAccess
+    url: agentic-access/fixie-agentic-access.yml
+  - type: Conventions
+    url: conventions/fixie-conventions.yml
+  - type: ErrorCatalog
+    url: errors/fixie-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/fixie-lifecycle.yml
+  - type: DataModel
+    url: data-model/fixie-data-model.yml
+  - type: Conformance
+    url: conformance/fixie-conformance.yml
+  - type: AsyncAPI
+    url: asyncapi/fixie-webhooks.yml
+  - type: Webhooks
+    url: asyncapi/fixie-webhooks.yml
+- aid: fixie:fixie-webhooks-api
+  name: Fixie webhooks API
+  description: The webhooks API from Fixie — 2 operation(s) for webhooks.
+  humanURL: https://docs.ultravox.ai/
+  baseURL: https://api.ultravox.ai/api
+  tags:
+  - webhooks
+  properties:
+  - type: OpenAPI
+    url: openapi/fixie-webhooks-api-openapi.yml
+  - type: Authentication
+    url: authentication/fixie-authentication.yml
+  - type: AgenticAccess
+    url: agentic-access/fixie-agentic-access.yml
+  - type: Conventions
+    url: conventions/fixie-conventions.yml
+  - type: ErrorCatalog
+    url: errors/fixie-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/fixie-lifecycle.yml
+  - type: DataModel
+    url: data-model/fixie-data-model.yml
+  - type: Conformance
+    url: conformance/fixie-conformance.yml
+  - type: AsyncAPI
+    url: asyncapi/fixie-webhooks.yml
+  - type: Webhooks
+    url: asyncapi/fixie-webhooks.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/fixie-domain-security.yml
+- type: TrustCenter
+  url: security/fixie-trust-center.yml
+- type: Packages
+  url: packages/fixie-packages.yml
+- type: SDKs
+  url: packages/fixie-packages.yml
+- type: ChangeLog
+  url: changelog/fixie-changelog.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/fixie-llms.txt
+- type: StatusPage
+  url: https://status.ultravox.ai
+- type: Deprecation
+  url: https://docs.ultravox.ai/changelog/deprecation
+- type: Webhooks
+  url: asyncapi/fixie-webhooks.yml
+- type: DeveloperPortal
+  url: https://docs.ultravox.ai/
+- type: Documentation
+  url: https://docs.ultravox.ai/
+- type: APIReference
+  url: https://docs.ultravox.ai/api-reference
+- type: GettingStarted
+  url: https://docs.ultravox.ai/gettingstarted/quickstart/agent-console
+- type: GitHubOrganization
+  url: https://github.com/fixie-ai
+- type: Blog
+  url: https://ultravox.ai/blog
+- type: Pricing
+  url: https://ultravox.ai/pricing
+- type: SignUp
+  url: https://app.ultravox.ai
+- type: Login
+  url: https://app.ultravox.ai
+- type: TermsOfService
+  url: https://ultravox.ai/terms
+- type: PrivacyPolicy
+  url: https://ultravox.ai/privacy
+- type: Support
+  url: mailto:hello@ultravox.ai
 - type: Website
-  url: https://www.fixie.ai/
+  url: https://ultravox.ai/
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

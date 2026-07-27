@@ -1,0 +1,15 @@
+generated: '2026-07-19'
+method: searched
+probe: false
+url: https://trust.delve.co/ultravox
+source: https://ultravox.ai/ (Trust/Security navigation link)
+certifications: []
+note: >-
+  Ultravox (Fixie) publishes a Delve-hosted trust center linked as "Trust /
+  Security" from ultravox.ai. The trust portal returned HTTP 429 on probe, so
+  named certifications could not be verified at capture time; none are asserted
+  here to avoid fabrication. Re-probe to enumerate SOC 2 / ISO / HIPAA posture.
+evidence:
+- source: https://ultravox.ai/
+  kind: nav-link
+  detail: Trust/Security link to https://trust.delve.co/ultravox

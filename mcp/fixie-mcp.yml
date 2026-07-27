@@ -1,0 +1,48 @@
+generated: '2026-07-19'
+method: derived
+status: candidate
+source: openapi/fixie-ultravox-openapi-original.yml
+note: >-
+  No official hosted/remote MCP server was found for Ultravox/Fixie. This is a
+  candidate tool list derived from the OpenAPI operations; one tool per marquee
+  operationId. Not an authoritative provider claim.
+server:
+  name: fixie-ultravox
+  transport: stdio
+tools:
+- name: list_agents
+  description: Return details for all agents
+  source_operation: openapi/fixie-ultravox-openapi-original.yml#agents_list
+- name: create_agent
+  description: Create a new agent from a name and call template
+  source_operation: openapi/fixie-ultravox-openapi-original.yml#agents_create
+- name: create_call
+  description: Create a new call using a system prompt and other properties
+  source_operation: openapi/fixie-ultravox-openapi-original.yml#calls_create
+- name: create_agent_call
+  description: Create a new call using a specified agent
+  source_operation: openapi/fixie-ultravox-openapi-original.yml#agents_calls_create
+- name: get_call
+  description: Get details for a specified call
+  source_operation: openapi/fixie-ultravox-openapi-original.yml#calls_retrieve
+- name: list_calls
+  description: Return details for all calls
+  source_operation: openapi/fixie-ultravox-openapi-original.yml#calls_list
+- name: list_call_messages
+  description: Return all messages generated during a call
+  source_operation: openapi/fixie-ultravox-openapi-original.yml#calls_messages_list
+- name: get_call_recording
+  description: Return a link to the recording of a call
+  source_operation: openapi/fixie-ultravox-openapi-original.yml#calls_recording_retrieve
+- name: list_tools
+  description: Retrieve all available tools
+  source_operation: openapi/fixie-ultravox-openapi-original.yml#tools_list
+- name: create_tool
+  description: Create a new tool
+  source_operation: openapi/fixie-ultravox-openapi-original.yml#tools_create
+- name: list_voices
+  description: Retrieve all available voices
+  source_operation: openapi/fixie-ultravox-openapi-original.yml#voices_list
+- name: create_webhook
+  description: Create a new webhook configuration for an account
+  source_operation: openapi/fixie-ultravox-openapi-original.yml#webhooks_create

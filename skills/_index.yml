@@ -1,0 +1,12 @@
+generated: '2026-07-19'
+method: generated
+source: openapi/fixie-ultravox-openapi-original.yml
+skills:
+- file: fixie-create-agent-and-call.md
+  name: Create a voice agent and start a call
+  api: openapi/fixie-ultravox-openapi-original.yml
+  operations: [agents_create, agents_calls_create, calls_retrieve, calls_messages_list]
+- file: fixie-webhooks-and-recording.md
+  name: Subscribe to call webhooks and fetch recordings
+  api: openapi/fixie-ultravox-openapi-original.yml
+  operations: [webhooks_create, webhooks_list, calls_events_list, calls_recording_retrieve]
