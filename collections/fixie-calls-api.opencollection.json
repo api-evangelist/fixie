@@ -1,0 +1,551 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ultravox accounts calls API",
+    "version": "0.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "calls",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "calls_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/calls",
+            "params": [
+              {
+                "name": "agentIds",
+                "value": "",
+                "type": "query",
+                "description": "Filter calls by the agent IDs."
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "The pagination cursor value."
+              },
+              {
+                "name": "durationMax",
+                "value": "",
+                "type": "query",
+                "description": "Maximum duration of calls"
+              },
+              {
+                "name": "durationMin",
+                "value": "",
+                "type": "query",
+                "description": "Minimum duration of calls"
+              },
+              {
+                "name": "fromDate",
+                "value": "",
+                "type": "query",
+                "description": "Start datetime (inclusive) for filtering calls by creation date. If no time component is present, this defaults to the start of the day (midnight)."
+              },
+              {
+                "name": "metadata",
+                "value": "",
+                "type": "query",
+                "description": "Filter calls by metadata. Use metadata.key=value to filter by specific key-value pairs."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "The search string used to filter results"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Which field to use when ordering the results."
+              },
+              {
+                "name": "timeOfDayEnd",
+                "value": "",
+                "type": "query",
+                "description": "Filter calls by the time of day of their creation, regardless of date. Format: HH:MM:SS. Defaults to 23:59:59 if not specified."
+              },
+              {
+                "name": "timeOfDayStart",
+                "value": "",
+                "type": "query",
+                "description": "Filter calls by the time of day of their creation, regardless of date. Format: HH:MM:SS. Defaults to 00:00:00 if not specified."
+              },
+              {
+                "name": "toDate",
+                "value": "",
+                "type": "query",
+                "description": "End datetime (inclusive) for filtering calls by creation date. If no time component is present, this defaults to the end of the day (11:59:59.999999 PM)."
+              },
+              {
+                "name": "voiceId",
+                "value": "",
+                "type": "query",
+                "description": "Filter calls by the associated voice ID"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "calls_create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ultravox.ai/api/calls",
+            "params": [
+              {
+                "name": "enableGreetingPrompt",
+                "value": "",
+                "type": "query",
+                "description": "Adds a prompt for a greeting if there's not an initial message that the model would naturally respond to (a user message or tool result)."
+              },
+              {
+                "name": "priorCallId",
+                "value": "",
+                "type": "query",
+                "description": "The UUID of a prior call. When specified, the new call will use the same properites as the prior call unless overriden in this request's body. The new call will also use the prior call's message history as its own initial_messages. (It's illegal to also set initial_messages in the body.)"
+              },
+              {
+                "name": "throttle",
+                "value": "",
+                "type": "query",
+                "description": "The name or ID of a call throttle to apply to this call. If the throttle's rate limits have been exceeded, the call will be rejected with a 429 status."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "calls_retrieve",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/calls/:call_id",
+            "params": [
+              {
+                "name": "call_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "calls_destroy",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.ultravox.ai/api/calls/:call_id",
+            "params": [
+              {
+                "name": "call_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "calls_events_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/calls/:call_id/events",
+            "params": [
+              {
+                "name": "call_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "The pagination cursor value."
+              },
+              {
+                "name": "minimum_severity",
+                "value": "",
+                "type": "query",
+                "description": "The minimum severity of events to include.\n\n* `debug` - debug\n* `info` - info\n* `warning` - warning\n* `error` - error"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "If set, restricts returned events to those of the given type."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Fetch the (paginated) event log for a call, possibly filtered by severity."
+        },
+        {
+          "info": {
+            "name": "calls_messages_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/calls/:call_id/messages",
+            "params": [
+              {
+                "name": "call_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "The pagination cursor value."
+              },
+              {
+                "name": "mode",
+                "value": "",
+                "type": "query",
+                "description": "* `last_stage` - Returns all messages for the call's last stage, similar to most call fields\n* `in_call` - Returns messages from all stages, excluding initialMessages"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "calls_recording_retrieve",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/calls/:call_id/recording",
+            "params": [
+              {
+                "name": "call_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns or redirects to a recording of the call."
+        },
+        {
+          "info": {
+            "name": "send_data_message_to_call",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ultravox.ai/api/calls/:call_id/send_data_message",
+            "params": [
+              {
+                "name": "call_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "calls_sip_logs_retrieve",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/calls/:call_id/sip_logs",
+            "params": [
+              {
+                "name": "call_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Redirects to sip logs for the call, if available."
+        },
+        {
+          "info": {
+            "name": "calls_stages_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/calls/:call_id/stages",
+            "params": [
+              {
+                "name": "call_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "The pagination cursor value."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "calls_stages_retrieve",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/calls/:call_id/stages/:call_stage_id",
+            "params": [
+              {
+                "name": "call_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "call_stage_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "calls_stages_messages_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/calls/:call_id/stages/:call_stage_id/messages",
+            "params": [
+              {
+                "name": "call_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "call_stage_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "The pagination cursor value."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "calls_stages_messages_audio_retrieve",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/calls/:call_id/stages/:call_stage_id/messages/:call_stage_message_index/audio",
+            "params": [
+              {
+                "name": "call_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "call_stage_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "call_stage_message_index",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "calls_stages_tools_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/calls/:call_id/stages/:call_stage_id/tools",
+            "params": [
+              {
+                "name": "call_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "call_stage_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "calls_tools_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/calls/:call_id/tools",
+            "params": [
+              {
+                "name": "call_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

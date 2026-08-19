@@ -1,0 +1,138 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ultravox accounts api_keys API",
+    "version": "0.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "api_keys",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "api_keys_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/api_keys",
+            "params": [
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "The pagination cursor value."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              }
+            ]
+          },
+          "docs": "Gets the current user's API keys."
+        },
+        {
+          "info": {
+            "name": "api_keys_create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ultravox.ai/api/api_keys",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new API key."
+        },
+        {
+          "info": {
+            "name": "api_keys_retrieve",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/api_keys/:api_key_prefix",
+            "params": [
+              {
+                "name": "api_key_prefix",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets an API key."
+        },
+        {
+          "info": {
+            "name": "api_keys_update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.ultravox.ai/api/api_keys/:api_key_prefix",
+            "params": [
+              {
+                "name": "api_key_prefix",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an API key."
+        },
+        {
+          "info": {
+            "name": "api_keys_partial_update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.ultravox.ai/api/api_keys/:api_key_prefix",
+            "params": [
+              {
+                "name": "api_key_prefix",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an API key."
+        },
+        {
+          "info": {
+            "name": "api_keys_destroy",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.ultravox.ai/api/api_keys/:api_key_prefix",
+            "params": [
+              {
+                "name": "api_key_prefix",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes an API key."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

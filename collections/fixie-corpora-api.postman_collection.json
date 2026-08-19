@@ -1,0 +1,2111 @@
+{
+  "item": [
+    {
+      "id": "b542e2a6-3dd1-42cd-80bb-d7a673973d7a",
+      "name": "corpora",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a31f117a-8909-4194-9755-b4e46366f3a3",
+          "name": "corpora list",
+          "request": {
+            "name": "corpora list",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "corpora"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": "<string>",
+                  "description": "The pagination cursor value."
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a63c07ec-dad5-4cc2-ab5d-87c737a77129",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "corpora"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"corpusId\": \"string\",\n      \"created\": \"2024-02-05T15:57:47.700Z\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"stats\": {\n        \"status\": \"CORPUS_STATUS_READY\",\n        \"lastUpdated\": \"1975-05-10T13:52:16.240Z\",\n        \"numChunks\": 7204,\n        \"numDocs\": 4077,\n        \"numVectors\": 2975\n      }\n    },\n    {\n      \"corpusId\": \"string\",\n      \"created\": \"1957-11-28T07:25:01.885Z\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"stats\": {\n        \"status\": \"CORPUS_STATUS_INITIALIZING\",\n        \"lastUpdated\": \"2016-08-28T09:49:20.591Z\",\n        \"numChunks\": 7365,\n        \"numDocs\": 7874,\n        \"numVectors\": 5145\n      }\n    }\n  ],\n  \"next\": \"http://DGRiMmy.rkmwKfJB1XNY-6aGlmiGCERZFZLq-xUucL\",\n  \"previous\": \"http://api.example.org/accounts/?cursor=cj0xJnA9NDg3\",\n  \"total\": 123\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "905862bb-1514-4852-9650-54a7336b9efd",
+          "name": "corpora create",
+          "request": {
+            "name": "corpora create",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "corpora"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"corpusId\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"stats\": {\n    \"status\": \"<enum>\",\n    \"lastUpdated\": \"<dateTime>\",\n    \"numChunks\": \"<integer>\",\n    \"numDocs\": \"<integer>\",\n    \"numVectors\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b3cb35be-35ea-4f48-a783-84f69072cd03",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "corpora"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"corpusId\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"stats\": {\n    \"status\": \"<enum>\",\n    \"lastUpdated\": \"<dateTime>\",\n    \"numChunks\": \"<integer>\",\n    \"numDocs\": \"<integer>\",\n    \"numVectors\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"corpusId\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"stats\": {\n    \"status\": \"<enum>\",\n    \"lastUpdated\": \"<dateTime>\",\n    \"numChunks\": \"<integer>\",\n    \"numDocs\": \"<integer>\",\n    \"numVectors\": \"<integer>\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "761806de-b308-4d97-99a0-85253892704a",
+          "name": "corpora retrieve",
+          "request": {
+            "name": "corpora retrieve",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "corpora",
+                ":corpus_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "corpus_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ffcaa618-a569-490d-bad5-f2877d42f3fc",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "corpora",
+                    ":corpus_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "corpus_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"corpusId\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"stats\": {\n    \"status\": \"<enum>\",\n    \"lastUpdated\": \"<dateTime>\",\n    \"numChunks\": \"<integer>\",\n    \"numDocs\": \"<integer>\",\n    \"numVectors\": \"<integer>\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8cbfb59f-9177-4347-8ff1-6b815271cc75",
+          "name": "corpora update",
+          "request": {
+            "name": "corpora update",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "corpora",
+                ":corpus_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "corpus_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"corpusId\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"stats\": {\n    \"status\": \"<enum>\",\n    \"lastUpdated\": \"<dateTime>\",\n    \"numChunks\": \"<integer>\",\n    \"numDocs\": \"<integer>\",\n    \"numVectors\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "485fbadd-f559-420e-8714-4076e238e91d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "corpora",
+                    ":corpus_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "corpus_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"corpusId\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"stats\": {\n    \"status\": \"<enum>\",\n    \"lastUpdated\": \"<dateTime>\",\n    \"numChunks\": \"<integer>\",\n    \"numDocs\": \"<integer>\",\n    \"numVectors\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"corpusId\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"stats\": {\n    \"status\": \"<enum>\",\n    \"lastUpdated\": \"<dateTime>\",\n    \"numChunks\": \"<integer>\",\n    \"numDocs\": \"<integer>\",\n    \"numVectors\": \"<integer>\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "af897bff-03a7-4372-a78d-367ec349a770",
+          "name": "corpora partial update",
+          "request": {
+            "name": "corpora partial update",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "corpora",
+                ":corpus_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "corpus_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"corpusId\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"stats\": {\n    \"status\": \"<enum>\",\n    \"lastUpdated\": \"<dateTime>\",\n    \"numChunks\": \"<integer>\",\n    \"numDocs\": \"<integer>\",\n    \"numVectors\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fcb85f4a-f81f-4945-9395-73695641f016",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "corpora",
+                    ":corpus_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "corpus_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"corpusId\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"stats\": {\n    \"status\": \"<enum>\",\n    \"lastUpdated\": \"<dateTime>\",\n    \"numChunks\": \"<integer>\",\n    \"numDocs\": \"<integer>\",\n    \"numVectors\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"corpusId\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"stats\": {\n    \"status\": \"<enum>\",\n    \"lastUpdated\": \"<dateTime>\",\n    \"numChunks\": \"<integer>\",\n    \"numDocs\": \"<integer>\",\n    \"numVectors\": \"<integer>\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ee5cf652-192f-4072-a0fc-1a65d474fb83",
+          "name": "corpora destroy",
+          "request": {
+            "name": "corpora destroy",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "corpora",
+                ":corpus_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "corpus_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e433430f-8565-4450-ba71-2d7d38b804c8",
+              "name": "No response body",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "corpora",
+                    ":corpus_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "corpus_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d308a0dc-a093-49a2-ad83-2dc51bf86876",
+          "name": "corpora query",
+          "request": {
+            "name": "corpora query",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "corpora",
+                ":corpus_id",
+                "query"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "corpus_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"<string>\",\n  \"maxResults\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "84ad9721-6525-4f40-b450-084e325ae6e5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "corpora",
+                    ":corpus_id",
+                    "query"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "corpus_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"<string>\",\n  \"maxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"content\": \"string\",\n    \"score\": 4835.042940598064,\n    \"citation\": {\n      \"sourceId\": \"string\",\n      \"documentId\": \"string\",\n      \"publicUrl\": \"string\",\n      \"title\": \"string\"\n    }\n  },\n  {\n    \"content\": \"string\",\n    \"score\": 5184.780907232125,\n    \"citation\": {\n      \"sourceId\": \"string\",\n      \"documentId\": \"string\",\n      \"publicUrl\": \"string\",\n      \"title\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3f6f8274-3c47-4979-8af8-27bd55023041",
+          "name": "corpora sources list",
+          "request": {
+            "name": "corpora sources list",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "corpora",
+                ":corpus_id",
+                "sources"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": "<string>",
+                  "description": "The pagination cursor value."
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "corpus_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6250bd51-aee3-41c3-93ea-8aa85d4d318a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "corpora",
+                    ":corpus_id",
+                    "sources"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "corpus_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"corpusId\": \"string\",\n      \"sourceId\": \"string\",\n      \"created\": \"1978-03-25T04:42:16.585Z\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"stats\": {\n        \"status\": \"SOURCE_STATUS_INITIALIZING\",\n        \"lastUpdated\": \"1983-02-25T03:32:06.212Z\",\n        \"numDocs\": 7544\n      },\n      \"loadSpec\": {\n        \"maxDocuments\": 5414,\n        \"maxDocumentBytes\": 7844,\n        \"relevantDocumentTypes\": {\n          \"include\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"exclude\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"startUrls\": [\n          \"string\",\n          \"string\"\n        ],\n        \"maxDepth\": 8612\n      },\n      \"crawl\": {\n        \"maxDocuments\": 2164,\n        \"maxDocumentBytes\": 1469,\n        \"relevantDocumentTypes\": {\n          \"include\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"exclude\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"startUrls\": [\n          \"string\",\n          \"string\"\n        ],\n        \"maxDepth\": 131\n      },\n      \"upload\": {\n        \"documentIds\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"advanced\": {\n        \"documents\": [\n          {\n            \"documentId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"exampleQueries\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"documentId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"exampleQueries\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"corpusId\": \"string\",\n      \"sourceId\": \"string\",\n      \"created\": \"1949-08-17T22:47:18.240Z\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"stats\": {\n        \"status\": \"SOURCE_STATUS_READY\",\n        \"lastUpdated\": \"1992-05-22T13:46:57.992Z\",\n        \"numDocs\": 9999\n      },\n      \"loadSpec\": {\n        \"maxDocuments\": 5883,\n        \"maxDocumentBytes\": 4825,\n        \"relevantDocumentTypes\": {\n          \"include\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"exclude\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"startUrls\": [\n          \"string\",\n          \"string\"\n        ],\n        \"maxDepth\": 6652\n      },\n      \"crawl\": {\n        \"maxDocuments\": 8774,\n        \"maxDocumentBytes\": 260,\n        \"relevantDocumentTypes\": {\n          \"include\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"exclude\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"startUrls\": [\n          \"string\",\n          \"string\"\n        ],\n        \"maxDepth\": 325\n      },\n      \"upload\": {\n        \"documentIds\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"advanced\": {\n        \"documents\": [\n          {\n            \"documentId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"exampleQueries\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"documentId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"exampleQueries\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      }\n    }\n  ],\n  \"next\": \"http://ZgMIaFtHYbNdBRVPGzjodxDjqrH.paV8E95-N\",\n  \"previous\": \"http://api.example.org/accounts/?cursor=cj0xJnA9NDg3\",\n  \"total\": 123\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "55a24e0c-f5b7-49ef-af72-40f7985ede24",
+          "name": "corpora sources create",
+          "request": {
+            "name": "corpora sources create",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "corpora",
+                ":corpus_id",
+                "sources"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "corpus_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"corpusId\": \"<string>\",\n  \"sourceId\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"stats\": {\n    \"status\": \"<enum>\",\n    \"lastUpdated\": \"<dateTime>\",\n    \"numDocs\": \"<integer>\"\n  },\n  \"loadSpec\": {\n    \"maxDocuments\": \"<integer>\",\n    \"maxDocumentBytes\": \"<integer>\",\n    \"relevantDocumentTypes\": {\n      \"include\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"exclude\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"startUrls\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"maxDepth\": \"<integer>\"\n  },\n  \"crawl\": {\n    \"maxDocuments\": \"<integer>\",\n    \"maxDocumentBytes\": \"<integer>\",\n    \"relevantDocumentTypes\": {\n      \"include\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"exclude\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"startUrls\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"maxDepth\": \"<integer>\"\n  },\n  \"upload\": {\n    \"documentIds\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"advanced\": {\n    \"documents\": [\n      {\n        \"documentId\": \"<string>\",\n        \"exampleQueries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"documentId\": \"<string>\",\n        \"exampleQueries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "444bf680-b73a-48ef-a6b9-db7498dc0370",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "corpora",
+                    ":corpus_id",
+                    "sources"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "corpus_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"corpusId\": \"<string>\",\n  \"sourceId\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"stats\": {\n    \"status\": \"<enum>\",\n    \"lastUpdated\": \"<dateTime>\",\n    \"numDocs\": \"<integer>\"\n  },\n  \"loadSpec\": {\n    \"maxDocuments\": \"<integer>\",\n    \"maxDocumentBytes\": \"<integer>\",\n    \"relevantDocumentTypes\": {\n      \"include\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"exclude\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"startUrls\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"maxDepth\": \"<integer>\"\n  },\n  \"crawl\": {\n    \"maxDocuments\": \"<integer>\",\n    \"maxDocumentBytes\": \"<integer>\",\n    \"relevantDocumentTypes\": {\n      \"include\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"exclude\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"startUrls\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"maxDepth\": \"<integer>\"\n  },\n  \"upload\": {\n    \"documentIds\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"advanced\": {\n    \"documents\": [\n      {\n        \"documentId\": \"<string>\",\n        \"exampleQueries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"documentId\": \"<string>\",\n        \"exampleQueries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"corpusId\": \"<string>\",\n  \"sourceId\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"stats\": {\n    \"status\": \"<enum>\",\n    \"lastUpdated\": \"<dateTime>\",\n    \"numDocs\": \"<integer>\"\n  },\n  \"loadSpec\": {\n    \"maxDocuments\": \"<integer>\",\n    \"maxDocumentBytes\": \"<integer>\",\n    \"relevantDocumentTypes\": {\n      \"include\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"exclude\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"startUrls\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"maxDepth\": \"<integer>\"\n  },\n  \"crawl\": {\n    \"maxDocuments\": \"<integer>\",\n    \"maxDocumentBytes\": \"<integer>\",\n    \"relevantDocumentTypes\": {\n      \"include\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"exclude\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"startUrls\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"maxDepth\": \"<integer>\"\n  },\n  \"upload\": {\n    \"documentIds\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"advanced\": {\n    \"documents\": [\n      {\n        \"documentId\": \"<string>\",\n        \"exampleQueries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"documentId\": \"<string>\",\n        \"exampleQueries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "93e1a184-af10-463d-825f-0bf9ca314eb9",
+          "name": "corpora sources retrieve",
+          "request": {
+            "name": "corpora sources retrieve",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "corpora",
+                ":corpus_id",
+                "sources",
+                ":source_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "corpus_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "source_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9d7b9681-8061-4378-8c3c-872ae621d32b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "corpora",
+                    ":corpus_id",
+                    "sources",
+                    ":source_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "corpus_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "source_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"corpusId\": \"<string>\",\n  \"sourceId\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"stats\": {\n    \"status\": \"<enum>\",\n    \"lastUpdated\": \"<dateTime>\",\n    \"numDocs\": \"<integer>\"\n  },\n  \"loadSpec\": {\n    \"maxDocuments\": \"<integer>\",\n    \"maxDocumentBytes\": \"<integer>\",\n    \"relevantDocumentTypes\": {\n      \"include\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"exclude\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"startUrls\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"maxDepth\": \"<integer>\"\n  },\n  \"crawl\": {\n    \"maxDocuments\": \"<integer>\",\n    \"maxDocumentBytes\": \"<integer>\",\n    \"relevantDocumentTypes\": {\n      \"include\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"exclude\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"startUrls\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"maxDepth\": \"<integer>\"\n  },\n  \"upload\": {\n    \"documentIds\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"advanced\": {\n    \"documents\": [\n      {\n        \"documentId\": \"<string>\",\n        \"exampleQueries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"documentId\": \"<string>\",\n        \"exampleQueries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "415f0e1c-8a49-4f95-9d08-1bc7f9c51c56",
+          "name": "corpora sources update",
+          "request": {
+            "name": "corpora sources update",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "corpora",
+                ":corpus_id",
+                "sources",
+                ":source_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "corpus_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "source_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"corpusId\": \"<string>\",\n  \"sourceId\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"stats\": {\n    \"status\": \"<enum>\",\n    \"lastUpdated\": \"<dateTime>\",\n    \"numDocs\": \"<integer>\"\n  },\n  \"loadSpec\": {\n    \"maxDocuments\": \"<integer>\",\n    \"maxDocumentBytes\": \"<integer>\",\n    \"relevantDocumentTypes\": {\n      \"include\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"exclude\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"startUrls\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"maxDepth\": \"<integer>\"\n  },\n  \"crawl\": {\n    \"maxDocuments\": \"<integer>\",\n    \"maxDocumentBytes\": \"<integer>\",\n    \"relevantDocumentTypes\": {\n      \"include\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"exclude\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"startUrls\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"maxDepth\": \"<integer>\"\n  },\n  \"upload\": {\n    \"documentIds\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"advanced\": {\n    \"documents\": [\n      {\n        \"documentId\": \"<string>\",\n        \"exampleQueries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"documentId\": \"<string>\",\n        \"exampleQueries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4510519e-2112-43b1-9fb5-1d4edfc3bfb3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "corpora",
+                    ":corpus_id",
+                    "sources",
+                    ":source_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "corpus_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "source_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"corpusId\": \"<string>\",\n  \"sourceId\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"stats\": {\n    \"status\": \"<enum>\",\n    \"lastUpdated\": \"<dateTime>\",\n    \"numDocs\": \"<integer>\"\n  },\n  \"loadSpec\": {\n    \"maxDocuments\": \"<integer>\",\n    \"maxDocumentBytes\": \"<integer>\",\n    \"relevantDocumentTypes\": {\n      \"include\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"exclude\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"startUrls\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"maxDepth\": \"<integer>\"\n  },\n  \"crawl\": {\n    \"maxDocuments\": \"<integer>\",\n    \"maxDocumentBytes\": \"<integer>\",\n    \"relevantDocumentTypes\": {\n      \"include\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"exclude\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"startUrls\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"maxDepth\": \"<integer>\"\n  },\n  \"upload\": {\n    \"documentIds\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"advanced\": {\n    \"documents\": [\n      {\n        \"documentId\": \"<string>\",\n        \"exampleQueries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"documentId\": \"<string>\",\n        \"exampleQueries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"corpusId\": \"<string>\",\n  \"sourceId\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"stats\": {\n    \"status\": \"<enum>\",\n    \"lastUpdated\": \"<dateTime>\",\n    \"numDocs\": \"<integer>\"\n  },\n  \"loadSpec\": {\n    \"maxDocuments\": \"<integer>\",\n    \"maxDocumentBytes\": \"<integer>\",\n    \"relevantDocumentTypes\": {\n      \"include\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"exclude\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"startUrls\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"maxDepth\": \"<integer>\"\n  },\n  \"crawl\": {\n    \"maxDocuments\": \"<integer>\",\n    \"maxDocumentBytes\": \"<integer>\",\n    \"relevantDocumentTypes\": {\n      \"include\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"exclude\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"startUrls\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"maxDepth\": \"<integer>\"\n  },\n  \"upload\": {\n    \"documentIds\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"advanced\": {\n    \"documents\": [\n      {\n        \"documentId\": \"<string>\",\n        \"exampleQueries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"documentId\": \"<string>\",\n        \"exampleQueries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d88f2899-15b9-48f3-8507-8d6c4132056f",
+          "name": "corpora sources partial update",
+          "request": {
+            "name": "corpora sources partial update",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "corpora",
+                ":corpus_id",
+                "sources",
+                ":source_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "corpus_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "source_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"corpusId\": \"<string>\",\n  \"sourceId\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"stats\": {\n    \"status\": \"<enum>\",\n    \"lastUpdated\": \"<dateTime>\",\n    \"numDocs\": \"<integer>\"\n  },\n  \"loadSpec\": {\n    \"maxDocuments\": \"<integer>\",\n    \"maxDocumentBytes\": \"<integer>\",\n    \"relevantDocumentTypes\": {\n      \"include\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"exclude\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"startUrls\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"maxDepth\": \"<integer>\"\n  },\n  \"crawl\": {\n    \"maxDocuments\": \"<integer>\",\n    \"maxDocumentBytes\": \"<integer>\",\n    \"relevantDocumentTypes\": {\n      \"include\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"exclude\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"startUrls\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"maxDepth\": \"<integer>\"\n  },\n  \"upload\": {\n    \"documentIds\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"advanced\": {\n    \"documents\": [\n      {\n        \"documentId\": \"<string>\",\n        \"exampleQueries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"documentId\": \"<string>\",\n        \"exampleQueries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4112e14c-8c1f-4bef-80ff-9b5148605354",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "corpora",
+                    ":corpus_id",
+                    "sources",
+                    ":source_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "corpus_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "source_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"corpusId\": \"<string>\",\n  \"sourceId\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"stats\": {\n    \"status\": \"<enum>\",\n    \"lastUpdated\": \"<dateTime>\",\n    \"numDocs\": \"<integer>\"\n  },\n  \"loadSpec\": {\n    \"maxDocuments\": \"<integer>\",\n    \"maxDocumentBytes\": \"<integer>\",\n    \"relevantDocumentTypes\": {\n      \"include\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"exclude\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"startUrls\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"maxDepth\": \"<integer>\"\n  },\n  \"crawl\": {\n    \"maxDocuments\": \"<integer>\",\n    \"maxDocumentBytes\": \"<integer>\",\n    \"relevantDocumentTypes\": {\n      \"include\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"exclude\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"startUrls\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"maxDepth\": \"<integer>\"\n  },\n  \"upload\": {\n    \"documentIds\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"advanced\": {\n    \"documents\": [\n      {\n        \"documentId\": \"<string>\",\n        \"exampleQueries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"documentId\": \"<string>\",\n        \"exampleQueries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"corpusId\": \"<string>\",\n  \"sourceId\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"stats\": {\n    \"status\": \"<enum>\",\n    \"lastUpdated\": \"<dateTime>\",\n    \"numDocs\": \"<integer>\"\n  },\n  \"loadSpec\": {\n    \"maxDocuments\": \"<integer>\",\n    \"maxDocumentBytes\": \"<integer>\",\n    \"relevantDocumentTypes\": {\n      \"include\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"exclude\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"startUrls\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"maxDepth\": \"<integer>\"\n  },\n  \"crawl\": {\n    \"maxDocuments\": \"<integer>\",\n    \"maxDocumentBytes\": \"<integer>\",\n    \"relevantDocumentTypes\": {\n      \"include\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"exclude\": {\n        \"mimeTypes\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"startUrls\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"maxDepth\": \"<integer>\"\n  },\n  \"upload\": {\n    \"documentIds\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"advanced\": {\n    \"documents\": [\n      {\n        \"documentId\": \"<string>\",\n        \"exampleQueries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"documentId\": \"<string>\",\n        \"exampleQueries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "efc9ecb7-2e21-4700-bcd3-df3913077e73",
+          "name": "corpora sources destroy",
+          "request": {
+            "name": "corpora sources destroy",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "corpora",
+                ":corpus_id",
+                "sources",
+                ":source_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "corpus_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "source_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9e97af32-06f8-4f27-806a-1cf0f5400015",
+              "name": "No response body",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "corpora",
+                    ":corpus_id",
+                    "sources",
+                    ":source_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "corpus_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "source_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b232a436-a2e9-45a1-8a65-6970cf7f7a3a",
+          "name": "corpora sources documents list",
+          "request": {
+            "name": "corpora sources documents list",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "corpora",
+                ":corpus_id",
+                "sources",
+                ":source_id",
+                "documents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": "<string>",
+                  "description": "The pagination cursor value."
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "corpus_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "source_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "726b767b-4644-497d-852b-8ba1f6b7af83",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "corpora",
+                    ":corpus_id",
+                    "sources",
+                    ":source_id",
+                    "documents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "corpus_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "source_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"corpusId\": \"string\",\n      \"sourceId\": \"string\",\n      \"documentId\": \"string\",\n      \"created\": \"1985-11-09T13:58:18.443Z\",\n      \"mimeType\": \"string\",\n      \"metadata\": {\n        \"publicUrl\": \"string\",\n        \"language\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"published\": \"1993-07-22T03:12:49.985Z\",\n        \"exampleQueries\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"sizeBytes\": \"string\"\n    },\n    {\n      \"corpusId\": \"string\",\n      \"sourceId\": \"string\",\n      \"documentId\": \"string\",\n      \"created\": \"1987-11-09T20:38:12.953Z\",\n      \"mimeType\": \"string\",\n      \"metadata\": {\n        \"publicUrl\": \"string\",\n        \"language\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"published\": \"1974-06-06T03:18:15.351Z\",\n        \"exampleQueries\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"sizeBytes\": \"string\"\n    }\n  ],\n  \"next\": \"https://iZsEUqnwRrZoCNzWRwQFzCXrQLmmBI.qzuk867mZpvSCt\",\n  \"previous\": \"http://api.example.org/accounts/?cursor=cj0xJnA9NDg3\",\n  \"total\": 123\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5246a831-4c2d-485e-9540-ac62ee0dc564",
+          "name": "corpora sources documents retrieve",
+          "request": {
+            "name": "corpora sources documents retrieve",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "corpora",
+                ":corpus_id",
+                "sources",
+                ":source_id",
+                "documents",
+                ":document_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "corpus_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "document_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "source_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e2a69207-8a19-40d1-8620-4b5db4f4392a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "corpora",
+                    ":corpus_id",
+                    "sources",
+                    ":source_id",
+                    "documents",
+                    ":document_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "corpus_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "document_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "source_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"corpusId\": \"string\",\n  \"sourceId\": \"string\",\n  \"documentId\": \"string\",\n  \"created\": \"1960-04-20T08:14:38.496Z\",\n  \"mimeType\": \"string\",\n  \"metadata\": {\n    \"publicUrl\": \"string\",\n    \"language\": \"string\",\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"published\": \"1997-01-29T17:01:38.375Z\",\n    \"exampleQueries\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"sizeBytes\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "37521c65-17e9-4c51-b622-08043f907bf7",
+          "name": "corpora uploads create",
+          "request": {
+            "name": "corpora uploads create",
+            "description": {
+              "content": "Request a presigned URL for uploading a document.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "corpora",
+                ":corpus_id",
+                "uploads"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "corpus_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"mimeType\": \"<string>\",\n  \"fileName\": \"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a615700b-d76c-4a86-889d-a47858d75150",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "corpora",
+                    ":corpus_id",
+                    "uploads"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "corpus_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"mimeType\": \"<string>\",\n  \"fileName\": \"\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"documentId\": \"string\",\n  \"presignedUrl\": \"http://obgLlUMdWaSzypJ.nkcOZpLYZ,KFWiNebqxgebUvqjIIKF+KBqKhPFFJyc9xNYKkEgjSa5ffW,hcudwchzcKgIKi4N0PkZpmZQJ\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.ultravox.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7cf69f9c-a5c2-49bb-b934-9848667a92b0",
+    "name": "Ultravox accounts corpora API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for the Ultravox service.",
+      "type": "text/plain"
+    }
+  }
+}

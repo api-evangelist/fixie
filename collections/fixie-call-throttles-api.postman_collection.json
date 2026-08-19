@@ -1,0 +1,750 @@
+{
+  "item": [
+    {
+      "id": "3340029d-3419-4335-a7dd-59dad65e1861",
+      "name": "call_throttles",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b9aff5df-c2b9-433e-a3ed-5c86e65e86fc",
+          "name": "call throttles list",
+          "request": {
+            "name": "call throttles list",
+            "description": {
+              "content": "Lists call throttles for the current account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "call_throttles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": "<string>",
+                  "description": "The pagination cursor value."
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8405d810-047a-48e9-9969-e18a869cf09f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "call_throttles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"created\": \"2022-02-15T12:57:11.002Z\",\n      \"name\": \"string\",\n      \"rules\": [\n        {\n          \"maxCalls\": 17,\n          \"windowSeconds\": 10248\n        },\n        {\n          \"maxCalls\": 89,\n          \"windowSeconds\": 77831\n        }\n      ],\n      \"throttleId\": \"d0be3f83-dedb-8e81-64b2-8fd6de042dd0\"\n    },\n    {\n      \"created\": \"1955-03-01T19:44:34.576Z\",\n      \"name\": \"string\",\n      \"rules\": [\n        {\n          \"maxCalls\": 58,\n          \"windowSeconds\": 50818\n        },\n        {\n          \"maxCalls\": 90,\n          \"windowSeconds\": 51746\n        }\n      ],\n      \"throttleId\": \"4097c89f-48c6-6ba8-79a2-1f28ec5fa78b\"\n    }\n  ],\n  \"next\": \"http://PDzxUNCcHv.trf1\",\n  \"previous\": \"http://api.example.org/accounts/?cursor=cj0xJnA9NDg3\",\n  \"total\": 123\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cf0ee84e-f922-4a1c-b559-84027082c7ba",
+          "name": "call throttles create",
+          "request": {
+            "name": "call throttles create",
+            "description": {
+              "content": "Creates a new call throttle.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "call_throttles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"rules\": [\n    {\n      \"maxCalls\": \"<integer>\",\n      \"windowSeconds\": \"<integer>\"\n    },\n    {\n      \"maxCalls\": \"<integer>\",\n      \"windowSeconds\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b0dc4043-8cc4-424a-be92-38553b6a8006",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "call_throttles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"rules\": [\n    {\n      \"maxCalls\": \"<integer>\",\n      \"windowSeconds\": \"<integer>\"\n    },\n    {\n      \"maxCalls\": \"<integer>\",\n      \"windowSeconds\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"<string>\",\n  \"rules\": [\n    {\n      \"maxCalls\": \"<integer>\",\n      \"windowSeconds\": \"<integer>\"\n    },\n    {\n      \"maxCalls\": \"<integer>\",\n      \"windowSeconds\": \"<integer>\"\n    }\n  ],\n  \"throttleId\": \"323cb0bb-55da-95a1-1c98-2708df5784d3\",\n  \"created\": \"1972-12-06T18:22:22.143Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1244505d-2993-4ba8-9000-e4fd7356911e",
+          "name": "call throttles retrieve",
+          "request": {
+            "name": "call throttles retrieve",
+            "description": {
+              "content": "Gets a call throttle.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "call_throttles",
+                ":throttle_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "throttle_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "59604d72-8f0b-45d7-b2ea-f6229d5c82dc",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "call_throttles",
+                    ":throttle_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "throttle_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"<string>\",\n  \"rules\": [\n    {\n      \"maxCalls\": \"<integer>\",\n      \"windowSeconds\": \"<integer>\"\n    },\n    {\n      \"maxCalls\": \"<integer>\",\n      \"windowSeconds\": \"<integer>\"\n    }\n  ],\n  \"throttleId\": \"323cb0bb-55da-95a1-1c98-2708df5784d3\",\n  \"created\": \"1972-12-06T18:22:22.143Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0ef99bd0-d87e-43dd-afe7-f735679df22c",
+          "name": "call throttles update",
+          "request": {
+            "name": "call throttles update",
+            "description": {
+              "content": "Updates a call throttle (full replacement).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "call_throttles",
+                ":throttle_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "throttle_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"rules\": [\n    {\n      \"maxCalls\": \"<integer>\",\n      \"windowSeconds\": \"<integer>\"\n    },\n    {\n      \"maxCalls\": \"<integer>\",\n      \"windowSeconds\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2eb3dc88-9253-4332-b917-162ad3dbb869",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "call_throttles",
+                    ":throttle_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "throttle_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"rules\": [\n    {\n      \"maxCalls\": \"<integer>\",\n      \"windowSeconds\": \"<integer>\"\n    },\n    {\n      \"maxCalls\": \"<integer>\",\n      \"windowSeconds\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"<string>\",\n  \"rules\": [\n    {\n      \"maxCalls\": \"<integer>\",\n      \"windowSeconds\": \"<integer>\"\n    },\n    {\n      \"maxCalls\": \"<integer>\",\n      \"windowSeconds\": \"<integer>\"\n    }\n  ],\n  \"throttleId\": \"323cb0bb-55da-95a1-1c98-2708df5784d3\",\n  \"created\": \"1972-12-06T18:22:22.143Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b143b30e-bc4e-4e96-b1ff-1ac756549cee",
+          "name": "call throttles partial update",
+          "request": {
+            "name": "call throttles partial update",
+            "description": {
+              "content": "Partially updates a call throttle.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "call_throttles",
+                ":throttle_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "throttle_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"rules\": [\n    {\n      \"maxCalls\": \"<integer>\",\n      \"windowSeconds\": \"<integer>\"\n    },\n    {\n      \"maxCalls\": \"<integer>\",\n      \"windowSeconds\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2593bf8b-045a-4538-b87c-7de391e013d7",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "call_throttles",
+                    ":throttle_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "throttle_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"rules\": [\n    {\n      \"maxCalls\": \"<integer>\",\n      \"windowSeconds\": \"<integer>\"\n    },\n    {\n      \"maxCalls\": \"<integer>\",\n      \"windowSeconds\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"<string>\",\n  \"rules\": [\n    {\n      \"maxCalls\": \"<integer>\",\n      \"windowSeconds\": \"<integer>\"\n    },\n    {\n      \"maxCalls\": \"<integer>\",\n      \"windowSeconds\": \"<integer>\"\n    }\n  ],\n  \"throttleId\": \"323cb0bb-55da-95a1-1c98-2708df5784d3\",\n  \"created\": \"1972-12-06T18:22:22.143Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "87a0dcf2-73de-4e56-a179-339964549a46",
+          "name": "call throttles destroy",
+          "request": {
+            "name": "call throttles destroy",
+            "description": {
+              "content": "Deletes a call throttle.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "call_throttles",
+                ":throttle_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "throttle_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ba492353-6641-4bd4-b8c5-40aecdc9e539",
+              "name": "No response body",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "call_throttles",
+                    ":throttle_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "throttle_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.ultravox.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f986553d-fb02-4541-9c31-1a6809167186",
+    "name": "Ultravox accounts call_throttles API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for the Ultravox service.",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,478 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ultravox accounts corpora API",
+    "version": "0.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "corpora",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "corpora_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/corpora",
+            "params": [
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "The pagination cursor value."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "corpora_create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ultravox.ai/api/corpora",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "corpora_retrieve",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/corpora/:corpus_id",
+            "params": [
+              {
+                "name": "corpus_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "corpora_update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.ultravox.ai/api/corpora/:corpus_id",
+            "params": [
+              {
+                "name": "corpus_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "corpora_partial_update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.ultravox.ai/api/corpora/:corpus_id",
+            "params": [
+              {
+                "name": "corpus_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "corpora_destroy",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.ultravox.ai/api/corpora/:corpus_id",
+            "params": [
+              {
+                "name": "corpus_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "corpora_query",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ultravox.ai/api/corpora/:corpus_id/query",
+            "params": [
+              {
+                "name": "corpus_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "corpora_sources_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/corpora/:corpus_id/sources",
+            "params": [
+              {
+                "name": "corpus_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "The pagination cursor value."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "corpora_sources_create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ultravox.ai/api/corpora/:corpus_id/sources",
+            "params": [
+              {
+                "name": "corpus_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "corpora_sources_retrieve",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/corpora/:corpus_id/sources/:source_id",
+            "params": [
+              {
+                "name": "corpus_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "source_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "corpora_sources_update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.ultravox.ai/api/corpora/:corpus_id/sources/:source_id",
+            "params": [
+              {
+                "name": "corpus_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "source_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "corpora_sources_partial_update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.ultravox.ai/api/corpora/:corpus_id/sources/:source_id",
+            "params": [
+              {
+                "name": "corpus_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "source_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "corpora_sources_destroy",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.ultravox.ai/api/corpora/:corpus_id/sources/:source_id",
+            "params": [
+              {
+                "name": "corpus_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "source_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "corpora_sources_documents_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/corpora/:corpus_id/sources/:source_id/documents",
+            "params": [
+              {
+                "name": "corpus_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "The pagination cursor value."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              },
+              {
+                "name": "source_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "corpora_sources_documents_retrieve",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/corpora/:corpus_id/sources/:source_id/documents/:document_id",
+            "params": [
+              {
+                "name": "corpus_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "document_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "source_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "corpora_uploads_create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ultravox.ai/api/corpora/:corpus_id/uploads",
+            "params": [
+              {
+                "name": "corpus_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Request a presigned URL for uploading a document."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

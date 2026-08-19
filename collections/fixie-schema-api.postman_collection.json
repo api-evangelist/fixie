@@ -1,0 +1,127 @@
+{
+  "item": [
+    {
+      "id": "3dae80fd-ec60-4169-a353-f6f85c846890",
+      "name": "schema",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c2986d76-0045-472f-9b09-99ccbc08e680",
+          "name": "schema retrieve",
+          "request": {
+            "name": "schema retrieve",
+            "description": {
+              "content": "OpenApi3 schema for this API. Format can be selected via content negotiation.\n\n- YAML: application/vnd.oai.openapi\n- JSON: application/vnd.oai.openapi+json",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "schema",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lang",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.oai.openapi"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "noauth"
+            }
+          },
+          "response": [
+            {
+              "id": "98280c41-fd7b-4f21-baf2-3c2b036ebb2c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "schema",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lang",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.oai.openapi"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.oai.openapi+json"
+                }
+              ],
+              "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.ultravox.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e5534c5f-0ef2-43c9-8081-95ee58d85fce",
+    "name": "Ultravox accounts schema API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for the Ultravox service.",
+      "type": "text/plain"
+    }
+  }
+}

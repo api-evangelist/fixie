@@ -1,0 +1,219 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ultravox accounts tools API",
+    "version": "0.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "tools",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "tools_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/tools",
+            "params": [
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "The pagination cursor value."
+              },
+              {
+                "name": "ownership",
+                "value": "",
+                "type": "query",
+                "description": "The ownership used to filter results.\n\n* `private` - Only private tools\n* `public` - Only public tools"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "The search string used to filter results."
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "How results should be ordered. If a cursor is provided, this parameter must match the sortOrder used in the previous request for results to be sensible.\n\n* `display` - Display order. Public tools by name first, then private tools with most recent first.\n* `alphabetic` - Name ascending\n* `reverseAlphabetic` - Name descending\n* `chronologic` - Creation order with oldest first.\n* `reverseChronologic` - Creation order with newest first.\n* `default` - Default ordering. Same as reverseChronologic but with private tools first."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List tools available to your account."
+        },
+        {
+          "info": {
+            "name": "tools_create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ultravox.ai/api/tools",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "tools_retrieve",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/tools/:tool_id",
+            "params": [
+              {
+                "name": "tool_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "tools_update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.ultravox.ai/api/tools/:tool_id",
+            "params": [
+              {
+                "name": "tool_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "tools_destroy",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.ultravox.ai/api/tools/:tool_id",
+            "params": [
+              {
+                "name": "tool_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "tools_history_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/tools/:tool_id/history",
+            "params": [
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "The pagination cursor value."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              },
+              {
+                "name": "tool_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "tools_test_create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ultravox.ai/api/tools/:tool_id/test",
+            "params": [
+              {
+                "name": "tool_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Test a tool by executing it with the provided parameters."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

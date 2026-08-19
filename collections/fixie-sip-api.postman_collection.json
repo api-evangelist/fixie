@@ -1,0 +1,816 @@
+{
+  "item": [
+    {
+      "id": "4bd3d2e8-0cda-491c-a971-307d67b652c2",
+      "name": "sip",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "08c3dadb-1110-43e8-8459-4e7277208fc7",
+          "name": "sip retrieve",
+          "request": {
+            "name": "sip retrieve",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "sip"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "827ed6d0-3b0e-4d07-a75c-f6bea5bbabe8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "sip"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"allowedAgents\": [\n    {\n      \"agentId\": \"21b8d8a1-2d66-e7e4-e781-022c3c8b225e\",\n      \"toUserPattern\": \"string\"\n    },\n    {\n      \"agentId\": \"e305558f-340f-4afe-a065-406701d96151\",\n      \"toUserPattern\": \"string\"\n    }\n  ],\n  \"domain\": \"string\",\n  \"allowedCidrRanges\": [\n    \"string\",\n    \"string\"\n  ],\n  \"allowAllAgents\": false,\n  \"fallbackHandler\": {\n    \"url\": \"http://HdgWDtIfIYRBeLw.kai8oiV8qaxeVEMhDNIC0h1vX17risB1NIPsnjL\",\n    \"secrets\": [\n      \"string\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f744837e-2d7d-4682-8825-d458d4a3079f",
+          "name": "sip partial update",
+          "request": {
+            "name": "sip partial update",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "sip"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"allowedCidrRanges\": [\n    \"<ipv4-cidr>\",\n    \"<ipv4-cidr>\"\n  ],\n  \"allowAllAgents\": false,\n  \"allowedAgents\": [\n    {\n      \"agentId\": \"<uuid>\",\n      \"toUserPattern\": \"<string>\"\n    },\n    {\n      \"agentId\": \"<uuid>\",\n      \"toUserPattern\": \"<string>\"\n    }\n  ],\n  \"fallbackHandler\": {\n    \"url\": \"<uri>\",\n    \"secrets\": [\n      \"<string>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f0cca564-4c8e-4357-a1b4-3adc90bec546",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "sip"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"allowedCidrRanges\": [\n    \"<ipv4-cidr>\",\n    \"<ipv4-cidr>\"\n  ],\n  \"allowAllAgents\": false,\n  \"allowedAgents\": [\n    {\n      \"agentId\": \"<uuid>\",\n      \"toUserPattern\": \"<string>\"\n    },\n    {\n      \"agentId\": \"<uuid>\",\n      \"toUserPattern\": \"<string>\"\n    }\n  ],\n  \"fallbackHandler\": {\n    \"url\": \"<uri>\",\n    \"secrets\": [\n      \"<string>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"allowedAgents\": [\n    {\n      \"agentId\": \"<uuid>\",\n      \"toUserPattern\": \"<string>\"\n    },\n    {\n      \"agentId\": \"<uuid>\",\n      \"toUserPattern\": \"<string>\"\n    }\n  ],\n  \"domain\": \"string\",\n  \"allowedCidrRanges\": [\n    \"string\",\n    \"string\"\n  ],\n  \"allowAllAgents\": false,\n  \"fallbackHandler\": {\n    \"url\": \"<uri>\",\n    \"secrets\": [\n      \"<string>\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7d3c2f53-cff7-4d63-beae-9f2a0006543d",
+          "name": "sip registrations list",
+          "request": {
+            "name": "sip registrations list",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "sip",
+                "registrations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": "<string>",
+                  "description": "The pagination cursor value."
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "bc82eee3-f6ec-42d6-b1aa-b92859f69f24",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "sip",
+                    "registrations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"created\": \"1948-10-13T07:15:43.239Z\",\n      \"proxy\": \"string\",\n      \"registrationId\": \"string\",\n      \"successful\": false,\n      \"username\": \"string\",\n      \"outboundProxy\": \"string\",\n      \"authUser\": \"string\"\n    },\n    {\n      \"created\": \"2002-04-10T22:29:22.576Z\",\n      \"proxy\": \"string\",\n      \"registrationId\": \"string\",\n      \"successful\": true,\n      \"username\": \"string\",\n      \"outboundProxy\": \"string\",\n      \"authUser\": \"string\"\n    }\n  ],\n  \"next\": \"http://JaDaifSkzcTMuvVnwjvA.yrlhM06zGYiZOlHAbIQZyT4W6DqlFelua\",\n  \"previous\": \"http://api.example.org/accounts/?cursor=cj0xJnA9NDg3\",\n  \"total\": 123\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4e5b518b-3615-411f-995a-44a73be952ba",
+          "name": "sip registrations create",
+          "request": {
+            "name": "sip registrations create",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "sip",
+                "registrations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"proxy\": \"<string>\",\n  \"username\": \"<string>\",\n  \"password\": \"<string>\",\n  \"outboundProxy\": \"<string>\",\n  \"authUser\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "20da4432-2379-4cab-9664-de1475319d03",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "sip",
+                    "registrations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"proxy\": \"<string>\",\n  \"username\": \"<string>\",\n  \"password\": \"<string>\",\n  \"outboundProxy\": \"<string>\",\n  \"authUser\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"proxy\": \"<string>\",\n  \"username\": \"<string>\",\n  \"registrationId\": \"string\",\n  \"created\": \"1950-07-06T21:50:27.063Z\",\n  \"outboundProxy\": \"<string>\",\n  \"authUser\": \"<string>\",\n  \"successful\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "12de619e-6989-44bd-a6f8-6894d8779d04",
+          "name": "sip registrations retrieve",
+          "request": {
+            "name": "sip registrations retrieve",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "sip",
+                "registrations",
+                ":registration_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registration_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "08a8dedd-3461-48cd-bffa-369826b17a49",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "sip",
+                    "registrations",
+                    ":registration_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registration_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"proxy\": \"<string>\",\n  \"username\": \"<string>\",\n  \"registrationId\": \"string\",\n  \"created\": \"1950-07-06T21:50:27.063Z\",\n  \"outboundProxy\": \"<string>\",\n  \"authUser\": \"<string>\",\n  \"successful\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0f37f05a-2681-40f1-a8da-1a422ca5ed74",
+          "name": "sip registrations partial update",
+          "request": {
+            "name": "sip registrations partial update",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "sip",
+                "registrations",
+                ":registration_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registration_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<string>\",\n  \"proxy\": \"<string>\",\n  \"outboundProxy\": \"<string>\",\n  \"authUser\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "095b844f-de5b-4bda-bf5d-ad31aec150a4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "sip",
+                    "registrations",
+                    ":registration_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registration_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<string>\",\n  \"proxy\": \"<string>\",\n  \"outboundProxy\": \"<string>\",\n  \"authUser\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"proxy\": \"<string>\",\n  \"username\": \"<string>\",\n  \"registrationId\": \"string\",\n  \"created\": \"1950-07-06T21:50:27.063Z\",\n  \"outboundProxy\": \"<string>\",\n  \"authUser\": \"<string>\",\n  \"successful\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6d39453e-b489-4fad-98fd-0ce242678373",
+          "name": "sip registrations destroy",
+          "request": {
+            "name": "sip registrations destroy",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "sip",
+                "registrations",
+                ":registration_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registration_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "08ef4855-a2a1-401c-85b3-c0a1658a226f",
+              "name": "No response body",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "sip",
+                    "registrations",
+                    ":registration_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registration_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.ultravox.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4b2b413c-5d94-4c74-891e-8f4a29827114",
+    "name": "Ultravox accounts sip API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for the Ultravox service.",
+      "type": "text/plain"
+    }
+  }
+}

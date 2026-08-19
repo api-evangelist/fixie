@@ -1,0 +1,1234 @@
+{
+  "item": [
+    {
+      "id": "a0689612-5a04-4092-a18f-09a7d14a8df5",
+      "name": "voices",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0aaeab94-ead0-4259-910a-30516c277ff7",
+          "name": "preview voice",
+          "request": {
+            "name": "preview voice",
+            "description": {
+              "content": "Performs a test generation of a voice, returning the resulting audio or error.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "voice_preview"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "audio/wav"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"definition\": {\n    \"elevenLabs\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"useSpeakerBoost\": \"<boolean>\",\n      \"style\": \"<float>\",\n      \"similarityBoost\": \"<float>\",\n      \"stability\": \"<float>\",\n      \"pronunciationDictionaries\": [\n        {\n          \"dictionaryId\": \"<string>\",\n          \"versionId\": \"<string>\"\n        },\n        {\n          \"dictionaryId\": \"<string>\",\n          \"versionId\": \"<string>\"\n        }\n      ],\n      \"optimizeStreamingLatency\": \"<integer>\",\n      \"maxSampleRate\": \"<integer>\",\n      \"enableSsmlParsing\": \"<boolean>\"\n    },\n    \"cartesia\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"emotion\": \"<string>\",\n      \"emotions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generationConfig\": {\n        \"volume\": \"<float>\",\n        \"speed\": \"<float>\",\n        \"emotion\": \"<string>\",\n        \"pronunciationDictId\": \"<string>\"\n      }\n    },\n    \"lmnt\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"conversational\": \"<boolean>\"\n    },\n    \"google\": {\n      \"voiceId\": \"<string>\",\n      \"speakingRate\": \"<float>\"\n    },\n    \"inworld\": {\n      \"voiceId\": \"<string>\",\n      \"modelId\": \"<string>\",\n      \"speakingRate\": \"<float>\",\n      \"temperature\": \"<float>\",\n      \"applyTextNormalization\": \"<boolean>\"\n    },\n    \"respeecher\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"seed\": \"<integer>\",\n      \"temperature\": \"<float>\",\n      \"topK\": \"<integer>\",\n      \"topP\": \"<float>\",\n      \"minP\": \"<float>\",\n      \"presencePenalty\": \"<float>\",\n      \"repetitionPenalty\": \"<float>\",\n      \"frequencyPenalty\": \"<float>\"\n    },\n    \"generic\": {\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"key_0\": \"<string>\"\n      },\n      \"body\": \"<object>\",\n      \"responseSampleRate\": \"<integer>\",\n      \"responseWordsPerMinute\": \"<integer>\",\n      \"responseMimeType\": \"<string>\",\n      \"jsonAudioFieldPath\": \"<string>\",\n      \"jsonByteEncoding\": \"<enum>\"\n    }\n  },\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"primaryLanguage\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "eeef842a-3746-4492-9718-388f38852e0b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "voice_preview"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "audio/wav"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"definition\": {\n    \"elevenLabs\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"useSpeakerBoost\": \"<boolean>\",\n      \"style\": \"<float>\",\n      \"similarityBoost\": \"<float>\",\n      \"stability\": \"<float>\",\n      \"pronunciationDictionaries\": [\n        {\n          \"dictionaryId\": \"<string>\",\n          \"versionId\": \"<string>\"\n        },\n        {\n          \"dictionaryId\": \"<string>\",\n          \"versionId\": \"<string>\"\n        }\n      ],\n      \"optimizeStreamingLatency\": \"<integer>\",\n      \"maxSampleRate\": \"<integer>\",\n      \"enableSsmlParsing\": \"<boolean>\"\n    },\n    \"cartesia\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"emotion\": \"<string>\",\n      \"emotions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generationConfig\": {\n        \"volume\": \"<float>\",\n        \"speed\": \"<float>\",\n        \"emotion\": \"<string>\",\n        \"pronunciationDictId\": \"<string>\"\n      }\n    },\n    \"lmnt\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"conversational\": \"<boolean>\"\n    },\n    \"google\": {\n      \"voiceId\": \"<string>\",\n      \"speakingRate\": \"<float>\"\n    },\n    \"inworld\": {\n      \"voiceId\": \"<string>\",\n      \"modelId\": \"<string>\",\n      \"speakingRate\": \"<float>\",\n      \"temperature\": \"<float>\",\n      \"applyTextNormalization\": \"<boolean>\"\n    },\n    \"respeecher\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"seed\": \"<integer>\",\n      \"temperature\": \"<float>\",\n      \"topK\": \"<integer>\",\n      \"topP\": \"<float>\",\n      \"minP\": \"<float>\",\n      \"presencePenalty\": \"<float>\",\n      \"repetitionPenalty\": \"<float>\",\n      \"frequencyPenalty\": \"<float>\"\n    },\n    \"generic\": {\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      },\n      \"body\": \"<object>\",\n      \"responseSampleRate\": \"<integer>\",\n      \"responseWordsPerMinute\": \"<integer>\",\n      \"responseMimeType\": \"<string>\",\n      \"jsonAudioFieldPath\": \"<string>\",\n      \"jsonByteEncoding\": \"<enum>\"\n    }\n  },\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"primaryLanguage\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "audio/wav"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "037505ac-e62c-428b-aa9b-f426ee768e32",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "voice_preview"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"definition\": {\n    \"elevenLabs\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"useSpeakerBoost\": \"<boolean>\",\n      \"style\": \"<float>\",\n      \"similarityBoost\": \"<float>\",\n      \"stability\": \"<float>\",\n      \"pronunciationDictionaries\": [\n        {\n          \"dictionaryId\": \"<string>\",\n          \"versionId\": \"<string>\"\n        },\n        {\n          \"dictionaryId\": \"<string>\",\n          \"versionId\": \"<string>\"\n        }\n      ],\n      \"optimizeStreamingLatency\": \"<integer>\",\n      \"maxSampleRate\": \"<integer>\",\n      \"enableSsmlParsing\": \"<boolean>\"\n    },\n    \"cartesia\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"emotion\": \"<string>\",\n      \"emotions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generationConfig\": {\n        \"volume\": \"<float>\",\n        \"speed\": \"<float>\",\n        \"emotion\": \"<string>\",\n        \"pronunciationDictId\": \"<string>\"\n      }\n    },\n    \"lmnt\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"conversational\": \"<boolean>\"\n    },\n    \"google\": {\n      \"voiceId\": \"<string>\",\n      \"speakingRate\": \"<float>\"\n    },\n    \"inworld\": {\n      \"voiceId\": \"<string>\",\n      \"modelId\": \"<string>\",\n      \"speakingRate\": \"<float>\",\n      \"temperature\": \"<float>\",\n      \"applyTextNormalization\": \"<boolean>\"\n    },\n    \"respeecher\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"seed\": \"<integer>\",\n      \"temperature\": \"<float>\",\n      \"topK\": \"<integer>\",\n      \"topP\": \"<float>\",\n      \"minP\": \"<float>\",\n      \"presencePenalty\": \"<float>\",\n      \"repetitionPenalty\": \"<float>\",\n      \"frequencyPenalty\": \"<float>\"\n    },\n    \"generic\": {\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      },\n      \"body\": \"<object>\",\n      \"responseSampleRate\": \"<integer>\",\n      \"responseWordsPerMinute\": \"<integer>\",\n      \"responseMimeType\": \"<string>\",\n      \"jsonAudioFieldPath\": \"<string>\",\n      \"jsonByteEncoding\": \"<enum>\"\n    }\n  },\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"primaryLanguage\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": {},\n  \"key_1\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f4ffada4-8c03-4676-baf7-95b02de56e97",
+          "name": "voices list",
+          "request": {
+            "name": "voices list",
+            "description": {
+              "content": "List all voices in your account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "voices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "billingStyle",
+                  "value": "<string>",
+                  "description": "The billing style used to filter results.\n\n* `VOICE_BILLING_STYLE_INCLUDED` - Voices with no additional charges beyond the cost of the call\n* `VOICE_BILLING_STYLE_EXTERNAL` - Voices with costs billed directly by the TTS provider"
+                },
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": "<string>",
+                  "description": "The pagination cursor value."
+                },
+                {
+                  "disabled": false,
+                  "key": "ownership",
+                  "value": "<string>",
+                  "description": "The ownership used to filter results.\n\n* `private` - Only private voices\n* `public` - Only public voices"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "primaryLanguage",
+                  "value": "<string>",
+                  "description": "The desired primary language for voice results using BCP47. Voices with different regions/scripts/variants but the same language tag may also be included but will be further down the results. If not provided, all languages are included."
+                },
+                {
+                  "disabled": false,
+                  "key": "provider",
+                  "value": "<string>",
+                  "description": "The providers used to filter results."
+                },
+                {
+                  "disabled": false,
+                  "key": "provider",
+                  "value": "<string>",
+                  "description": "The providers used to filter results."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "The search string used to filter results."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "11d0be01-0460-4bba-80d0-30eeb8ffb5a6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "voices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "billingStyle",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ownership",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "primaryLanguage",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "provider",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "provider",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"definition\": {\n        \"elevenLabs\": {\n          \"voiceId\": \"<string>\",\n          \"model\": \"<string>\",\n          \"speed\": \"<float>\",\n          \"useSpeakerBoost\": \"<boolean>\",\n          \"style\": \"<float>\",\n          \"similarityBoost\": \"<float>\",\n          \"stability\": \"<float>\",\n          \"pronunciationDictionaries\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"optimizeStreamingLatency\": \"<integer>\",\n          \"maxSampleRate\": \"<integer>\",\n          \"enableSsmlParsing\": \"<boolean>\"\n        },\n        \"cartesia\": {\n          \"voiceId\": \"<string>\",\n          \"model\": \"<string>\",\n          \"speed\": \"<float>\",\n          \"emotion\": \"<string>\",\n          \"emotions\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"generationConfig\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"lmnt\": {\n          \"voiceId\": \"<string>\",\n          \"model\": \"<string>\",\n          \"speed\": \"<float>\",\n          \"conversational\": \"<boolean>\"\n        },\n        \"google\": {\n          \"voiceId\": \"<string>\",\n          \"speakingRate\": \"<float>\"\n        },\n        \"inworld\": {\n          \"voiceId\": \"<string>\",\n          \"modelId\": \"<string>\",\n          \"speakingRate\": \"<float>\",\n          \"temperature\": \"<float>\",\n          \"applyTextNormalization\": \"<boolean>\"\n        },\n        \"respeecher\": {\n          \"voiceId\": \"<string>\",\n          \"model\": \"<string>\",\n          \"seed\": \"<integer>\",\n          \"temperature\": \"<float>\",\n          \"topK\": \"<integer>\",\n          \"topP\": \"<float>\",\n          \"minP\": \"<float>\",\n          \"presencePenalty\": \"<float>\",\n          \"repetitionPenalty\": \"<float>\",\n          \"frequencyPenalty\": \"<float>\"\n        },\n        \"generic\": {\n          \"url\": \"<string>\",\n          \"headers\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"body\": \"<object>\",\n          \"responseSampleRate\": \"<integer>\",\n          \"responseWordsPerMinute\": \"<integer>\",\n          \"responseMimeType\": \"<string>\",\n          \"jsonAudioFieldPath\": \"<string>\",\n          \"jsonByteEncoding\": \"<enum>\"\n        }\n      },\n      \"name\": \"<string>\",\n      \"voiceId\": \"23991a2b-4421-4296-1a89-46facbb1d5f1\",\n      \"description\": \"<string>\",\n      \"primaryLanguage\": \"<string>\",\n      \"languageLabel\": \"string\",\n      \"previewUrl\": \"http://yazngLUCgfQviXclpTNCnHSyKR.fvwzyGhdMpQobmKxdhgkf1oh,1w7n5j8+R6\",\n      \"ownership\": \"public\",\n      \"billingStyle\": \"VOICE_BILLING_STYLE_EXTERNAL\",\n      \"provider\": \"string\"\n    },\n    {\n      \"definition\": {\n        \"elevenLabs\": {\n          \"voiceId\": \"<string>\",\n          \"model\": \"<string>\",\n          \"speed\": \"<float>\",\n          \"useSpeakerBoost\": \"<boolean>\",\n          \"style\": \"<float>\",\n          \"similarityBoost\": \"<float>\",\n          \"stability\": \"<float>\",\n          \"pronunciationDictionaries\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"optimizeStreamingLatency\": \"<integer>\",\n          \"maxSampleRate\": \"<integer>\",\n          \"enableSsmlParsing\": \"<boolean>\"\n        },\n        \"cartesia\": {\n          \"voiceId\": \"<string>\",\n          \"model\": \"<string>\",\n          \"speed\": \"<float>\",\n          \"emotion\": \"<string>\",\n          \"emotions\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"generationConfig\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"lmnt\": {\n          \"voiceId\": \"<string>\",\n          \"model\": \"<string>\",\n          \"speed\": \"<float>\",\n          \"conversational\": \"<boolean>\"\n        },\n        \"google\": {\n          \"voiceId\": \"<string>\",\n          \"speakingRate\": \"<float>\"\n        },\n        \"inworld\": {\n          \"voiceId\": \"<string>\",\n          \"modelId\": \"<string>\",\n          \"speakingRate\": \"<float>\",\n          \"temperature\": \"<float>\",\n          \"applyTextNormalization\": \"<boolean>\"\n        },\n        \"respeecher\": {\n          \"voiceId\": \"<string>\",\n          \"model\": \"<string>\",\n          \"seed\": \"<integer>\",\n          \"temperature\": \"<float>\",\n          \"topK\": \"<integer>\",\n          \"topP\": \"<float>\",\n          \"minP\": \"<float>\",\n          \"presencePenalty\": \"<float>\",\n          \"repetitionPenalty\": \"<float>\",\n          \"frequencyPenalty\": \"<float>\"\n        },\n        \"generic\": {\n          \"url\": \"<string>\",\n          \"headers\": {\n            \"key_0\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"body\": \"<object>\",\n          \"responseSampleRate\": \"<integer>\",\n          \"responseWordsPerMinute\": \"<integer>\",\n          \"responseMimeType\": \"<string>\",\n          \"jsonAudioFieldPath\": \"<string>\",\n          \"jsonByteEncoding\": \"<enum>\"\n        }\n      },\n      \"name\": \"<string>\",\n      \"voiceId\": \"836e28aa-d7fd-0a17-e3a0-cfa8d5de7429\",\n      \"description\": \"<string>\",\n      \"primaryLanguage\": \"<string>\",\n      \"languageLabel\": \"string\",\n      \"previewUrl\": \"https://rU.wcuKgAqrzijMo-GLmUnmLuy6xJm0COqsfq,dvmFxcO\",\n      \"ownership\": \"private\",\n      \"billingStyle\": \"VOICE_BILLING_STYLE_EXTERNAL\",\n      \"provider\": \"string\"\n    }\n  ],\n  \"next\": \"https://nrxxNyfxTu.fhDxAhFauIL-D\",\n  \"previous\": \"http://api.example.org/accounts/?cursor=cj0xJnA9NDg3\",\n  \"total\": 123\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3a17b21b-fad0-4033-a868-7991ce08580b",
+          "name": "voices create",
+          "request": {
+            "name": "voices create",
+            "description": {
+              "content": "Create a new cloned voice from an audio sample. The created voice will be private to your account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "voices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": "(Required) An audio file containing a sample of the voice to clone."
+                },
+                {
+                  "key": "name",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) Name for the cloned voice. Must be unique within your account."
+                },
+                {
+                  "key": "description",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "Optional description for the voice. If not provided, a default description will be generated."
+                },
+                {
+                  "key": "language",
+                  "value": "en",
+                  "type": "text",
+                  "description": "BCP47 language code for the language used in the recording."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8444b85a-0590-4c44-be6d-ffc8dcfcb492",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "voices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) An audio file containing a sample of the voice to clone.",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) Name for the cloned voice. Must be unique within your account.",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "My Custom Voice",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Optional description for the voice. If not provided, a default description will be generated.",
+                        "type": "text/plain"
+                      },
+                      "key": "description",
+                      "value": "Voice recorded on Jan 1, 2024",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "BCP47 language code for the language used in the recording.",
+                        "type": "text/plain"
+                      },
+                      "key": "language",
+                      "value": "en-US",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"definition\": {\n    \"elevenLabs\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"useSpeakerBoost\": \"<boolean>\",\n      \"style\": \"<float>\",\n      \"similarityBoost\": \"<float>\",\n      \"stability\": \"<float>\",\n      \"pronunciationDictionaries\": [\n        {\n          \"dictionaryId\": \"<string>\",\n          \"versionId\": \"<string>\"\n        },\n        {\n          \"dictionaryId\": \"<string>\",\n          \"versionId\": \"<string>\"\n        }\n      ],\n      \"optimizeStreamingLatency\": \"<integer>\",\n      \"maxSampleRate\": \"<integer>\",\n      \"enableSsmlParsing\": \"<boolean>\"\n    },\n    \"cartesia\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"emotion\": \"<string>\",\n      \"emotions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generationConfig\": {\n        \"volume\": \"<float>\",\n        \"speed\": \"<float>\",\n        \"emotion\": \"<string>\",\n        \"pronunciationDictId\": \"<string>\"\n      }\n    },\n    \"lmnt\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"conversational\": \"<boolean>\"\n    },\n    \"google\": {\n      \"voiceId\": \"<string>\",\n      \"speakingRate\": \"<float>\"\n    },\n    \"inworld\": {\n      \"voiceId\": \"<string>\",\n      \"modelId\": \"<string>\",\n      \"speakingRate\": \"<float>\",\n      \"temperature\": \"<float>\",\n      \"applyTextNormalization\": \"<boolean>\"\n    },\n    \"respeecher\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"seed\": \"<integer>\",\n      \"temperature\": \"<float>\",\n      \"topK\": \"<integer>\",\n      \"topP\": \"<float>\",\n      \"minP\": \"<float>\",\n      \"presencePenalty\": \"<float>\",\n      \"repetitionPenalty\": \"<float>\",\n      \"frequencyPenalty\": \"<float>\"\n    },\n    \"generic\": {\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\",\n        \"key_3\": \"<string>\"\n      },\n      \"body\": \"<object>\",\n      \"responseSampleRate\": \"<integer>\",\n      \"responseWordsPerMinute\": \"<integer>\",\n      \"responseMimeType\": \"<string>\",\n      \"jsonAudioFieldPath\": \"<string>\",\n      \"jsonByteEncoding\": \"<enum>\"\n    }\n  },\n  \"name\": \"<string>\",\n  \"voiceId\": \"57350c72-3177-7397-cc4b-0dcab6c54a27\",\n  \"description\": \"<string>\",\n  \"primaryLanguage\": \"<string>\",\n  \"languageLabel\": \"string\",\n  \"previewUrl\": \"http://IFCcBGdiciLLYwixJnryOJjsWIVCdug.uxcJDVoxGNb0rQOEpB6muzso6qgetv8ekEvl5O0fcI.ljyTlvrTZDsQUMS\",\n  \"ownership\": \"private\",\n  \"billingStyle\": \"VOICE_BILLING_STYLE_INCLUDED\",\n  \"provider\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "918872e2-360d-4940-9ac3-257b79a67460",
+          "name": "voices retrieve",
+          "request": {
+            "name": "voices retrieve",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "voices",
+                ":voice_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "voice_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5dd4c6ff-cd73-47e5-a052-c7d595f333ea",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "voices",
+                    ":voice_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "voice_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"definition\": {\n    \"elevenLabs\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"useSpeakerBoost\": \"<boolean>\",\n      \"style\": \"<float>\",\n      \"similarityBoost\": \"<float>\",\n      \"stability\": \"<float>\",\n      \"pronunciationDictionaries\": [\n        {\n          \"dictionaryId\": \"<string>\",\n          \"versionId\": \"<string>\"\n        },\n        {\n          \"dictionaryId\": \"<string>\",\n          \"versionId\": \"<string>\"\n        }\n      ],\n      \"optimizeStreamingLatency\": \"<integer>\",\n      \"maxSampleRate\": \"<integer>\",\n      \"enableSsmlParsing\": \"<boolean>\"\n    },\n    \"cartesia\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"emotion\": \"<string>\",\n      \"emotions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generationConfig\": {\n        \"volume\": \"<float>\",\n        \"speed\": \"<float>\",\n        \"emotion\": \"<string>\",\n        \"pronunciationDictId\": \"<string>\"\n      }\n    },\n    \"lmnt\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"conversational\": \"<boolean>\"\n    },\n    \"google\": {\n      \"voiceId\": \"<string>\",\n      \"speakingRate\": \"<float>\"\n    },\n    \"inworld\": {\n      \"voiceId\": \"<string>\",\n      \"modelId\": \"<string>\",\n      \"speakingRate\": \"<float>\",\n      \"temperature\": \"<float>\",\n      \"applyTextNormalization\": \"<boolean>\"\n    },\n    \"respeecher\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"seed\": \"<integer>\",\n      \"temperature\": \"<float>\",\n      \"topK\": \"<integer>\",\n      \"topP\": \"<float>\",\n      \"minP\": \"<float>\",\n      \"presencePenalty\": \"<float>\",\n      \"repetitionPenalty\": \"<float>\",\n      \"frequencyPenalty\": \"<float>\"\n    },\n    \"generic\": {\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\",\n        \"key_3\": \"<string>\"\n      },\n      \"body\": \"<object>\",\n      \"responseSampleRate\": \"<integer>\",\n      \"responseWordsPerMinute\": \"<integer>\",\n      \"responseMimeType\": \"<string>\",\n      \"jsonAudioFieldPath\": \"<string>\",\n      \"jsonByteEncoding\": \"<enum>\"\n    }\n  },\n  \"name\": \"<string>\",\n  \"voiceId\": \"57350c72-3177-7397-cc4b-0dcab6c54a27\",\n  \"description\": \"<string>\",\n  \"primaryLanguage\": \"<string>\",\n  \"languageLabel\": \"string\",\n  \"previewUrl\": \"http://IFCcBGdiciLLYwixJnryOJjsWIVCdug.uxcJDVoxGNb0rQOEpB6muzso6qgetv8ekEvl5O0fcI.ljyTlvrTZDsQUMS\",\n  \"ownership\": \"private\",\n  \"billingStyle\": \"VOICE_BILLING_STYLE_INCLUDED\",\n  \"provider\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2b711806-e37f-4f63-9404-393f2ae62c15",
+          "name": "voices update",
+          "request": {
+            "name": "voices update",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "voices",
+                ":voice_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "voice_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"definition\": {\n    \"elevenLabs\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"useSpeakerBoost\": \"<boolean>\",\n      \"style\": \"<float>\",\n      \"similarityBoost\": \"<float>\",\n      \"stability\": \"<float>\",\n      \"pronunciationDictionaries\": [\n        {\n          \"dictionaryId\": \"<string>\",\n          \"versionId\": \"<string>\"\n        },\n        {\n          \"dictionaryId\": \"<string>\",\n          \"versionId\": \"<string>\"\n        }\n      ],\n      \"optimizeStreamingLatency\": \"<integer>\",\n      \"maxSampleRate\": \"<integer>\",\n      \"enableSsmlParsing\": \"<boolean>\"\n    },\n    \"cartesia\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"emotion\": \"<string>\",\n      \"emotions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generationConfig\": {\n        \"volume\": \"<float>\",\n        \"speed\": \"<float>\",\n        \"emotion\": \"<string>\",\n        \"pronunciationDictId\": \"<string>\"\n      }\n    },\n    \"lmnt\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"conversational\": \"<boolean>\"\n    },\n    \"google\": {\n      \"voiceId\": \"<string>\",\n      \"speakingRate\": \"<float>\"\n    },\n    \"inworld\": {\n      \"voiceId\": \"<string>\",\n      \"modelId\": \"<string>\",\n      \"speakingRate\": \"<float>\",\n      \"temperature\": \"<float>\",\n      \"applyTextNormalization\": \"<boolean>\"\n    },\n    \"respeecher\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"seed\": \"<integer>\",\n      \"temperature\": \"<float>\",\n      \"topK\": \"<integer>\",\n      \"topP\": \"<float>\",\n      \"minP\": \"<float>\",\n      \"presencePenalty\": \"<float>\",\n      \"repetitionPenalty\": \"<float>\",\n      \"frequencyPenalty\": \"<float>\"\n    },\n    \"generic\": {\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\",\n        \"key_3\": \"<string>\",\n        \"key_4\": \"<string>\"\n      },\n      \"body\": \"<object>\",\n      \"responseSampleRate\": \"<integer>\",\n      \"responseWordsPerMinute\": \"<integer>\",\n      \"responseMimeType\": \"<string>\",\n      \"jsonAudioFieldPath\": \"<string>\",\n      \"jsonByteEncoding\": \"<enum>\"\n    }\n  },\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"primaryLanguage\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "341554a6-b77f-4e10-ae6f-94d8ce2492da",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "voices",
+                    ":voice_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "voice_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"definition\": {\n    \"elevenLabs\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"useSpeakerBoost\": \"<boolean>\",\n      \"style\": \"<float>\",\n      \"similarityBoost\": \"<float>\",\n      \"stability\": \"<float>\",\n      \"pronunciationDictionaries\": [\n        {\n          \"dictionaryId\": \"<string>\",\n          \"versionId\": \"<string>\"\n        },\n        {\n          \"dictionaryId\": \"<string>\",\n          \"versionId\": \"<string>\"\n        }\n      ],\n      \"optimizeStreamingLatency\": \"<integer>\",\n      \"maxSampleRate\": \"<integer>\",\n      \"enableSsmlParsing\": \"<boolean>\"\n    },\n    \"cartesia\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"emotion\": \"<string>\",\n      \"emotions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generationConfig\": {\n        \"volume\": \"<float>\",\n        \"speed\": \"<float>\",\n        \"emotion\": \"<string>\",\n        \"pronunciationDictId\": \"<string>\"\n      }\n    },\n    \"lmnt\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"conversational\": \"<boolean>\"\n    },\n    \"google\": {\n      \"voiceId\": \"<string>\",\n      \"speakingRate\": \"<float>\"\n    },\n    \"inworld\": {\n      \"voiceId\": \"<string>\",\n      \"modelId\": \"<string>\",\n      \"speakingRate\": \"<float>\",\n      \"temperature\": \"<float>\",\n      \"applyTextNormalization\": \"<boolean>\"\n    },\n    \"respeecher\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"seed\": \"<integer>\",\n      \"temperature\": \"<float>\",\n      \"topK\": \"<integer>\",\n      \"topP\": \"<float>\",\n      \"minP\": \"<float>\",\n      \"presencePenalty\": \"<float>\",\n      \"repetitionPenalty\": \"<float>\",\n      \"frequencyPenalty\": \"<float>\"\n    },\n    \"generic\": {\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      },\n      \"body\": \"<object>\",\n      \"responseSampleRate\": \"<integer>\",\n      \"responseWordsPerMinute\": \"<integer>\",\n      \"responseMimeType\": \"<string>\",\n      \"jsonAudioFieldPath\": \"<string>\",\n      \"jsonByteEncoding\": \"<enum>\"\n    }\n  },\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"primaryLanguage\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"definition\": {\n    \"elevenLabs\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"useSpeakerBoost\": \"<boolean>\",\n      \"style\": \"<float>\",\n      \"similarityBoost\": \"<float>\",\n      \"stability\": \"<float>\",\n      \"pronunciationDictionaries\": [\n        {\n          \"dictionaryId\": \"<string>\",\n          \"versionId\": \"<string>\"\n        },\n        {\n          \"dictionaryId\": \"<string>\",\n          \"versionId\": \"<string>\"\n        }\n      ],\n      \"optimizeStreamingLatency\": \"<integer>\",\n      \"maxSampleRate\": \"<integer>\",\n      \"enableSsmlParsing\": \"<boolean>\"\n    },\n    \"cartesia\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"emotion\": \"<string>\",\n      \"emotions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generationConfig\": {\n        \"volume\": \"<float>\",\n        \"speed\": \"<float>\",\n        \"emotion\": \"<string>\",\n        \"pronunciationDictId\": \"<string>\"\n      }\n    },\n    \"lmnt\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"conversational\": \"<boolean>\"\n    },\n    \"google\": {\n      \"voiceId\": \"<string>\",\n      \"speakingRate\": \"<float>\"\n    },\n    \"inworld\": {\n      \"voiceId\": \"<string>\",\n      \"modelId\": \"<string>\",\n      \"speakingRate\": \"<float>\",\n      \"temperature\": \"<float>\",\n      \"applyTextNormalization\": \"<boolean>\"\n    },\n    \"respeecher\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"seed\": \"<integer>\",\n      \"temperature\": \"<float>\",\n      \"topK\": \"<integer>\",\n      \"topP\": \"<float>\",\n      \"minP\": \"<float>\",\n      \"presencePenalty\": \"<float>\",\n      \"repetitionPenalty\": \"<float>\",\n      \"frequencyPenalty\": \"<float>\"\n    },\n    \"generic\": {\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\",\n        \"key_3\": \"<string>\"\n      },\n      \"body\": \"<object>\",\n      \"responseSampleRate\": \"<integer>\",\n      \"responseWordsPerMinute\": \"<integer>\",\n      \"responseMimeType\": \"<string>\",\n      \"jsonAudioFieldPath\": \"<string>\",\n      \"jsonByteEncoding\": \"<enum>\"\n    }\n  },\n  \"name\": \"<string>\",\n  \"voiceId\": \"57350c72-3177-7397-cc4b-0dcab6c54a27\",\n  \"description\": \"<string>\",\n  \"primaryLanguage\": \"<string>\",\n  \"languageLabel\": \"string\",\n  \"previewUrl\": \"http://IFCcBGdiciLLYwixJnryOJjsWIVCdug.uxcJDVoxGNb0rQOEpB6muzso6qgetv8ekEvl5O0fcI.ljyTlvrTZDsQUMS\",\n  \"ownership\": \"private\",\n  \"billingStyle\": \"VOICE_BILLING_STYLE_INCLUDED\",\n  \"provider\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "152853b7-7e9a-4e4b-b10c-afa0e2325229",
+          "name": "voices partial update",
+          "request": {
+            "name": "voices partial update",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "voices",
+                ":voice_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "voice_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"primaryLanguage\": \"<string>\",\n  \"definition\": {\n    \"elevenLabs\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"useSpeakerBoost\": \"<boolean>\",\n      \"style\": \"<float>\",\n      \"similarityBoost\": \"<float>\",\n      \"stability\": \"<float>\",\n      \"pronunciationDictionaries\": [\n        {\n          \"dictionaryId\": \"<string>\",\n          \"versionId\": \"<string>\"\n        },\n        {\n          \"dictionaryId\": \"<string>\",\n          \"versionId\": \"<string>\"\n        }\n      ],\n      \"optimizeStreamingLatency\": \"<integer>\",\n      \"maxSampleRate\": \"<integer>\",\n      \"enableSsmlParsing\": \"<boolean>\"\n    },\n    \"cartesia\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"emotion\": \"<string>\",\n      \"emotions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generationConfig\": {\n        \"volume\": \"<float>\",\n        \"speed\": \"<float>\",\n        \"emotion\": \"<string>\",\n        \"pronunciationDictId\": \"<string>\"\n      }\n    },\n    \"lmnt\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"conversational\": \"<boolean>\"\n    },\n    \"google\": {\n      \"voiceId\": \"<string>\",\n      \"speakingRate\": \"<float>\"\n    },\n    \"inworld\": {\n      \"voiceId\": \"<string>\",\n      \"modelId\": \"<string>\",\n      \"speakingRate\": \"<float>\",\n      \"temperature\": \"<float>\",\n      \"applyTextNormalization\": \"<boolean>\"\n    },\n    \"respeecher\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"seed\": \"<integer>\",\n      \"temperature\": \"<float>\",\n      \"topK\": \"<integer>\",\n      \"topP\": \"<float>\",\n      \"minP\": \"<float>\",\n      \"presencePenalty\": \"<float>\",\n      \"repetitionPenalty\": \"<float>\",\n      \"frequencyPenalty\": \"<float>\"\n    },\n    \"generic\": {\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      },\n      \"body\": \"<object>\",\n      \"responseSampleRate\": \"<integer>\",\n      \"responseWordsPerMinute\": \"<integer>\",\n      \"responseMimeType\": \"<string>\",\n      \"jsonAudioFieldPath\": \"<string>\",\n      \"jsonByteEncoding\": \"<enum>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8d89f78d-94e8-46a2-843a-4782295bde7b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "voices",
+                    ":voice_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "voice_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"primaryLanguage\": \"<string>\",\n  \"definition\": {\n    \"elevenLabs\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"useSpeakerBoost\": \"<boolean>\",\n      \"style\": \"<float>\",\n      \"similarityBoost\": \"<float>\",\n      \"stability\": \"<float>\",\n      \"pronunciationDictionaries\": [\n        {\n          \"dictionaryId\": \"<string>\",\n          \"versionId\": \"<string>\"\n        },\n        {\n          \"dictionaryId\": \"<string>\",\n          \"versionId\": \"<string>\"\n        }\n      ],\n      \"optimizeStreamingLatency\": \"<integer>\",\n      \"maxSampleRate\": \"<integer>\",\n      \"enableSsmlParsing\": \"<boolean>\"\n    },\n    \"cartesia\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"emotion\": \"<string>\",\n      \"emotions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generationConfig\": {\n        \"volume\": \"<float>\",\n        \"speed\": \"<float>\",\n        \"emotion\": \"<string>\",\n        \"pronunciationDictId\": \"<string>\"\n      }\n    },\n    \"lmnt\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"conversational\": \"<boolean>\"\n    },\n    \"google\": {\n      \"voiceId\": \"<string>\",\n      \"speakingRate\": \"<float>\"\n    },\n    \"inworld\": {\n      \"voiceId\": \"<string>\",\n      \"modelId\": \"<string>\",\n      \"speakingRate\": \"<float>\",\n      \"temperature\": \"<float>\",\n      \"applyTextNormalization\": \"<boolean>\"\n    },\n    \"respeecher\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"seed\": \"<integer>\",\n      \"temperature\": \"<float>\",\n      \"topK\": \"<integer>\",\n      \"topP\": \"<float>\",\n      \"minP\": \"<float>\",\n      \"presencePenalty\": \"<float>\",\n      \"repetitionPenalty\": \"<float>\",\n      \"frequencyPenalty\": \"<float>\"\n    },\n    \"generic\": {\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      },\n      \"body\": \"<object>\",\n      \"responseSampleRate\": \"<integer>\",\n      \"responseWordsPerMinute\": \"<integer>\",\n      \"responseMimeType\": \"<string>\",\n      \"jsonAudioFieldPath\": \"<string>\",\n      \"jsonByteEncoding\": \"<enum>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"definition\": {\n    \"elevenLabs\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"useSpeakerBoost\": \"<boolean>\",\n      \"style\": \"<float>\",\n      \"similarityBoost\": \"<float>\",\n      \"stability\": \"<float>\",\n      \"pronunciationDictionaries\": [\n        {\n          \"dictionaryId\": \"<string>\",\n          \"versionId\": \"<string>\"\n        },\n        {\n          \"dictionaryId\": \"<string>\",\n          \"versionId\": \"<string>\"\n        }\n      ],\n      \"optimizeStreamingLatency\": \"<integer>\",\n      \"maxSampleRate\": \"<integer>\",\n      \"enableSsmlParsing\": \"<boolean>\"\n    },\n    \"cartesia\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"emotion\": \"<string>\",\n      \"emotions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generationConfig\": {\n        \"volume\": \"<float>\",\n        \"speed\": \"<float>\",\n        \"emotion\": \"<string>\",\n        \"pronunciationDictId\": \"<string>\"\n      }\n    },\n    \"lmnt\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"speed\": \"<float>\",\n      \"conversational\": \"<boolean>\"\n    },\n    \"google\": {\n      \"voiceId\": \"<string>\",\n      \"speakingRate\": \"<float>\"\n    },\n    \"inworld\": {\n      \"voiceId\": \"<string>\",\n      \"modelId\": \"<string>\",\n      \"speakingRate\": \"<float>\",\n      \"temperature\": \"<float>\",\n      \"applyTextNormalization\": \"<boolean>\"\n    },\n    \"respeecher\": {\n      \"voiceId\": \"<string>\",\n      \"model\": \"<string>\",\n      \"seed\": \"<integer>\",\n      \"temperature\": \"<float>\",\n      \"topK\": \"<integer>\",\n      \"topP\": \"<float>\",\n      \"minP\": \"<float>\",\n      \"presencePenalty\": \"<float>\",\n      \"repetitionPenalty\": \"<float>\",\n      \"frequencyPenalty\": \"<float>\"\n    },\n    \"generic\": {\n      \"url\": \"<string>\",\n      \"headers\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\",\n        \"key_3\": \"<string>\"\n      },\n      \"body\": \"<object>\",\n      \"responseSampleRate\": \"<integer>\",\n      \"responseWordsPerMinute\": \"<integer>\",\n      \"responseMimeType\": \"<string>\",\n      \"jsonAudioFieldPath\": \"<string>\",\n      \"jsonByteEncoding\": \"<enum>\"\n    }\n  },\n  \"name\": \"<string>\",\n  \"voiceId\": \"57350c72-3177-7397-cc4b-0dcab6c54a27\",\n  \"description\": \"<string>\",\n  \"primaryLanguage\": \"<string>\",\n  \"languageLabel\": \"string\",\n  \"previewUrl\": \"http://IFCcBGdiciLLYwixJnryOJjsWIVCdug.uxcJDVoxGNb0rQOEpB6muzso6qgetv8ekEvl5O0fcI.ljyTlvrTZDsQUMS\",\n  \"ownership\": \"private\",\n  \"billingStyle\": \"VOICE_BILLING_STYLE_INCLUDED\",\n  \"provider\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f3fc4628-94f0-4eb3-9875-d6ab93c1f8bb",
+          "name": "voices destroy",
+          "request": {
+            "name": "voices destroy",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "voices",
+                ":voice_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "voice_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f0b3c6e9-8ad3-4cd2-a0c2-1bfe5104411c",
+              "name": "No response body",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "voices",
+                    ":voice_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "voice_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fc2abe40-9ac9-4434-8f83-ada0d86ec686",
+          "name": "voices preview retrieve",
+          "request": {
+            "name": "voices preview retrieve",
+            "description": {
+              "content": "Provides an audio sample for a voice, or the error caused by using it.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "voices",
+                ":voice_id",
+                "preview"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "voice_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "audio/wav"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "50ae9747-6205-4c72-ab8a-6f9456ce03b4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "voices",
+                    ":voice_id",
+                    "preview"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "voice_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "audio/wav"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "audio/wav"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d5629674-988d-455e-9ed3-4e3b95efebba",
+              "name": "No response body",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "voices",
+                    ":voice_id",
+                    "preview"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "voice_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Found",
+              "code": 302,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e6c2d938-9914-40ee-8894-985099a3cd37",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "voices",
+                    ":voice_id",
+                    "preview"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "voice_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": {},\n  \"key_1\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.ultravox.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8bdc890b-b864-489c-a22e-058e9d561780",
+    "name": "Ultravox accounts voices API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for the Ultravox service.",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ultravox accounts deleted_calls API",
+    "version": "0.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "deleted_calls",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "deleted_calls_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/deleted_calls",
+            "params": [
+              {
+                "name": "agentIds",
+                "value": "",
+                "type": "query",
+                "description": "Filter calls by the agent IDs."
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "The pagination cursor value."
+              },
+              {
+                "name": "durationMax",
+                "value": "",
+                "type": "query",
+                "description": "Maximum duration of calls"
+              },
+              {
+                "name": "durationMin",
+                "value": "",
+                "type": "query",
+                "description": "Minimum duration of calls"
+              },
+              {
+                "name": "fromDate",
+                "value": "",
+                "type": "query",
+                "description": "Start datetime (inclusive) for filtering calls by creation date. If no time component is present, this defaults to the start of the day (midnight)."
+              },
+              {
+                "name": "metadata",
+                "value": "",
+                "type": "query",
+                "description": "Filter calls by metadata. Use metadata.key=value to filter by specific key-value pairs."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "The search string used to filter results"
+              },
+              {
+                "name": "timeOfDayEnd",
+                "value": "",
+                "type": "query",
+                "description": "Filter calls by the time of day of their creation, regardless of date. Format: HH:MM:SS. Defaults to 23:59:59 if not specified."
+              },
+              {
+                "name": "timeOfDayStart",
+                "value": "",
+                "type": "query",
+                "description": "Filter calls by the time of day of their creation, regardless of date. Format: HH:MM:SS. Defaults to 00:00:00 if not specified."
+              },
+              {
+                "name": "toDate",
+                "value": "",
+                "type": "query",
+                "description": "End datetime (inclusive) for filtering calls by creation date. If no time component is present, this defaults to the end of the day (11:59:59.999999 PM)."
+              },
+              {
+                "name": "voiceId",
+                "value": "",
+                "type": "query",
+                "description": "Filter calls by the associated voice ID"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "deleted_calls_retrieve",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/deleted_calls/:call_id",
+            "params": [
+              {
+                "name": "call_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

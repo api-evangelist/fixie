@@ -1,0 +1,382 @@
+{
+  "item": [
+    {
+      "id": "27cdc687-918d-4499-92d2-1053a3ce660c",
+      "name": "deleted_calls",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "285b020d-41ec-40ed-bb25-8dfeda0cc6ad",
+          "name": "deleted calls list",
+          "request": {
+            "name": "deleted calls list",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "deleted_calls"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "agentIds",
+                  "value": "<uuid>",
+                  "description": "Filter calls by the agent IDs."
+                },
+                {
+                  "disabled": false,
+                  "key": "agentIds",
+                  "value": "<uuid>",
+                  "description": "Filter calls by the agent IDs."
+                },
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": "<string>",
+                  "description": "The pagination cursor value."
+                },
+                {
+                  "disabled": false,
+                  "key": "durationMax",
+                  "value": "<string>",
+                  "description": "Maximum duration of calls"
+                },
+                {
+                  "disabled": false,
+                  "key": "durationMin",
+                  "value": "<string>",
+                  "description": "Minimum duration of calls"
+                },
+                {
+                  "disabled": false,
+                  "key": "fromDate",
+                  "value": "<dateTime>",
+                  "description": "Start datetime (inclusive) for filtering calls by creation date. If no time component is present, this defaults to the start of the day (midnight)."
+                },
+                {
+                  "disabled": false,
+                  "key": "key_0",
+                  "value": "<string>",
+                  "description": "Filter calls by metadata. Use metadata.key=value to filter by specific key-value pairs."
+                },
+                {
+                  "disabled": false,
+                  "key": "key_1",
+                  "value": "<string>",
+                  "description": "Filter calls by metadata. Use metadata.key=value to filter by specific key-value pairs."
+                },
+                {
+                  "disabled": false,
+                  "key": "key_2",
+                  "value": "<string>",
+                  "description": "Filter calls by metadata. Use metadata.key=value to filter by specific key-value pairs."
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "The search string used to filter results"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeOfDayEnd",
+                  "value": "23:59:59.999999",
+                  "description": "Filter calls by the time of day of their creation, regardless of date. Format: HH:MM:SS. Defaults to 23:59:59 if not specified."
+                },
+                {
+                  "disabled": false,
+                  "key": "timeOfDayStart",
+                  "value": "00:00:00",
+                  "description": "Filter calls by the time of day of their creation, regardless of date. Format: HH:MM:SS. Defaults to 00:00:00 if not specified."
+                },
+                {
+                  "disabled": false,
+                  "key": "toDate",
+                  "value": "<dateTime>",
+                  "description": "End datetime (inclusive) for filtering calls by creation date. If no time component is present, this defaults to the end of the day (11:59:59.999999 PM)."
+                },
+                {
+                  "disabled": false,
+                  "key": "voiceId",
+                  "value": "<uuid>",
+                  "description": "Filter calls by the associated voice ID"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "25f0e860-8653-40ab-868f-cc6acce44539",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "deleted_calls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "agentIds",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "agentIds",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "durationMax",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "durationMin",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fromDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_1",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "timeOfDayEnd",
+                      "value": "23:59:59.999999"
+                    },
+                    {
+                      "key": "timeOfDayStart",
+                      "value": "00:00:00"
+                    },
+                    {
+                      "key": "toDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "voiceId",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"accountId\": \"de4cdcb4-d6df-59a9-352b-91c44cebdad2\",\n      \"callId\": \"8f9d00e8-a715-56df-9043-ac3211f01cd8\",\n      \"created\": \"1964-11-05T15:03:45.879Z\",\n      \"deletionTime\": \"1958-01-06T01:58:42.430Z\",\n      \"endReason\": \"hangup\",\n      \"hadSummary\": false,\n      \"recordingEnabled\": true,\n      \"joined\": \"2005-01-06T08:32:08.744Z\",\n      \"ended\": \"1993-10-17T03:08:15.373Z\",\n      \"maxDuration\": \"3600s\"\n    },\n    {\n      \"accountId\": \"b719c7e4-00c2-21fe-7e02-621d1370364f\",\n      \"callId\": \"2d82ef1c-1931-ab7f-f6b2-d029366c4c3d\",\n      \"created\": \"2023-03-31T04:17:51.591Z\",\n      \"deletionTime\": \"2015-05-22T04:19:09.712Z\",\n      \"endReason\": \"agent_hangup\",\n      \"hadSummary\": false,\n      \"recordingEnabled\": false,\n      \"joined\": \"1997-04-20T18:28:41.386Z\",\n      \"ended\": \"1982-07-27T04:05:29.522Z\",\n      \"maxDuration\": \"3600s\"\n    }\n  ],\n  \"next\": \"https://KBAKJRdYmXNlbvsTioRMhBGORvMnJUAFa.inoAAVOs,XkBjDuL,Dzd\",\n  \"previous\": \"http://api.example.org/accounts/?cursor=cj0xJnA9NDg3\",\n  \"total\": 123\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6ea6bbae-55f4-4e19-92bf-2f3425cdd878",
+          "name": "deleted calls retrieve",
+          "request": {
+            "name": "deleted calls retrieve",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "deleted_calls",
+                ":call_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "call_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7ea5fc47-5580-4e48-91fc-22c85068bc2c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "deleted_calls",
+                    ":call_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "call_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accountId\": \"9acd840b-04d3-d0bc-e497-89a947ad4f9c\",\n  \"callId\": \"0e62cb85-abed-6788-da3d-c962e817b83c\",\n  \"created\": \"1961-02-06T10:12:09.872Z\",\n  \"deletionTime\": \"1965-09-12T15:53:04.822Z\",\n  \"endReason\": \"unjoined\",\n  \"hadSummary\": false,\n  \"recordingEnabled\": true,\n  \"joined\": \"2002-01-29T05:06:17.558Z\",\n  \"ended\": \"1959-08-11T16:51:54.474Z\",\n  \"maxDuration\": \"3600s\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.ultravox.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e577b11d-2b39-46e1-a371-4599851bca08",
+    "name": "Ultravox accounts deleted_calls API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for the Ultravox service.",
+      "type": "text/plain"
+    }
+  }
+}

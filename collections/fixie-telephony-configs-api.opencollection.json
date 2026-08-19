@@ -1,0 +1,234 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ultravox accounts telephony_configs API",
+    "version": "0.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "telephony_configs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "telephony_configs_plivo_retrieve",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/telephony_configs/plivo",
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "telephony_configs_plivo_create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ultravox.ai/api/telephony_configs/plivo",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "telephony_configs_plivo_partial_update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.ultravox.ai/api/telephony_configs/plivo",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "telephony_configs_plivo_destroy",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.ultravox.ai/api/telephony_configs/plivo",
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "telephony_configs_telnyx_retrieve",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/telephony_configs/telnyx",
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "telephony_configs_telnyx_create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ultravox.ai/api/telephony_configs/telnyx",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "telephony_configs_telnyx_partial_update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.ultravox.ai/api/telephony_configs/telnyx",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "telephony_configs_telnyx_destroy",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.ultravox.ai/api/telephony_configs/telnyx",
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "telephony_configs_twilio_retrieve",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/telephony_configs/twilio",
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "telephony_configs_twilio_create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ultravox.ai/api/telephony_configs/twilio",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "telephony_configs_twilio_partial_update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.ultravox.ai/api/telephony_configs/twilio",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "telephony_configs_twilio_destroy",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.ultravox.ai/api/telephony_configs/twilio",
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,742 @@
+{
+  "item": [
+    {
+      "id": "2bb522ca-3b2a-487c-8517-a377a91ff965",
+      "name": "webhooks",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d3dbda26-975c-438c-a298-33a9b57a9079",
+          "name": "webhooks list",
+          "request": {
+            "name": "webhooks list",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "webhooks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "agentId",
+                  "value": "<uuid>",
+                  "description": "Filter webhooks by agent ID."
+                },
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": "<string>",
+                  "description": "The pagination cursor value."
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "04d45852-6ded-425e-beca-6a3e7fa11e8c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "webhooks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "agentId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"created\": \"1999-05-08T19:38:33.549Z\",\n      \"events\": [\n        \"call.started\",\n        \"call.started\"\n      ],\n      \"lastStatusChange\": \"1999-08-31T04:39:45.638Z\",\n      \"recentFailures\": [\n        {\n          \"failure\": \"string\",\n          \"timestamp\": \"1990-01-09T11:16:58.899Z\"\n        },\n        {\n          \"failure\": \"string\",\n          \"timestamp\": \"1996-02-14T17:04:19.953Z\"\n        }\n      ],\n      \"status\": \"unhealthy\",\n      \"url\": \"https://eKCwcyqtofrUuDmFxXQQyWZGBZp.nmXiTvYOFCIXP4UfLp.XwL0Dp21\",\n      \"webhookId\": \"b753c678-fe25-ab47-9f3f-2c2394ee54a1\",\n      \"agentId\": \"782c23a2-d30a-bab0-d998-7f376b2feb07\",\n      \"secrets\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"created\": \"1990-01-15T07:05:52.164Z\",\n      \"events\": [\n        \"call.ended\",\n        \"call.ended\"\n      ],\n      \"lastStatusChange\": \"2007-01-18T14:18:09.650Z\",\n      \"recentFailures\": [\n        {\n          \"failure\": \"string\",\n          \"timestamp\": \"2003-05-09T01:12:20.384Z\"\n        },\n        {\n          \"failure\": \"string\",\n          \"timestamp\": \"2024-03-29T23:53:29.703Z\"\n        }\n      ],\n      \"status\": \"normal\",\n      \"url\": \"http://ZWcUkRhwYnNBgngcnoFYR.jleeyA-f4b4sbAKPGPGHrtosBIroMlvmTmWRA6Ya-+TXakX4KRwBz5s\",\n      \"webhookId\": \"000daaf8-672d-ff53-6be5-f4306534db91\",\n      \"agentId\": \"a3aaa158-3d90-9e1e-5504-80bf7f36905b\",\n      \"secrets\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"next\": \"http://YWzwbOgDGfssGrrkWcfrqelwdDydYCNw.mwavPic0K4lSJdi\",\n  \"previous\": \"http://api.example.org/accounts/?cursor=cj0xJnA9NDg3\",\n  \"total\": 123\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a6c9f01a-0fed-418f-9333-bfc828265000",
+          "name": "webhooks create",
+          "request": {
+            "name": "webhooks create",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "webhooks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"url\": \"<uri>\",\n  \"agentId\": \"<uuid>\",\n  \"secrets\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b7758934-f01e-4124-8a39-305dfa123d70",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "webhooks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"url\": \"<uri>\",\n  \"agentId\": \"<uuid>\",\n  \"secrets\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"url\": \"<uri>\",\n  \"webhookId\": \"b50e6ce0-8bb4-76ae-08a8-bb48c37c122c\",\n  \"agentId\": \"<uuid>\",\n  \"created\": \"2011-09-29T04:45:18.860Z\",\n  \"secrets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"status\": \"normal\",\n  \"lastStatusChange\": \"1964-01-16T12:07:21.362Z\",\n  \"recentFailures\": [\n    {\n      \"failure\": \"string\",\n      \"timestamp\": \"2010-12-29T08:12:52.760Z\"\n    },\n    {\n      \"failure\": \"string\",\n      \"timestamp\": \"1963-01-30T03:47:40.254Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dfc26879-6378-4f64-9d8a-be6cd86fb899",
+          "name": "webhooks retrieve",
+          "request": {
+            "name": "webhooks retrieve",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "webhooks",
+                ":webhook_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "webhook_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5078e08e-eb1b-41c2-b610-7f70ace4cd8d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "webhooks",
+                    ":webhook_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "webhook_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"url\": \"<uri>\",\n  \"webhookId\": \"b50e6ce0-8bb4-76ae-08a8-bb48c37c122c\",\n  \"agentId\": \"<uuid>\",\n  \"created\": \"2011-09-29T04:45:18.860Z\",\n  \"secrets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"status\": \"normal\",\n  \"lastStatusChange\": \"1964-01-16T12:07:21.362Z\",\n  \"recentFailures\": [\n    {\n      \"failure\": \"string\",\n      \"timestamp\": \"2010-12-29T08:12:52.760Z\"\n    },\n    {\n      \"failure\": \"string\",\n      \"timestamp\": \"1963-01-30T03:47:40.254Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f540b8bd-942a-4af4-b497-3e57bf6a48b1",
+          "name": "webhooks update",
+          "request": {
+            "name": "webhooks update",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "webhooks",
+                ":webhook_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "webhook_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"url\": \"<uri>\",\n  \"agentId\": \"<uuid>\",\n  \"secrets\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4560bf73-b893-40cc-b486-8e5431334040",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "webhooks",
+                    ":webhook_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "webhook_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"url\": \"<uri>\",\n  \"agentId\": \"<uuid>\",\n  \"secrets\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"url\": \"<uri>\",\n  \"webhookId\": \"b50e6ce0-8bb4-76ae-08a8-bb48c37c122c\",\n  \"agentId\": \"<uuid>\",\n  \"created\": \"2011-09-29T04:45:18.860Z\",\n  \"secrets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"status\": \"normal\",\n  \"lastStatusChange\": \"1964-01-16T12:07:21.362Z\",\n  \"recentFailures\": [\n    {\n      \"failure\": \"string\",\n      \"timestamp\": \"2010-12-29T08:12:52.760Z\"\n    },\n    {\n      \"failure\": \"string\",\n      \"timestamp\": \"1963-01-30T03:47:40.254Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eae2d1b6-0bc3-4c4b-bfa5-983e64977ee3",
+          "name": "webhooks partial update",
+          "request": {
+            "name": "webhooks partial update",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "webhooks",
+                ":webhook_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "webhook_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"agentId\": \"<uuid>\",\n  \"url\": \"<uri>\",\n  \"secrets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"events\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8dee2b70-2915-4ac2-bc13-4e6a8096e719",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "webhooks",
+                    ":webhook_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "webhook_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"agentId\": \"<uuid>\",\n  \"url\": \"<uri>\",\n  \"secrets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"events\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"url\": \"<uri>\",\n  \"webhookId\": \"b50e6ce0-8bb4-76ae-08a8-bb48c37c122c\",\n  \"agentId\": \"<uuid>\",\n  \"created\": \"2011-09-29T04:45:18.860Z\",\n  \"secrets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"status\": \"normal\",\n  \"lastStatusChange\": \"1964-01-16T12:07:21.362Z\",\n  \"recentFailures\": [\n    {\n      \"failure\": \"string\",\n      \"timestamp\": \"2010-12-29T08:12:52.760Z\"\n    },\n    {\n      \"failure\": \"string\",\n      \"timestamp\": \"1963-01-30T03:47:40.254Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4b06d751-8924-4ae2-919b-b68d5a93f0f5",
+          "name": "webhooks destroy",
+          "request": {
+            "name": "webhooks destroy",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "webhooks",
+                ":webhook_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "webhook_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c3ad9bb3-0f51-4170-8737-401499d7e4f0",
+              "name": "No response body",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "webhooks",
+                    ":webhook_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "webhook_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.ultravox.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "dd48294d-a39a-47a9-8ffe-573a6ea4ae69",
+    "name": "Ultravox accounts webhooks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for the Ultravox service.",
+      "type": "text/plain"
+    }
+  }
+}

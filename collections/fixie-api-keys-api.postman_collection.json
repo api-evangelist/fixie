@@ -1,0 +1,604 @@
+{
+  "item": [
+    {
+      "id": "f639ceab-d558-4190-b596-cac86789cbdd",
+      "name": "api_keys",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0816c78e-dcca-4a50-b083-94ba2e64028a",
+          "name": "api keys list",
+          "request": {
+            "name": "api keys list",
+            "description": {
+              "content": "Gets the current user's API keys.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "api_keys"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": "<string>",
+                  "description": "The pagination cursor value."
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d0c6c7b4-caa2-495e-9e77-8456c7d40121",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "api_keys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"created\": \"2021-06-10T18:43:15.822Z\",\n      \"creator\": \"string\",\n      \"expiryDate\": \"1956-08-09T12:14:56.843Z\",\n      \"name\": \"string\",\n      \"prefix\": \"string\",\n      \"revoked\": false\n    },\n    {\n      \"created\": \"1981-04-23T17:49:57.299Z\",\n      \"creator\": \"string\",\n      \"expiryDate\": \"2009-01-03T13:09:09.979Z\",\n      \"name\": \"string\",\n      \"prefix\": \"string\",\n      \"revoked\": true\n    }\n  ],\n  \"next\": \"http://FwAyPEhPNsvJBbdGkkZaGMqut.tvbWpHhmmfHyoMHuNa92cWRxRZCtL\",\n  \"previous\": \"http://api.example.org/accounts/?cursor=cj0xJnA9NDg3\",\n  \"total\": 123\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "adc6fb44-2919-4661-a507-278d4413bc31",
+          "name": "api keys create",
+          "request": {
+            "name": "api keys create",
+            "description": {
+              "content": "Creates a new API key.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "api_keys"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"expiryDate\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b3636c50-b928-4d86-be14-65d510c02fcf",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "api_keys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"expiryDate\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"<string>\",\n  \"prefix\": \"string\",\n  \"created\": \"2012-01-05T00:27:18.788Z\",\n  \"creator\": \"string\",\n  \"secret\": \"string\",\n  \"revoked\": false,\n  \"expiryDate\": \"<dateTime>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dd80ae74-f8b4-4b5f-a086-707640fc8b62",
+          "name": "api keys retrieve",
+          "request": {
+            "name": "api keys retrieve",
+            "description": {
+              "content": "Gets an API key.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "api_keys",
+                ":api_key_prefix"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "api_key_prefix",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "399bc402-0899-4812-b9da-0903482a46d4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "api_keys",
+                    ":api_key_prefix"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "api_key_prefix",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"created\": \"1986-10-19T04:22:31.479Z\",\n  \"creator\": \"string\",\n  \"expiryDate\": \"1955-01-28T05:51:21.141Z\",\n  \"name\": \"string\",\n  \"prefix\": \"string\",\n  \"revoked\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4cd992e0-5776-41cd-ad6b-c4f57e9fd231",
+          "name": "api keys update",
+          "request": {
+            "name": "api keys update",
+            "description": {
+              "content": "Updates an API key.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "api_keys",
+                ":api_key_prefix"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "api_key_prefix",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"revoked\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e4dbcd59-f388-49e4-8b55-5fe772905799",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "api_keys",
+                    ":api_key_prefix"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "api_key_prefix",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"revoked\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"prefix\": \"string\",\n  \"created\": \"2011-03-20T07:36:33.662Z\",\n  \"creator\": \"string\",\n  \"name\": \"string\",\n  \"expiryDate\": \"1977-03-23T17:33:31.228Z\",\n  \"revoked\": \"<boolean>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c5a18687-afab-4a6f-8e1e-d466813d0349",
+          "name": "api keys partial update",
+          "request": {
+            "name": "api keys partial update",
+            "description": {
+              "content": "Updates an API key.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "api_keys",
+                ":api_key_prefix"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "api_key_prefix",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"revoked\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "150f806a-87d0-4fbd-a6ca-d72c09beb989",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "api_keys",
+                    ":api_key_prefix"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "api_key_prefix",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"revoked\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"prefix\": \"string\",\n  \"created\": \"2011-03-20T07:36:33.662Z\",\n  \"creator\": \"string\",\n  \"name\": \"string\",\n  \"expiryDate\": \"1977-03-23T17:33:31.228Z\",\n  \"revoked\": \"<boolean>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7e605bdb-1e9d-4931-8a84-3b9abde58866",
+          "name": "api keys destroy",
+          "request": {
+            "name": "api keys destroy",
+            "description": {
+              "content": "Deletes an API key.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "api_keys",
+                ":api_key_prefix"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "api_key_prefix",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "211a3cdf-3e9d-4fb1-95ca-cea645eb4c44",
+              "name": "No response body",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "api_keys",
+                    ":api_key_prefix"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "api_key_prefix",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.ultravox.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e64ce2e2-e3b8-4f69-84f4-ea71ea7ed530",
+    "name": "Ultravox accounts api_keys API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for the Ultravox service.",
+      "type": "text/plain"
+    }
+  }
+}

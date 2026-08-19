@@ -1,0 +1,245 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ultravox accounts voices API",
+    "version": "0.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "voices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "preview_voice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ultravox.ai/api/voice_preview",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Performs a test generation of a voice, returning the resulting audio or error."
+        },
+        {
+          "info": {
+            "name": "voices_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/voices",
+            "params": [
+              {
+                "name": "billingStyle",
+                "value": "",
+                "type": "query",
+                "description": "The billing style used to filter results.\n\n* `VOICE_BILLING_STYLE_INCLUDED` - Voices with no additional charges beyond the cost of the call\n* `VOICE_BILLING_STYLE_EXTERNAL` - Voices with costs billed directly by the TTS provider"
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "The pagination cursor value."
+              },
+              {
+                "name": "ownership",
+                "value": "",
+                "type": "query",
+                "description": "The ownership used to filter results.\n\n* `private` - Only private voices\n* `public` - Only public voices"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              },
+              {
+                "name": "primaryLanguage",
+                "value": "",
+                "type": "query",
+                "description": "The desired primary language for voice results using BCP47. Voices with different regions/scripts/variants but the same language tag may also be included but will be further down the results. If not provided, all languages are included."
+              },
+              {
+                "name": "provider",
+                "value": "",
+                "type": "query",
+                "description": "The providers used to filter results."
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "The search string used to filter results."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List all voices in your account."
+        },
+        {
+          "info": {
+            "name": "voices_create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ultravox.ai/api/voices",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create a new cloned voice from an audio sample. The created voice will be private to your account."
+        },
+        {
+          "info": {
+            "name": "voices_retrieve",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/voices/:voice_id",
+            "params": [
+              {
+                "name": "voice_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "voices_update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.ultravox.ai/api/voices/:voice_id",
+            "params": [
+              {
+                "name": "voice_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "voices_partial_update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.ultravox.ai/api/voices/:voice_id",
+            "params": [
+              {
+                "name": "voice_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "voices_destroy",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.ultravox.ai/api/voices/:voice_id",
+            "params": [
+              {
+                "name": "voice_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "voices_preview_retrieve",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultravox.ai/api/voices/:voice_id/preview",
+            "params": [
+              {
+                "name": "voice_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Provides an audio sample for a voice, or the error caused by using it."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

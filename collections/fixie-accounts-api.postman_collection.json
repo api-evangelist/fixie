@@ -1,0 +1,1345 @@
+{
+  "item": [
+    {
+      "id": "005944bd-4841-4b97-8fb7-4681c8560093",
+      "name": "accounts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5a0c22a1-5196-4868-8da7-23f49a7f7359",
+          "name": "accounts list",
+          "request": {
+            "name": "accounts list",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6008fc91-22c1-44bf-beaf-74c28c964ace",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"accountId\": \"5740fbb3-5a16-2ee4-0780-f08b87148f70\",\n    \"activeCalls\": 8016,\n    \"allowedConcurrentCalls\": 8018,\n    \"allowedCorpora\": 6022,\n    \"allowedVoices\": 9485,\n    \"billingUrl\": \"string\",\n    \"freeTimeRemaining\": \"string\",\n    \"freeTimeUsed\": \"string\",\n    \"hasActiveSubscription\": true,\n    \"name\": \"string\",\n    \"subscriptionCadence\": \"string\",\n    \"subscriptionExpiration\": \"2007-11-05T01:08:47.472Z\",\n    \"subscriptionRenewal\": \"2005-11-03T21:29:14.732Z\",\n    \"subscriptionScheduledUpdate\": \"1948-09-24T16:51:22.615Z\",\n    \"subscriptionTier\": \"string\"\n  },\n  {\n    \"accountId\": \"4a9553ee-4d7e-3e2f-7570-4106c982655c\",\n    \"activeCalls\": 8459,\n    \"allowedConcurrentCalls\": 6512,\n    \"allowedCorpora\": 7819,\n    \"allowedVoices\": 6711,\n    \"billingUrl\": \"string\",\n    \"freeTimeRemaining\": \"string\",\n    \"freeTimeUsed\": \"string\",\n    \"hasActiveSubscription\": true,\n    \"name\": \"string\",\n    \"subscriptionCadence\": \"string\",\n    \"subscriptionExpiration\": \"1972-03-31T03:32:44.126Z\",\n    \"subscriptionRenewal\": \"1976-05-08T12:00:19.713Z\",\n    \"subscriptionScheduledUpdate\": \"2004-07-03T13:17:19.467Z\",\n    \"subscriptionTier\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dfda8b44-351e-464f-a4e9-44aeaa407d94",
+          "name": "accounts me retrieve",
+          "request": {
+            "name": "accounts me retrieve",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "accounts",
+                "me"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9263030d-97df-433a-a665-b9c50e6c2f9d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "accounts",
+                    "me"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accountId\": \"b2187351-1c4c-c4a1-634e-bd3cac29d1bc\",\n  \"activeCalls\": 5322,\n  \"allowedConcurrentCalls\": 4564,\n  \"allowedCorpora\": 4362,\n  \"allowedVoices\": 8866,\n  \"billingUrl\": \"string\",\n  \"freeTimeRemaining\": \"string\",\n  \"freeTimeUsed\": \"string\",\n  \"hasActiveSubscription\": true,\n  \"name\": \"string\",\n  \"subscriptionCadence\": \"string\",\n  \"subscriptionExpiration\": \"1982-06-10T17:55:25.552Z\",\n  \"subscriptionRenewal\": \"1958-10-17T18:56:42.336Z\",\n  \"subscriptionScheduledUpdate\": \"1977-11-28T07:55:27.277Z\",\n  \"subscriptionTier\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "de12405b-7f12-4b4d-99de-b48bef7a34cf",
+          "name": "accounts me billing retrieve",
+          "request": {
+            "name": "accounts me billing retrieve",
+            "description": {
+              "content": "Gets high-level billing information for the current account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "accounts",
+                "me",
+                "billing"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b0d8de33-44ba-4031-97dc-e6c1f3fcd600",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "accounts",
+                    "me",
+                    "billing"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"billingEmail\": \"qVFswpV@vebqLJz.mm\",\n  \"paymentMethod\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "125620b5-9a22-4b23-8135-a479699c0108",
+          "name": "accounts me billing invoices retrieve",
+          "request": {
+            "name": "accounts me billing invoices retrieve",
+            "description": {
+              "content": "Lists invoices for the current account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "accounts",
+                "me",
+                "billing",
+                "invoices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": "<string>",
+                  "description": "The pagination cursor value."
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "10",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "66739563-a888-452c-b864-3b335f021eec",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "accounts",
+                    "me",
+                    "billing",
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"next\": \"https://sCviKlQwSZHGJwbGqgWxxbiUshrsMdYw.yjdpsW,K.oLm8zO\",\n  \"previous\": \"https://WtJEYWRthSsqihIhWLopAQGaCL.aqtBbN5M\",\n  \"results\": [\n    {\n      \"amount\": 2669,\n      \"billingReason\": \"subscription_update\",\n      \"invoiceDate\": \"1968-09-11T17:07:56.081Z\",\n      \"invoiceNumber\": \"string\",\n      \"invoiceStatus\": \"unpaid\",\n      \"invoiceUrl\": \"https://GfcgcLOpOgJEYwupBBeFULfVFUYJdjIo.henfnaPQ2GteaFhTdAwa5oCf,Bsas.ebiA1PAQ03pInHYYuoXJt8PbeO6xVtXP\"\n    },\n    {\n      \"amount\": 7486,\n      \"billingReason\": \"subscription_create\",\n      \"invoiceDate\": \"2022-04-11T16:54:18.236Z\",\n      \"invoiceNumber\": \"string\",\n      \"invoiceStatus\": \"paid\",\n      \"invoiceUrl\": \"http://cnfduYpbJfpaIAUZGQkIEkLqIoea.amizpoiX3+AbMTZsK3J7t0KbLdX4J7kTovMncr2.hIzZ9xZxJEf\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "31dd7a81-4656-48a3-858e-9845db436e23",
+          "name": "accounts me billing usage retrieve",
+          "request": {
+            "name": "accounts me billing usage retrieve",
+            "description": {
+              "content": "Gets usage information for the current account in the given period.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "accounts",
+                "me",
+                "billing",
+                "usage"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fromDate",
+                  "value": "<date>",
+                  "description": "Start date (UTC, inclusive) for per-day usage information. Defaults to the start of monthly billing cycle."
+                },
+                {
+                  "disabled": false,
+                  "key": "toDate",
+                  "value": "<date>",
+                  "description": "End date (UTC, exclusive) for per-day usage information. Max 90 days after fromDate."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "2d627e2e-ef99-49cf-b0be-1cfa9cf9085f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "accounts",
+                    "me",
+                    "billing",
+                    "usage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fromDate",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "toDate",
+                      "value": "<date>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"dailyUsage\": [\n    {\n      \"date\": \"2024-08-08\",\n      \"minutes\": 9913.610541422242,\n      \"sipMinutes\": 8561.723534471621\n    },\n    {\n      \"date\": \"1990-11-23\",\n      \"minutes\": 4122.222855540987,\n      \"sipMinutes\": 4854.8271660775745\n    }\n  ],\n  \"totalMinutes\": 803.2023939858857,\n  \"totalSipMinutes\": 823.4531814193458\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9c5066da-a1a1-4530-8862-c9799403ec69",
+          "name": "accounts me telephony config retrieve",
+          "request": {
+            "name": "accounts me telephony config retrieve",
+            "description": {
+              "content": "DEPRECATED. Prefer the provider-specific endpoints, e.g. /api/telephony_configs/twilio.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "accounts",
+                "me",
+                "telephony_config"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4a78470a-913e-4b4e-9283-1524114db496",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "accounts",
+                    "me",
+                    "telephony_config"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"twilio\": {\n    \"accountSid\": \"string\",\n    \"callCreationAllowedAgentIds\": [\n      \"e6f2aaf2-22b3-a155-286b-d4b9c83a055c\",\n      \"1a1e3b21-9a4d-9993-c1db-8d09188c84de\"\n    ],\n    \"callCreationAllowAllAgents\": false,\n    \"requestContextMapping\": {\n      \"key_0\": \"string\"\n    },\n    \"authTokenPrefix\": {\n      \"prefix\": \"string\"\n    }\n  },\n  \"telnyx\": {\n    \"accountSid\": \"string\",\n    \"applicationSid\": \"string\",\n    \"callCreationAllowedAgentIds\": [\n      \"1976c614-b9ec-609c-f7bf-541ce8e93d8f\",\n      \"cf7d9b65-95e1-e86f-b1de-27ae85c8acb7\"\n    ],\n    \"callCreationAllowAllAgents\": false,\n    \"requestContextMapping\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\"\n    },\n    \"apiKeyPrefix\": {\n      \"prefix\": \"string\"\n    },\n    \"publicKeyPrefix\": {\n      \"prefix\": \"string\"\n    }\n  },\n  \"plivo\": {\n    \"authId\": \"string\",\n    \"callCreationAllowedAgentIds\": [\n      \"21c8990d-c0ef-f6e2-989d-8940db333d4a\",\n      \"a01c4fc5-dac0-eee5-47c6-434eb42a7df0\"\n    ],\n    \"callCreationAllowAllAgents\": false,\n    \"requestContextMapping\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"authTokenPrefix\": {\n      \"prefix\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "add970f8-c435-4f54-9894-d5cd87612d57",
+          "name": "accounts me telephony config partial update",
+          "request": {
+            "name": "accounts me telephony config partial update",
+            "description": {
+              "content": "DEPRECATED. Prefer the provider-specific endpoints, e.g. /api/telephony_configs/twilio.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "accounts",
+                "me",
+                "telephony_config"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"twilio\": {\n    \"accountSid\": \"<string>\",\n    \"callCreationAllowedAgentIds\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"callCreationAllowAllAgents\": false,\n    \"requestContextMapping\": {\n      \"key_0\": \"<string>\"\n    },\n    \"authToken\": \"<string>\"\n  },\n  \"telnyx\": {\n    \"accountSid\": \"<string>\",\n    \"applicationSid\": \"<string>\",\n    \"callCreationAllowedAgentIds\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"callCreationAllowAllAgents\": false,\n    \"requestContextMapping\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    },\n    \"apiKey\": \"<string>\",\n    \"publicKey\": \"<string>\"\n  },\n  \"plivo\": {\n    \"authId\": \"<string>\",\n    \"callCreationAllowedAgentIds\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"callCreationAllowAllAgents\": false,\n    \"requestContextMapping\": {\n      \"key_0\": \"<string>\"\n    },\n    \"authToken\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8407c9f1-25da-477e-92e7-406869f5aede",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "accounts",
+                    "me",
+                    "telephony_config"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"twilio\": {\n    \"accountSid\": \"<string>\",\n    \"callCreationAllowedAgentIds\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"callCreationAllowAllAgents\": false,\n    \"requestContextMapping\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\",\n      \"key_2\": \"<string>\"\n    },\n    \"authToken\": \"<string>\"\n  },\n  \"telnyx\": {\n    \"accountSid\": \"<string>\",\n    \"applicationSid\": \"<string>\",\n    \"callCreationAllowedAgentIds\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"callCreationAllowAllAgents\": false,\n    \"requestContextMapping\": {\n      \"key_0\": \"<string>\"\n    },\n    \"apiKey\": \"<string>\",\n    \"publicKey\": \"<string>\"\n  },\n  \"plivo\": {\n    \"authId\": \"<string>\",\n    \"callCreationAllowedAgentIds\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"callCreationAllowAllAgents\": false,\n    \"requestContextMapping\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\",\n      \"key_2\": \"<string>\"\n    },\n    \"authToken\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"twilio\": {\n    \"accountSid\": \"<string>\",\n    \"callCreationAllowedAgentIds\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"callCreationAllowAllAgents\": false,\n    \"requestContextMapping\": {\n      \"key_0\": \"<string>\"\n    },\n    \"authTokenPrefix\": {\n      \"prefix\": \"string\"\n    }\n  },\n  \"telnyx\": {\n    \"accountSid\": \"<string>\",\n    \"applicationSid\": \"<string>\",\n    \"callCreationAllowedAgentIds\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"callCreationAllowAllAgents\": false,\n    \"requestContextMapping\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    },\n    \"apiKeyPrefix\": {\n      \"prefix\": \"string\"\n    },\n    \"publicKeyPrefix\": {\n      \"prefix\": \"string\"\n    }\n  },\n  \"plivo\": {\n    \"authId\": \"<string>\",\n    \"callCreationAllowedAgentIds\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"callCreationAllowAllAgents\": false,\n    \"requestContextMapping\": {\n      \"key_0\": \"<string>\"\n    },\n    \"authTokenPrefix\": {\n      \"prefix\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7ee668f0-e44f-4ec5-9c60-155762086648",
+          "name": "accounts me tts api keys retrieve",
+          "request": {
+            "name": "accounts me tts api keys retrieve",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "accounts",
+                "me",
+                "tts_api_keys"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "660a6b62-aa67-40d2-b0c4-02788190bf33",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "accounts",
+                    "me",
+                    "tts_api_keys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"elevenLabs\": {\n    \"prefix\": \"string\"\n  },\n  \"cartesia\": {\n    \"prefix\": \"string\"\n  },\n  \"lmnt\": {\n    \"prefix\": \"string\"\n  },\n  \"google\": {\n    \"prefix\": \"string\"\n  },\n  \"inworld\": {\n    \"prefix\": \"string\"\n  },\n  \"respeecher\": {\n    \"prefix\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0d458244-d687-4067-bae7-897a541cc40d",
+          "name": "accounts me tts api keys partial update",
+          "request": {
+            "name": "accounts me tts api keys partial update",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "accounts",
+                "me",
+                "tts_api_keys"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"elevenLabs\": \"<string>\",\n  \"cartesia\": \"<string>\",\n  \"lmnt\": \"<string>\",\n  \"google\": \"<string>\",\n  \"inworld\": \"<string>\",\n  \"respeecher\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5ad2e095-2b02-4f5e-9b8c-62196660f2b8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "accounts",
+                    "me",
+                    "tts_api_keys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"elevenLabs\": \"<string>\",\n  \"cartesia\": \"<string>\",\n  \"lmnt\": \"<string>\",\n  \"google\": \"<string>\",\n  \"inworld\": \"<string>\",\n  \"respeecher\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"elevenLabs\": {\n    \"prefix\": \"string\"\n  },\n  \"cartesia\": {\n    \"prefix\": \"string\"\n  },\n  \"lmnt\": {\n    \"prefix\": \"string\"\n  },\n  \"google\": {\n    \"prefix\": \"string\"\n  },\n  \"inworld\": {\n    \"prefix\": \"string\"\n  },\n  \"respeecher\": {\n    \"prefix\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b453a1c1-26ea-44f8-9735-b2748cab1b64",
+          "name": "accounts me usage calls retrieve",
+          "request": {
+            "name": "accounts me usage calls retrieve",
+            "description": {
+              "content": "Gets aggregated call usage.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "accounts",
+                "me",
+                "usage",
+                "calls"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "agentIds",
+                  "value": "<uuid>",
+                  "description": "Filter calls by the agent IDs."
+                },
+                {
+                  "disabled": false,
+                  "key": "agentIds",
+                  "value": "<uuid>",
+                  "description": "Filter calls by the agent IDs."
+                },
+                {
+                  "disabled": false,
+                  "key": "durationMax",
+                  "value": "<string>",
+                  "description": "Maximum duration of calls"
+                },
+                {
+                  "disabled": false,
+                  "key": "durationMin",
+                  "value": "<string>",
+                  "description": "Minimum duration of calls"
+                },
+                {
+                  "disabled": false,
+                  "key": "fromDate",
+                  "value": "<dateTime>",
+                  "description": "Start datetime (inclusive) for filtering calls by creation date. If no time component is present, this defaults to the start of the day (midnight)."
+                },
+                {
+                  "disabled": false,
+                  "key": "key_0",
+                  "value": "<string>",
+                  "description": "Filter calls by metadata. Use metadata.key=value to filter by specific key-value pairs."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "The search string used to filter results"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeOfDayEnd",
+                  "value": "23:59:59.999999",
+                  "description": "Filter calls by the time of day of their creation, regardless of date. Format: HH:MM:SS. Defaults to 23:59:59 if not specified."
+                },
+                {
+                  "disabled": false,
+                  "key": "timeOfDayStart",
+                  "value": "00:00:00",
+                  "description": "Filter calls by the time of day of their creation, regardless of date. Format: HH:MM:SS. Defaults to 00:00:00 if not specified."
+                },
+                {
+                  "disabled": false,
+                  "key": "toDate",
+                  "value": "<dateTime>",
+                  "description": "End datetime (inclusive) for filtering calls by creation date. If no time component is present, this defaults to the end of the day (11:59:59.999999 PM)."
+                },
+                {
+                  "disabled": false,
+                  "key": "voiceId",
+                  "value": "<uuid>",
+                  "description": "Filter calls by the associated voice ID"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f18ae4da-5890-4a5a-941e-6e20d14900d5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "accounts",
+                    "me",
+                    "usage",
+                    "calls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "agentIds",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "agentIds",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "durationMax",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "durationMin",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fromDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_1",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "timeOfDayEnd",
+                      "value": "23:59:59.999999"
+                    },
+                    {
+                      "key": "timeOfDayStart",
+                      "value": "00:00:00"
+                    },
+                    {
+                      "key": "toDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "voiceId",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"allTime\": {\n    \"billedMinutes\": 6426.591098423383,\n    \"duration\": \"string\",\n    \"errorCount\": 9643,\n    \"joinedCount\": 6385,\n    \"totalCount\": 5545\n  },\n  \"daily\": [\n    {\n      \"billedMinutes\": 8410.731179685039,\n      \"date\": \"1952-11-22\",\n      \"duration\": \"string\",\n      \"errorCount\": 8821,\n      \"joinedCount\": 926,\n      \"totalCount\": 9113\n    },\n    {\n      \"billedMinutes\": 575.4551672539809,\n      \"date\": \"1999-05-29\",\n      \"duration\": \"string\",\n      \"errorCount\": 7287,\n      \"joinedCount\": 2881,\n      \"totalCount\": 749\n    }\n  ],\n  \"hourly\": [\n    {\n      \"billedMinutes\": 5008.585110031292,\n      \"date\": \"2021-04-23\",\n      \"duration\": \"string\",\n      \"errorCount\": 8835,\n      \"hour\": 8079,\n      \"joinedCount\": 5541,\n      \"totalCount\": 8495\n    },\n    {\n      \"billedMinutes\": 5121.057347890802,\n      \"date\": \"2005-01-15\",\n      \"duration\": \"string\",\n      \"errorCount\": 490,\n      \"hour\": 7746,\n      \"joinedCount\": 5428,\n      \"totalCount\": 1814\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "088b5363-9d8b-49ea-b8ec-08ac0c034901",
+          "name": "accounts me usage concurrency retrieve",
+          "request": {
+            "name": "accounts me usage concurrency retrieve",
+            "description": {
+              "content": "Gets historical call concurrency for the account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "accounts",
+                "me",
+                "usage",
+                "concurrency"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "bucket",
+                  "value": "minute",
+                  "description": "Bucket size for the time series.\n\n* `minute` - minute\n* `5min` - 5min\n* `hour` - hour\n* `day` - day"
+                },
+                {
+                  "disabled": false,
+                  "key": "end",
+                  "value": "<dateTime>",
+                  "description": "End datetime for the time range. Defaults to now."
+                },
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<dateTime>",
+                  "description": "Start datetime for the time range. Defaults to 24 hours before end."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9a90687d-9442-40c3-a5a3-cfd008f56fcd",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "accounts",
+                    "me",
+                    "usage",
+                    "concurrency"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "bucket",
+                      "value": "minute"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "start",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timeSeries\": [\n    {\n      \"avgJoinedCalls\": 8402.105405128821,\n      \"avgTotalCalls\": 6837.5917937056265,\n      \"maxJoinedCalls\": 2137,\n      \"maxTotalCalls\": 8761,\n      \"timestamp\": \"1948-02-11T20:37:22.497Z\"\n    },\n    {\n      \"avgJoinedCalls\": 5976.025746244143,\n      \"avgTotalCalls\": 1339.0650629373436,\n      \"maxJoinedCalls\": 5913,\n      \"maxTotalCalls\": 3329,\n      \"timestamp\": \"2021-08-14T17:00:43.696Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.ultravox.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8f46b933-f28d-4fdf-8133-499e9d5ca0af",
+    "name": "Ultravox accounts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for the Ultravox service.",
+      "type": "text/plain"
+    }
+  }
+}

@@ -2,10 +2,9 @@ generated: '2026-07-19'
 method: derived
 status: candidate
 source: openapi/fixie-ultravox-openapi-original.yml
-note: >-
-  No official hosted/remote MCP server was found for Ultravox/Fixie. This is a
-  candidate tool list derived from the OpenAPI operations; one tool per marquee
-  operationId. Not an authoritative provider claim.
+note: No official hosted/remote MCP server was found for Ultravox/Fixie. This is a candidate tool list
+  derived from the OpenAPI operations; one tool per marquee operationId. Not an authoritative provider
+  claim.
 server:
   name: fixie-ultravox
   transport: stdio
@@ -46,3 +45,9 @@ tools:
 - name: create_webhook
   description: Create a new webhook configuration for an account
   source_operation: openapi/fixie-ultravox-openapi-original.yml#webhooks_create
+deployment:
+  mode: none
+  verified: derived
+  tools: 12
+  checked: '2026-08-12'
+  source: catalog MCP census
