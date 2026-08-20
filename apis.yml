@@ -39,6 +39,17 @@ tags:
 - Company
 - Voice AI
 - Conversational AI
+- Real-Time
+- Speech
+- Agents
+- Telephony
+- Machine-Learning
+- SIP
+- Webhook
+tags_raw:
+- Company
+- Voice AI
+- Conversational AI
 - Real-time
 - Speech
 - Agents
@@ -53,6 +64,8 @@ apis:
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
   tags:
+  - Account
+  tags_raw:
   - accounts
   properties:
   - type: OpenAPI
@@ -81,6 +94,8 @@ apis:
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
   tags:
+  - Agents
+  tags_raw:
   - agents
   properties:
   - type: OpenAPI
@@ -109,6 +124,8 @@ apis:
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
   tags:
+  - APIKeys
+  tags_raw:
   - api_keys
   properties:
   - type: OpenAPI
@@ -136,7 +153,8 @@ apis:
   description: The call_throttles API from Fixie — 2 operation(s) for call_throttles.
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
-  tags:
+  tags: []
+  tags_raw:
   - call_throttles
   properties:
   - type: OpenAPI
@@ -165,6 +183,8 @@ apis:
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
   tags:
+  - Calls
+  tags_raw:
   - calls
   properties:
   - type: OpenAPI
@@ -193,6 +213,8 @@ apis:
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
   tags:
+  - Corpora
+  tags_raw:
   - corpora
   properties:
   - type: OpenAPI
@@ -220,7 +242,8 @@ apis:
   description: The deleted_calls API from Fixie — 2 operation(s) for deleted_calls.
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
-  tags:
+  tags: []
+  tags_raw:
   - deleted_calls
   properties:
   - type: OpenAPI
@@ -249,6 +272,8 @@ apis:
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
   tags:
+  - Models
+  tags_raw:
   - models
   properties:
   - type: OpenAPI
@@ -277,6 +302,8 @@ apis:
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
   tags:
+  - Schema
+  tags_raw:
   - schema
   properties:
   - type: OpenAPI
@@ -305,6 +332,8 @@ apis:
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
   tags:
+  - SIP
+  tags_raw:
   - sip
   properties:
   - type: OpenAPI
@@ -332,7 +361,8 @@ apis:
   description: The telephony_configs API from Fixie — 3 operation(s) for telephony_configs.
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
-  tags:
+  tags: []
+  tags_raw:
   - telephony_configs
   properties:
   - type: OpenAPI
@@ -361,6 +391,8 @@ apis:
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
   tags:
+  - Tools
+  tags_raw:
   - tools
   properties:
   - type: OpenAPI
@@ -389,6 +421,8 @@ apis:
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
   tags:
+  - Voices
+  tags_raw:
   - voices
   properties:
   - type: OpenAPI
@@ -417,6 +451,8 @@ apis:
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
   tags:
+  - Webhook
+  tags_raw:
   - webhooks
   properties:
   - type: OpenAPI
