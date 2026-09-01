@@ -135,7 +135,8 @@ apis:
   description: The api_keys API from Fixie — 2 operation(s) for api_keys.
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
-  tags: []
+  tags:
+  - APIKeys
   tags_raw:
   - api_keys
   properties:
@@ -224,7 +225,7 @@ apis:
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
   tags:
-  - corpora
+  - Corpora
   tags_raw:
   - corpora
   properties:
@@ -432,7 +433,7 @@ apis:
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
   tags:
-  - voices
+  - Voices
   tags_raw:
   - voices
   properties:
