@@ -434,7 +434,7 @@ apis:
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
   tags:
-  - Voices
+  - Voice
   tags_raw:
   - voices
   properties:
