@@ -1,0 +1,69 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-09-20'
+method: searched
+source: https://www.ultravox.ai/pricing
+sources:
+- https://www.ultravox.ai/pricing
+- https://ultravox.ai/pricing
+provenance:
+  tool: planning/api-economics/harvest_pricing.py
+  run: 20260920T120546
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: usage-other
+published: true
+note: Per-minute voice usage pricing with monthly tiers; Enterprise is custom. PRICES MARKED AS ANNUAL
+  RATE noted on page.
+plan_count: 7
+currency: USD
+plans:
+- name: Pay as You go
+  price_text: $0 /month
+  price: 0
+  currency: USD
+  period: month
+  unit: month
+  included_quota: 30 minutes of free calls; Unlimited playground calls; Up to 5 concurrent calls; 1 custom
+    voice clone; 2 corpora (RAG)
+  overage: $0.05 per minute after
+- name: Pro
+  price_text: $100 /month
+  price: 100
+  currency: USD
+  period: month
+  unit: month
+  included_quota: Everything in Pay As You Go plus no hard caps on concurrency, Outbound Call Scheduler,
+    5 custom voices, 20 corpora for RAG, 30 free minutes
+  overage: $0.05 per minute
+- name: Enterprise
+  price_text: Custom
+  period: none
+  included_quota: Priority SLA, Org support, Customizable everything
+- name: SIP Pricing (Pay As You Go)
+  price_text: .5¢ per minute
+  price: 0.5
+  currency: USD
+  period: per-use
+  unit: minute
+- name: SIP Pricing (Pro)
+  price_text: .48¢ per minute
+  price: 0.48
+  currency: USD
+  period: per-use
+  unit: minute
+- name: Threads Pricing - input
+  price_text: $2.00 per 1M input tokens (uncached)
+  price: 2
+  currency: USD
+  period: per-use
+  unit: 1M input tokens
+  included_quota: No charge for cached input tokens
+- name: Threads Pricing - output
+  price_text: $15.00 per 1M output tokens
+  price: 15
+  currency: USD
+  period: per-use
+  unit: 1M output tokens
+rate_limit_statements:
+- Up to 5 concurrent calls
+- Hard Cap on Concurrent Calls 5
