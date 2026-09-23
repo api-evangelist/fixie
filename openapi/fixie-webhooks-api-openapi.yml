@@ -1,12 +1,12 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Ultravox accounts webhooks API
+  title: Ultravox Webhooks API
   version: 0.1.0
   description: API for the Ultravox service.
 servers:
 - url: https://api.ultravox.ai
 tags:
-- name: webhooks
+- name: Webhooks
 paths:
   /api/webhooks:
     get:
@@ -15,9 +15,10 @@ paths:
       - in: query
         name: agentId
         schema:
-          type: string
+          type:
+          - string
+          - 'null'
           format: uuid
-          nullable: true
         description: Filter webhooks by agent ID.
       - name: cursor
         required: false
@@ -32,7 +33,7 @@ paths:
         schema:
           type: integer
       tags:
-      - webhooks
+      - Webhooks
       security:
       - apiKeyAuth: []
       responses:
@@ -42,10 +43,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/PaginatedWebhookList'
           description: ''
+      summary: Webhooks list
+      x-summary-source: derived
     post:
       operationId: webhooks_create
       tags:
-      - webhooks
+      - Webhooks
       requestBody:
         content:
           application/json:
@@ -61,6 +64,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Webhook'
           description: ''
+      summary: Webhooks create
+      x-summary-source: derived
   /api/webhooks/{webhook_id}:
     get:
       operationId: webhooks_retrieve
@@ -72,7 +77,7 @@ paths:
           format: uuid
         required: true
       tags:
-      - webhooks
+      - Webhooks
       security:
       - apiKeyAuth: []
       responses:
@@ -82,6 +87,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Webhook'
           description: ''
+      summary: Webhooks retrieve
+      x-summary-source: derived
     put:
       operationId: webhooks_update
       parameters:
@@ -92,7 +99,7 @@ paths:
           format: uuid
         required: true
       tags:
-      - webhooks
+      - Webhooks
       requestBody:
         content:
           application/json:
@@ -108,6 +115,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Webhook'
           description: ''
+      summary: Webhooks update
+      x-summary-source: derived
     patch:
       operationId: webhooks_partial_update
       parameters:
@@ -118,7 +127,7 @@ paths:
           format: uuid
         required: true
       tags:
-      - webhooks
+      - Webhooks
       requestBody:
         content:
           application/json:
@@ -133,6 +142,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Webhook'
           description: ''
+      summary: Webhooks partial update
+      x-summary-source: derived
     delete:
       operationId: webhooks_destroy
       parameters:
@@ -143,14 +154,30 @@ paths:
           format: uuid
         required: true
       tags:
-      - webhooks
+      - Webhooks
       security:
       - apiKeyAuth: []
       responses:
         '204':
           description: No response body
+      summary: Webhooks destroy
+      x-summary-source: derived
 components:
   schemas:
+    EventsEnum:
+      enum:
+      - call.started
+      - call.joined
+      - call.ended
+      - call.billed
+      type: string
+      description: '* `call.started` - Fired when a call starts
+
+        * `call.joined` - Fired when a call is joined
+
+        * `call.ended` - Fired when a call ends
+
+        * `call.billed` - Fired when a call is billed'
     Webhook:
       type: object
       properties:
@@ -159,9 +186,10 @@ components:
           format: uuid
           readOnly: true
         agentId:
-          type: string
+          type:
+          - string
+          - 'null'
           format: uuid
-          nullable: true
           description: If set, this webhook will be limited to calls with this agent.
         created:
           type: string
@@ -185,10 +213,11 @@ components:
           - $ref: '#/components/schemas/WebhookStatusEnum'
           readOnly: true
         lastStatusChange:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
           readOnly: true
-          nullable: true
         recentFailures:
           type: array
           items:
@@ -203,20 +232,6 @@ components:
       - status
       - url
       - webhookId
-    EventsEnum:
-      enum:
-      - call.started
-      - call.joined
-      - call.ended
-      - call.billed
-      type: string
-      description: '* `call.started` - Fired when a call starts
-
-        * `call.joined` - Fired when a call is joined
-
-        * `call.ended` - Fired when a call ends
-
-        * `call.billed` - Fired when a call is billed'
     WebhookStatusEnum:
       enum:
       - normal
@@ -242,13 +257,15 @@ components:
       - results
       properties:
         next:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           format: uri
           example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
         previous:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           format: uri
           example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
         results:
@@ -266,9 +283,10 @@ components:
           format: uuid
           readOnly: true
         agentId:
-          type: string
+          type:
+          - string
+          - 'null'
           format: uuid
-          nullable: true
           description: If set, this webhook will be limited to calls with this agent.
         created:
           type: string
@@ -292,10 +310,11 @@ components:
           - $ref: '#/components/schemas/WebhookStatusEnum'
           readOnly: true
         lastStatusChange:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
           readOnly: true
-          nullable: true
         recentFailures:
           type: array
           items:

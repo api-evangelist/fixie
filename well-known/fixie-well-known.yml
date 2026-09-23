@@ -1,23 +1,24 @@
 generated: '2026-07-19'
 method: searched
 host: https://api.ultravox.ai
-note: >-
-  Probed the standard /.well-known discovery surface on api.ultravox.ai and
-  ultravox.ai. None are published (all 404). Absence is recorded as valid data;
-  no WellKnown/SecurityTxt pointer is wired because nothing returned 200.
-documents:
-- path: /.well-known/security.txt
-  host: api.ultravox.ai
-  status: 404
-- path: /.well-known/security.txt
-  host: ultravox.ai
-  status: 404
-- path: /.well-known/openid-configuration
-  host: api.ultravox.ai
-  status: 404
-- path: /.well-known/oauth-authorization-server
-  host: api.ultravox.ai
-  status: 404
-- path: /.well-known/api-catalog
-  host: api.ultravox.ai
-  status: 404
+note: Probed the standard /.well-known discovery surface on api.ultravox.ai and ultravox.ai. None are
+  published (all 404). Absence is recorded as valid data; no WellKnown/SecurityTxt pointer is wired because
+  nothing returned 200.
+hosts:
+- host: https://api.ultravox.ai
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.

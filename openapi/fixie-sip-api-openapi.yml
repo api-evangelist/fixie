@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Ultravox accounts sip API
+  title: Ultravox Sip API
   version: 0.1.0
   description: API for the Ultravox service.
 servers:
@@ -22,6 +22,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SipConfig'
           description: ''
+      summary: Sip retrieve
+      x-summary-source: derived
     patch:
       operationId: sip_partial_update
       tags:
@@ -40,6 +42,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SipConfig'
           description: ''
+      summary: Sip partial update
+      x-summary-source: derived
   /api/sip/registrations:
     get:
       operationId: sip_registrations_list
@@ -67,6 +71,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/PaginatedSipRegistrationList'
           description: ''
+      summary: Sip registrations list
+      x-summary-source: derived
     post:
       operationId: sip_registrations_create
       tags:
@@ -86,6 +92,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SipRegistration'
           description: ''
+      summary: Sip registrations create
+      x-summary-source: derived
   /api/sip/registrations/{registration_id}:
     get:
       operationId: sip_registrations_retrieve
@@ -106,6 +114,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SipRegistration'
           description: ''
+      summary: Sip registrations retrieve
+      x-summary-source: derived
     patch:
       operationId: sip_registrations_partial_update
       parameters:
@@ -130,6 +140,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SipRegistration'
           description: ''
+      summary: Sip registrations partial update
+      x-summary-source: derived
     delete:
       operationId: sip_registrations_destroy
       parameters:
@@ -145,8 +157,34 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Sip registrations destroy
+      x-summary-source: derived
 components:
   schemas:
+    PaginatedSipRegistrationList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/SipRegistration'
+        total:
+          type: integer
+          example: 123
     PatchedSipRegistration:
       type: object
       properties:
@@ -170,20 +208,110 @@ components:
           description: The SIP server to register with.
           maxLength: 100
         outboundProxy:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: A proxy used to reach your SIP server for registration. Most often unset, but may be used if you need to register as `alice@trunk.com` using `proxy.trunk.com` for example.
           maxLength: 100
         authUser:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: The authentication username, if different from the SIP username. Most often unset.
           maxLength: 60
         successful:
-          type: boolean
-          nullable: true
+          type:
+          - boolean
+          - 'null'
           readOnly: true
           description: Whether the registration was successfully created and is now active. May be null if status is not available yet.
+    PatchedSipConfig:
+      type: object
+      properties:
+        allowedCidrRanges:
+          type: array
+          items:
+            type: string
+            format: ipv4-cidr
+          description: The list of IPv4 CIDR ranges from which incoming SIP calls will be accepted.
+        allowAllAgents:
+          type: boolean
+          default: false
+          description: If true, adds an implicit allowance for requests matching agent_<agent_id>@<anydomain> for any of your agents.
+        allowedAgents:
+          type: array
+          items:
+            $ref: '#/components/schemas/AgentAllowance'
+          description: Calls must match a pattern for one of these agents (or the global agent pattern if allowAllAgents is true) to be accepted.
+          maxItems: 20
+        fallbackHandler:
+          allOf:
+          - $ref: '#/components/schemas/FallbackHandler'
+          description: If set, this webhook is consulted for any incoming SIP call that does not match an agent allowance (including the allowAllAgents allowance if set). The endpoint must respond promptly with a 200 status and a JSON body with exactly one of startAgentCall, startCall, or reject. The first two use the request body for the associated call creation endpoints plus agentId in the former case, while reject may include `sipRejectCode` (default 603) to pass along to the caller.
+        domain:
+          type: string
+          readOnly: true
+          description: The domain used for SIP invites for your account.
+    AgentAllowance:
+      type: object
+      properties:
+        agentId:
+          type: string
+          format: uuid
+          description: The ID of the agent to allow.
+        toUserPattern:
+          type: string
+          description: A pattern to apply to the to user part of the URI of any incoming sip INVITE that determines how this agent can be reached. Defaults to ^agent_<agent_id>$ if not specified.
+          maxLength: 200
+      required:
+      - agentId
+    FallbackHandler:
+      type: object
+      properties:
+        url:
+          type: string
+          format: uri
+          description: The URL to which POSTs will be sent.
+        secrets:
+          type: array
+          items:
+            type: string
+            maxLength: 120
+          description: Shared secrets used to sign requests. A strong secret is auto-generated if omitted.
+          maxItems: 10
+          minItems: 1
+      required:
+      - url
+    SipConfig:
+      type: object
+      properties:
+        allowedCidrRanges:
+          type: array
+          items:
+            type: string
+            format: ipv4-cidr
+          description: The list of IPv4 CIDR ranges from which incoming SIP calls will be accepted.
+        allowAllAgents:
+          type: boolean
+          default: false
+          description: If true, adds an implicit allowance for requests matching agent_<agent_id>@<anydomain> for any of your agents.
+        allowedAgents:
+          type: array
+          items:
+            $ref: '#/components/schemas/AgentAllowance'
+          description: Calls must match a pattern for one of these agents (or the global agent pattern if allowAllAgents is true) to be accepted.
+          maxItems: 20
+        fallbackHandler:
+          allOf:
+          - $ref: '#/components/schemas/FallbackHandler'
+          description: If set, this webhook is consulted for any incoming SIP call that does not match an agent allowance (including the allowAllAgents allowance if set). The endpoint must respond promptly with a 200 status and a JSON body with exactly one of startAgentCall, startCall, or reject. The first two use the request body for the associated call creation endpoints plus agentId in the former case, while reject may include `sipRejectCode` (default 603) to pass along to the caller.
+        domain:
+          type: string
+          readOnly: true
+          description: The domain used for SIP invites for your account.
+      required:
+      - allowedAgents
+      - domain
     SipRegistration:
       type: object
       properties:
@@ -207,18 +335,21 @@ components:
           description: The SIP server to register with.
           maxLength: 100
         outboundProxy:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: A proxy used to reach your SIP server for registration. Most often unset, but may be used if you need to register as `alice@trunk.com` using `proxy.trunk.com` for example.
           maxLength: 100
         authUser:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: The authentication username, if different from the SIP username. Most often unset.
           maxLength: 60
         successful:
-          type: boolean
-          nullable: true
+          type:
+          - boolean
+          - 'null'
           readOnly: true
           description: Whether the registration was successfully created and is now active. May be null if status is not available yet.
       required:
@@ -228,117 +359,6 @@ components:
       - registrationId
       - successful
       - username
-    SipConfig:
-      type: object
-      properties:
-        allowedCidrRanges:
-          type: array
-          items:
-            type: string
-            format: ipv4-cidr
-          description: The list of IPv4 CIDR ranges from which incoming SIP calls will be accepted.
-        allowAllAgents:
-          type: boolean
-          default: false
-          description: If true, adds an implicit allowance for requests matching agent_<agent_id>@<anydomain> for any of your agents.
-        allowedAgents:
-          type: array
-          items:
-            $ref: '#/components/schemas/AgentAllowance'
-          description: Calls must match a pattern for one of these agents (or the global agent pattern if allowAllAgents is true) to be accepted.
-          maxItems: 20
-        fallbackHandler:
-          allOf:
-          - $ref: '#/components/schemas/FallbackHandler'
-          nullable: true
-          description: If set, this webhook is consulted for any incoming SIP call that does not match an agent allowance (including the allowAllAgents allowance if set). The endpoint must respond promptly with a 200 status and a JSON body with exactly one of startAgentCall, startCall, or reject. The first two use the request body for the associated call creation endpoints plus agentId in the former case, while reject may include `sipRejectCode` (default 603) to pass along to the caller.
-        domain:
-          type: string
-          readOnly: true
-          description: The domain used for SIP invites for your account.
-      required:
-      - allowedAgents
-      - domain
-    PaginatedSipRegistrationList:
-      type: object
-      required:
-      - results
-      properties:
-        next:
-          type: string
-          nullable: true
-          format: uri
-          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
-        previous:
-          type: string
-          nullable: true
-          format: uri
-          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/SipRegistration'
-        total:
-          type: integer
-          example: 123
-    AgentAllowance:
-      type: object
-      properties:
-        agentId:
-          type: string
-          format: uuid
-          description: The ID of the agent to allow.
-        toUserPattern:
-          type: string
-          description: A pattern to apply to the to user part of the URI of any incoming sip INVITE that determines how this agent can be reached. Defaults to ^agent_<agent_id>$ if not specified.
-          maxLength: 200
-      required:
-      - agentId
-    PatchedSipConfig:
-      type: object
-      properties:
-        allowedCidrRanges:
-          type: array
-          items:
-            type: string
-            format: ipv4-cidr
-          description: The list of IPv4 CIDR ranges from which incoming SIP calls will be accepted.
-        allowAllAgents:
-          type: boolean
-          default: false
-          description: If true, adds an implicit allowance for requests matching agent_<agent_id>@<anydomain> for any of your agents.
-        allowedAgents:
-          type: array
-          items:
-            $ref: '#/components/schemas/AgentAllowance'
-          description: Calls must match a pattern for one of these agents (or the global agent pattern if allowAllAgents is true) to be accepted.
-          maxItems: 20
-        fallbackHandler:
-          allOf:
-          - $ref: '#/components/schemas/FallbackHandler'
-          nullable: true
-          description: If set, this webhook is consulted for any incoming SIP call that does not match an agent allowance (including the allowAllAgents allowance if set). The endpoint must respond promptly with a 200 status and a JSON body with exactly one of startAgentCall, startCall, or reject. The first two use the request body for the associated call creation endpoints plus agentId in the former case, while reject may include `sipRejectCode` (default 603) to pass along to the caller.
-        domain:
-          type: string
-          readOnly: true
-          description: The domain used for SIP invites for your account.
-    FallbackHandler:
-      type: object
-      properties:
-        url:
-          type: string
-          format: uri
-          description: The URL to which POSTs will be sent.
-        secrets:
-          type: array
-          items:
-            type: string
-            maxLength: 120
-          description: Shared secrets used to sign requests. A strong secret is auto-generated if omitted.
-          maxItems: 10
-          minItems: 1
-      required:
-      - url
   securitySchemes:
     apiKeyAuth:
       type: apiKey

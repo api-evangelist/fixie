@@ -1,12 +1,12 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Ultravox accounts models API
+  title: Ultravox Models API
   version: 0.1.0
   description: API for the Ultravox service.
 servers:
 - url: https://api.ultravox.ai
 tags:
-- name: models
+- name: Models
 paths:
   /api/models:
     get:
@@ -25,7 +25,7 @@ paths:
         schema:
           type: integer
       tags:
-      - models
+      - Models
       security:
       - apiKeyAuth: []
       responses:
@@ -35,30 +35,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/PaginatedModelAliasList'
           description: ''
+      summary: Models list
+      x-summary-source: derived
 components:
   schemas:
-    ModelAlias:
-      type: object
-      properties:
-        name:
-          type: string
-          readOnly: true
-          description: The alias name.
-      required:
-      - name
     PaginatedModelAliasList:
       type: object
       required:
       - results
       properties:
         next:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           format: uri
           example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
         previous:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           format: uri
           example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
         results:
@@ -68,6 +63,15 @@ components:
         total:
           type: integer
           example: 123
+    ModelAlias:
+      type: object
+      properties:
+        name:
+          type: string
+          readOnly: true
+          description: The alias name.
+      required:
+      - name
   securitySchemes:
     apiKeyAuth:
       type: apiKey

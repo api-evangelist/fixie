@@ -1,0 +1,32 @@
+# Front Door AI Index — fixie — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: fixie
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: ultravox.ai
+  final_host: www.ultravox.ai
+  ownership: own
+  owner: fixie
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 44
+  host_score: 44
+  density: 34.89
+  words: 1261
+  tiers:
+    agentic: 12
+    core: 32
+    model: 0
+  ambiguous: 28
+  top_terms:
+    AI: 28
+    agent: 14
+    intelligence: 12
+    inference: 6
+    AI agent: 4
+    LLMs: 4
+    agentic: 2
+    smart: 2

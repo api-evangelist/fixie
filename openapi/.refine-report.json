@@ -1,20 +1,7 @@
 {
   "provider": "fixie",
   "sources": [
-    "fixie-accounts-api-openapi.yml",
-    "fixie-agents-api-openapi.yml",
-    "fixie-api-keys-api-openapi.yml",
-    "fixie-call-throttles-api-openapi.yml",
-    "fixie-calls-api-openapi.yml",
-    "fixie-corpora-api-openapi.yml",
-    "fixie-deleted-calls-api-openapi.yml",
-    "fixie-models-api-openapi.yml",
-    "fixie-schema-api-openapi.yml",
-    "fixie-sip-api-openapi.yml",
-    "fixie-telephony-configs-api-openapi.yml",
-    "fixie-tools-api-openapi.yml",
-    "fixie-voices-api-openapi.yml",
-    "fixie-webhooks-api-openapi.yml"
+    "_original/fixie-ultravox-openapi-original.yml"
   ],
   "outputs": [
     "fixie-accounts-api-openapi.yml",
@@ -35,6 +22,39 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "fixie-ultravox-openapi-original.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "fixie-ultravox-openapi-original.yml: declared missing tag: accounts",
+    "fixie-ultravox-openapi-original.yml: declared missing tag: agents",
+    "fixie-ultravox-openapi-original.yml: declared missing tag: api_keys",
+    "fixie-ultravox-openapi-original.yml: declared missing tag: call_throttles",
+    "fixie-ultravox-openapi-original.yml: declared missing tag: calls",
+    "fixie-ultravox-openapi-original.yml: declared missing tag: corpora",
+    "fixie-ultravox-openapi-original.yml: declared missing tag: deleted_calls",
+    "fixie-ultravox-openapi-original.yml: declared missing tag: models",
+    "fixie-ultravox-openapi-original.yml: declared missing tag: schema",
+    "fixie-ultravox-openapi-original.yml: declared missing tag: sip",
+    "fixie-ultravox-openapi-original.yml: declared missing tag: telephony_configs",
+    "fixie-ultravox-openapi-original.yml: declared missing tag: tools",
+    "fixie-ultravox-openapi-original.yml: declared missing tag: voices",
+    "fixie-ultravox-openapi-original.yml: declared missing tag: webhooks",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "fixie-accounts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fixie-agents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fixie-api-keys-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fixie-call-throttles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fixie-calls-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fixie-corpora-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fixie-deleted-calls-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fixie-models-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fixie-schema-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fixie-sip-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fixie-telephony-configs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fixie-tools-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fixie-voices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fixie-webhooks-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Ultravox accounts deleted_calls API
+  title: Ultravox Deleted Calls API
   version: 0.1.0
   description: API for the Ultravox service.
 servers:
@@ -98,6 +98,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/PaginatedCallTombstoneList'
           description: ''
+      summary: Deleted calls list
+      x-summary-source: derived
   /api/deleted_calls/{call_id}:
     get:
       operationId: deleted_calls_retrieve
@@ -119,8 +121,34 @@ paths:
               schema:
                 $ref: '#/components/schemas/CallTombstone'
           description: ''
+      summary: Deleted calls retrieve
+      x-summary-source: derived
 components:
   schemas:
+    PaginatedCallTombstoneList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/CallTombstone'
+        total:
+          type: integer
+          example: 123
     EndReasonEnum:
       enum:
       - unjoined
@@ -144,28 +172,6 @@ components:
     NullEnum:
       enum:
       - null
-    PaginatedCallTombstoneList:
-      type: object
-      required:
-      - results
-      properties:
-        next:
-          type: string
-          nullable: true
-          format: uri
-          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
-        previous:
-          type: string
-          nullable: true
-          format: uri
-          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/CallTombstone'
-        total:
-          type: integer
-          example: 123
     CallTombstone:
       type: object
       properties:
@@ -185,19 +191,20 @@ components:
           format: date-time
           readOnly: true
         joined:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         ended:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         maxDuration:
           type: string
           default: 3600s
         endReason:
           readOnly: true
-          nullable: true
           description: 'The reason the call ended.
 
 
