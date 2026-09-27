@@ -164,20 +164,30 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    EventsEnum:
-      enum:
-      - call.started
-      - call.joined
-      - call.ended
-      - call.billed
-      type: string
-      description: '* `call.started` - Fired when a call starts
-
-        * `call.joined` - Fired when a call is joined
-
-        * `call.ended` - Fired when a call ends
-
-        * `call.billed` - Fired when a call is billed'
+    PaginatedWebhookList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Webhook'
+        total:
+          type: integer
+          example: 123
     Webhook:
       type: object
       properties:
@@ -232,49 +242,20 @@ components:
       - status
       - url
       - webhookId
-    WebhookStatusEnum:
+    EventsEnum:
       enum:
-      - normal
-      - unhealthy
+      - call.started
+      - call.joined
+      - call.ended
+      - call.billed
       type: string
-      description: '* `normal` - NORMAL
+      description: '* `call.started` - Fired when a call starts
 
-        * `unhealthy` - UNHEALTHY'
-    WebhookFailure:
-      type: object
-      properties:
-        timestamp:
-          type: string
-          format: date-time
-        failure:
-          type: string
-      required:
-      - failure
-      - timestamp
-    PaginatedWebhookList:
-      type: object
-      required:
-      - results
-      properties:
-        next:
-          type:
-          - string
-          - 'null'
-          format: uri
-          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
-        previous:
-          type:
-          - string
-          - 'null'
-          format: uri
-          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Webhook'
-        total:
-          type: integer
-          example: 123
+        * `call.joined` - Fired when a call is joined
+
+        * `call.ended` - Fired when a call ends
+
+        * `call.billed` - Fired when a call is billed'
     PatchedWebhook:
       type: object
       properties:
@@ -321,6 +302,25 @@ components:
             $ref: '#/components/schemas/WebhookFailure'
           readOnly: true
           description: A list of recent failures for this webhook, if any.
+    WebhookStatusEnum:
+      enum:
+      - normal
+      - unhealthy
+      type: string
+      description: '* `normal` - NORMAL
+
+        * `unhealthy` - UNHEALTHY'
+    WebhookFailure:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        failure:
+          type: string
+      required:
+      - failure
+      - timestamp
   securitySchemes:
     apiKeyAuth:
       type: apiKey

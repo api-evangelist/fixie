@@ -331,7 +331,69 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    DailyCallStatistics:
+    ConcurrencyBucket:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+          description: Start of the time bucket
+        maxTotalCalls:
+          type: integer
+          description: Peak total active calls in this bucket
+        maxJoinedCalls:
+          type: integer
+          description: Peak joined calls in this bucket
+        avgTotalCalls:
+          type: number
+          format: double
+          description: Average total active calls in this bucket
+        avgJoinedCalls:
+          type: number
+          format: double
+          description: Average joined calls in this bucket
+      required:
+      - avgJoinedCalls
+      - avgTotalCalls
+      - maxJoinedCalls
+      - maxTotalCalls
+      - timestamp
+    KeyPrefix:
+      type: object
+      properties:
+        prefix:
+          type: string
+          description: The prefix of the API key.
+      required:
+      - prefix
+    AccountTtsKeys:
+      type: object
+      properties:
+        elevenLabs:
+          allOf:
+          - $ref: '#/components/schemas/KeyPrefix'
+          description: The ElevenLabs API key.
+        cartesia:
+          allOf:
+          - $ref: '#/components/schemas/KeyPrefix'
+          description: The Cartesia API key.
+        lmnt:
+          allOf:
+          - $ref: '#/components/schemas/KeyPrefix'
+          description: The LMNT API key.
+        google:
+          allOf:
+          - $ref: '#/components/schemas/KeyPrefix'
+          description: The Google service account key.
+        inworld:
+          allOf:
+          - $ref: '#/components/schemas/KeyPrefix'
+          description: The Inworld API key.
+        respeecher:
+          allOf:
+          - $ref: '#/components/schemas/KeyPrefix'
+          description: The Respeecher API key.
+    HourlyCallStatistics:
       type: object
       properties:
         totalCount:
@@ -353,14 +415,84 @@ components:
         date:
           type: string
           format: date
-          description: Date of usage
+          description: Date of the bucket
+        hour:
+          type: integer
+          description: Hour of day (0-23) UTC
       required:
       - billedMinutes
       - date
       - duration
       - errorCount
+      - hour
       - joinedCount
       - totalCount
+    TelnyxConfig:
+      type: object
+      properties:
+        callCreationAllowedAgentIds:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: List of agents for whom calls may be directly created by this telephony provider to facilitate incoming calls. May not be set if callCreationAllowAllAgents is true.
+          maxItems: 100
+        callCreationAllowAllAgents:
+          type: boolean
+          default: false
+          description: If true, calls may be directly created by this telephony provider for all agents. If false, only agents listed in callCreationAllowedAgentIds are allowed.
+        requestContextMapping:
+          type: object
+          additionalProperties:
+            type: string
+          description: Maps (dot separated) request fields to (dot separated) context fields for incoming call creation.
+        accountSid:
+          type: string
+          description: Your Telnyx Account SID. See https://portal.telnyx.com/#/account/general
+        apiKey:
+          type: string
+          writeOnly: true
+          description: Your Telnyx API Key. See https://portal.telnyx.com/#/api-keys
+        apiKeyPrefix:
+          allOf:
+          - $ref: '#/components/schemas/KeyPrefix'
+          readOnly: true
+          description: The prefix of your Telnyx API Key.
+        publicKey:
+          type: string
+          writeOnly: true
+          description: Your Telnyx Public Key. See https://portal.telnyx.com/#/api-keys/public-key
+        publicKeyPrefix:
+          allOf:
+          - $ref: '#/components/schemas/KeyPrefix'
+          readOnly: true
+          description: The prefix of your Telnyx Public Key.
+        applicationSid:
+          type: string
+          description: Your Telnyx Application SID. This must be configured with an Outbound Voice Profile that allows calls to your destination. See https://portal.telnyx.com/#/call-control/texml
+          maxLength: 40
+      required:
+      - accountSid
+      - apiKey
+      - apiKeyPrefix
+      - applicationSid
+      - publicKey
+      - publicKeyPrefix
+    AccountTelephonyConfig:
+      type: object
+      properties:
+        twilio:
+          allOf:
+          - $ref: '#/components/schemas/TwilioConfig'
+          description: Your Twilio configuration. See https://console.twilio.com/
+        telnyx:
+          allOf:
+          - $ref: '#/components/schemas/TelnyxConfig'
+          description: Your Telnyx configuration. See https://portal.telnyx.com/
+        plivo:
+          allOf:
+          - $ref: '#/components/schemas/PlivoConfig'
+          description: Your Plivo configuration. See https://console.plivo.com/dashboard/
     AccountBillingInfo:
       type: object
       properties:
@@ -397,6 +529,164 @@ components:
         * `subscription_threshold` - subscription_threshold
 
         * `subscription_update` - subscription_update'
+    PlivoConfig:
+      type: object
+      properties:
+        callCreationAllowedAgentIds:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: List of agents for whom calls may be directly created by this telephony provider to facilitate incoming calls. May not be set if callCreationAllowAllAgents is true.
+          maxItems: 100
+        callCreationAllowAllAgents:
+          type: boolean
+          default: false
+          description: If true, calls may be directly created by this telephony provider for all agents. If false, only agents listed in callCreationAllowedAgentIds are allowed.
+        requestContextMapping:
+          type: object
+          additionalProperties:
+            type: string
+          description: Maps (dot separated) request fields to (dot separated) context fields for incoming call creation.
+        authId:
+          type: string
+          description: Your Plivo Auth ID.
+        authToken:
+          type: string
+          writeOnly: true
+          description: Your Plivo Auth Token.
+        authTokenPrefix:
+          allOf:
+          - $ref: '#/components/schemas/KeyPrefix'
+          readOnly: true
+          description: The prefix of your Plivo Auth Token.
+      required:
+      - authId
+      - authToken
+      - authTokenPrefix
+    PatchedAccountTelephonyConfig:
+      type: object
+      properties:
+        twilio:
+          allOf:
+          - $ref: '#/components/schemas/TwilioConfig'
+          description: Your Twilio configuration. See https://console.twilio.com/
+        telnyx:
+          allOf:
+          - $ref: '#/components/schemas/TelnyxConfig'
+          description: Your Telnyx configuration. See https://portal.telnyx.com/
+        plivo:
+          allOf:
+          - $ref: '#/components/schemas/PlivoConfig'
+          description: Your Plivo configuration. See https://console.plivo.com/dashboard/
+    CallUsage:
+      type: object
+      properties:
+        allTime:
+          allOf:
+          - $ref: '#/components/schemas/CallStatistics'
+          description: All-time call usage
+        daily:
+          type: array
+          items:
+            $ref: '#/components/schemas/DailyCallStatistics'
+          description: Call usage per day
+        hourly:
+          type: array
+          items:
+            $ref: '#/components/schemas/HourlyCallStatistics'
+          description: Call counts by date and hour
+      required:
+      - allTime
+      - daily
+      - hourly
+    CallStatistics:
+      type: object
+      properties:
+        totalCount:
+          type: integer
+          description: Total number of calls
+        errorCount:
+          type: integer
+          description: Number of calls that ended in error
+        duration:
+          type: string
+          description: Total duration of all calls
+        joinedCount:
+          type: integer
+          description: Number of calls that were joined
+        billedMinutes:
+          type: number
+          format: double
+          description: Total billed minutes.
+      required:
+      - billedMinutes
+      - duration
+      - errorCount
+      - joinedCount
+      - totalCount
+    Invoice:
+      type: object
+      properties:
+        invoiceDate:
+          type: string
+          format: date-time
+          readOnly: true
+          description: When the invoice became effective.
+        amount:
+          type: integer
+          readOnly: true
+        billingReason:
+          allOf:
+          - $ref: '#/components/schemas/BillingReasonEnum'
+          readOnly: true
+        invoiceNumber:
+          type: string
+          readOnly: true
+        invoiceStatus:
+          allOf:
+          - $ref: '#/components/schemas/InvoiceStatusEnum'
+          readOnly: true
+        invoiceUrl:
+          type: string
+          format: uri
+      required:
+      - amount
+      - billingReason
+      - invoiceDate
+      - invoiceNumber
+      - invoiceStatus
+      - invoiceUrl
+    DailyCallStatistics:
+      type: object
+      properties:
+        totalCount:
+          type: integer
+          description: Total number of calls
+        errorCount:
+          type: integer
+          description: Number of calls that ended in error
+        duration:
+          type: string
+          description: Total duration of all calls
+        joinedCount:
+          type: integer
+          description: Number of calls that were joined
+        billedMinutes:
+          type: number
+          format: double
+          description: Total billed minutes.
+        date:
+          type: string
+          format: date
+          description: Date of usage
+      required:
+      - billedMinutes
+      - date
+      - duration
+      - errorCount
+      - joinedCount
+      - totalCount
     InvoiceStatusEnum:
       enum:
       - paid
@@ -405,25 +695,51 @@ components:
       description: '* `paid` - paid
 
         * `unpaid` - unpaid'
-    BillingUsageDay:
+    ConcurrencyResponse:
       type: object
       properties:
-        date:
-          type: string
-          format: date
-          description: The date (UTC) of the usage.
-        minutes:
-          type: number
-          format: double
-          description: Total minutes billed on this date.
-        sipMinutes:
-          type: number
-          format: double
-          description: Total SIP minutes billed on this date.
+        timeSeries:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConcurrencyBucket'
+          description: Concurrency over time
       required:
-      - date
-      - minutes
-      - sipMinutes
+      - timeSeries
+    TwilioConfig:
+      type: object
+      properties:
+        callCreationAllowedAgentIds:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: List of agents for whom calls may be directly created by this telephony provider to facilitate incoming calls. May not be set if callCreationAllowAllAgents is true.
+          maxItems: 100
+        callCreationAllowAllAgents:
+          type: boolean
+          default: false
+          description: If true, calls may be directly created by this telephony provider for all agents. If false, only agents listed in callCreationAllowedAgentIds are allowed.
+        requestContextMapping:
+          type: object
+          additionalProperties:
+            type: string
+          description: Maps (dot separated) request fields to (dot separated) context fields for incoming call creation.
+        accountSid:
+          type: string
+          description: Your Twilio Account SID.
+        authToken:
+          type: string
+          writeOnly: true
+          description: Your Twilio Auth Token.
+        authTokenPrefix:
+          allOf:
+          - $ref: '#/components/schemas/KeyPrefix'
+          readOnly: true
+          description: The prefix of your Twilio Auth Token.
+      required:
+      - accountSid
+      - authToken
+      - authTokenPrefix
     Account:
       type: object
       properties:
@@ -519,129 +835,46 @@ components:
       - subscriptionRenewal
       - subscriptionScheduledUpdate
       - subscriptionTier
-    PatchedAccountTelephonyConfig:
+    UsageResponse:
       type: object
       properties:
-        twilio:
-          allOf:
-          - $ref: '#/components/schemas/TwilioConfig'
-          description: Your Twilio configuration. See https://console.twilio.com/
-        telnyx:
-          allOf:
-          - $ref: '#/components/schemas/TelnyxConfig'
-          description: Your Telnyx configuration. See https://portal.telnyx.com/
-        plivo:
-          allOf:
-          - $ref: '#/components/schemas/PlivoConfig'
-          description: Your Plivo configuration. See https://console.plivo.com/dashboard/
-    HourlyCallStatistics:
-      type: object
-      properties:
-        totalCount:
-          type: integer
-          description: Total number of calls
-        errorCount:
-          type: integer
-          description: Number of calls that ended in error
-        duration:
-          type: string
-          description: Total duration of all calls
-        joinedCount:
-          type: integer
-          description: Number of calls that were joined
-        billedMinutes:
+        dailyUsage:
+          type: array
+          items:
+            $ref: '#/components/schemas/BillingUsageDay'
+        totalMinutes:
           type: number
           format: double
-          description: Total billed minutes.
+          readOnly: true
+          description: Total billed usage within the requested period in minutes.
+        totalSipMinutes:
+          type: number
+          format: double
+          readOnly: true
+          description: Total billed SIP usage within the requested period in minutes.
+      required:
+      - dailyUsage
+      - totalMinutes
+      - totalSipMinutes
+    BillingUsageDay:
+      type: object
+      properties:
         date:
           type: string
           format: date
-          description: Date of the bucket
-        hour:
-          type: integer
-          description: Hour of day (0-23) UTC
+          description: The date (UTC) of the usage.
+        minutes:
+          type: number
+          format: double
+          description: Total minutes billed on this date.
+        sipMinutes:
+          type: number
+          format: double
+          description: Total SIP minutes billed on this date.
       required:
-      - billedMinutes
       - date
-      - duration
-      - errorCount
-      - hour
-      - joinedCount
-      - totalCount
-    PaginatedInvoiceList:
-      type: object
-      properties:
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Invoice'
-        next:
-          type:
-          - string
-          - 'null'
-          format: uri
-          readOnly: true
-        previous:
-          type:
-          - string
-          - 'null'
-          format: uri
-          readOnly: true
-      required:
-      - next
-      - previous
-      - results
-    TelnyxConfig:
-      type: object
-      properties:
-        callCreationAllowedAgentIds:
-          type: array
-          items:
-            type: string
-            format: uuid
-          description: List of agents for whom calls may be directly created by this telephony provider to facilitate incoming calls. May not be set if callCreationAllowAllAgents is true.
-          maxItems: 100
-        callCreationAllowAllAgents:
-          type: boolean
-          default: false
-          description: If true, calls may be directly created by this telephony provider for all agents. If false, only agents listed in callCreationAllowedAgentIds are allowed.
-        requestContextMapping:
-          type: object
-          additionalProperties:
-            type: string
-          description: Maps (dot separated) request fields to (dot separated) context fields for incoming call creation.
-        accountSid:
-          type: string
-          description: Your Telnyx Account SID. See https://portal.telnyx.com/#/account/general
-        apiKey:
-          type: string
-          writeOnly: true
-          description: Your Telnyx API Key. See https://portal.telnyx.com/#/api-keys
-        apiKeyPrefix:
-          allOf:
-          - $ref: '#/components/schemas/KeyPrefix'
-          readOnly: true
-          description: The prefix of your Telnyx API Key.
-        publicKey:
-          type: string
-          writeOnly: true
-          description: Your Telnyx Public Key. See https://portal.telnyx.com/#/api-keys/public-key
-        publicKeyPrefix:
-          allOf:
-          - $ref: '#/components/schemas/KeyPrefix'
-          readOnly: true
-          description: The prefix of your Telnyx Public Key.
-        applicationSid:
-          type: string
-          description: Your Telnyx Application SID. This must be configured with an Outbound Voice Profile that allows calls to your destination. See https://portal.telnyx.com/#/call-control/texml
-          maxLength: 40
-      required:
-      - accountSid
-      - apiKey
-      - apiKeyPrefix
-      - applicationSid
-      - publicKey
-      - publicKeyPrefix
+      - minutes
+      - sipMinutes
     PatchedSetTtsApiKeysRequest:
       type: object
       properties:
@@ -689,262 +922,29 @@ components:
           description: 'Your Respeecher API key.
 
             https://space.respeecher.com/api-keys'
-    TwilioConfig:
+    PaginatedInvoiceList:
       type: object
       properties:
-        callCreationAllowedAgentIds:
+        results:
           type: array
           items:
-            type: string
-            format: uuid
-          description: List of agents for whom calls may be directly created by this telephony provider to facilitate incoming calls. May not be set if callCreationAllowAllAgents is true.
-          maxItems: 100
-        callCreationAllowAllAgents:
-          type: boolean
-          default: false
-          description: If true, calls may be directly created by this telephony provider for all agents. If false, only agents listed in callCreationAllowedAgentIds are allowed.
-        requestContextMapping:
-          type: object
-          additionalProperties:
-            type: string
-          description: Maps (dot separated) request fields to (dot separated) context fields for incoming call creation.
-        accountSid:
-          type: string
-          description: Your Twilio Account SID.
-        authToken:
-          type: string
-          writeOnly: true
-          description: Your Twilio Auth Token.
-        authTokenPrefix:
-          allOf:
-          - $ref: '#/components/schemas/KeyPrefix'
-          readOnly: true
-          description: The prefix of your Twilio Auth Token.
-      required:
-      - accountSid
-      - authToken
-      - authTokenPrefix
-    ConcurrencyResponse:
-      type: object
-      properties:
-        timeSeries:
-          type: array
-          items:
-            $ref: '#/components/schemas/ConcurrencyBucket'
-          description: Concurrency over time
-      required:
-      - timeSeries
-    AccountTtsKeys:
-      type: object
-      properties:
-        elevenLabs:
-          allOf:
-          - $ref: '#/components/schemas/KeyPrefix'
-          description: The ElevenLabs API key.
-        cartesia:
-          allOf:
-          - $ref: '#/components/schemas/KeyPrefix'
-          description: The Cartesia API key.
-        lmnt:
-          allOf:
-          - $ref: '#/components/schemas/KeyPrefix'
-          description: The LMNT API key.
-        google:
-          allOf:
-          - $ref: '#/components/schemas/KeyPrefix'
-          description: The Google service account key.
-        inworld:
-          allOf:
-          - $ref: '#/components/schemas/KeyPrefix'
-          description: The Inworld API key.
-        respeecher:
-          allOf:
-          - $ref: '#/components/schemas/KeyPrefix'
-          description: The Respeecher API key.
-    UsageResponse:
-      type: object
-      properties:
-        dailyUsage:
-          type: array
-          items:
-            $ref: '#/components/schemas/BillingUsageDay'
-        totalMinutes:
-          type: number
-          format: double
-          readOnly: true
-          description: Total billed usage within the requested period in minutes.
-        totalSipMinutes:
-          type: number
-          format: double
-          readOnly: true
-          description: Total billed SIP usage within the requested period in minutes.
-      required:
-      - dailyUsage
-      - totalMinutes
-      - totalSipMinutes
-    PlivoConfig:
-      type: object
-      properties:
-        callCreationAllowedAgentIds:
-          type: array
-          items:
-            type: string
-            format: uuid
-          description: List of agents for whom calls may be directly created by this telephony provider to facilitate incoming calls. May not be set if callCreationAllowAllAgents is true.
-          maxItems: 100
-        callCreationAllowAllAgents:
-          type: boolean
-          default: false
-          description: If true, calls may be directly created by this telephony provider for all agents. If false, only agents listed in callCreationAllowedAgentIds are allowed.
-        requestContextMapping:
-          type: object
-          additionalProperties:
-            type: string
-          description: Maps (dot separated) request fields to (dot separated) context fields for incoming call creation.
-        authId:
-          type: string
-          description: Your Plivo Auth ID.
-        authToken:
-          type: string
-          writeOnly: true
-          description: Your Plivo Auth Token.
-        authTokenPrefix:
-          allOf:
-          - $ref: '#/components/schemas/KeyPrefix'
-          readOnly: true
-          description: The prefix of your Plivo Auth Token.
-      required:
-      - authId
-      - authToken
-      - authTokenPrefix
-    AccountTelephonyConfig:
-      type: object
-      properties:
-        twilio:
-          allOf:
-          - $ref: '#/components/schemas/TwilioConfig'
-          description: Your Twilio configuration. See https://console.twilio.com/
-        telnyx:
-          allOf:
-          - $ref: '#/components/schemas/TelnyxConfig'
-          description: Your Telnyx configuration. See https://portal.telnyx.com/
-        plivo:
-          allOf:
-          - $ref: '#/components/schemas/PlivoConfig'
-          description: Your Plivo configuration. See https://console.plivo.com/dashboard/
-    CallStatistics:
-      type: object
-      properties:
-        totalCount:
-          type: integer
-          description: Total number of calls
-        errorCount:
-          type: integer
-          description: Number of calls that ended in error
-        duration:
-          type: string
-          description: Total duration of all calls
-        joinedCount:
-          type: integer
-          description: Number of calls that were joined
-        billedMinutes:
-          type: number
-          format: double
-          description: Total billed minutes.
-      required:
-      - billedMinutes
-      - duration
-      - errorCount
-      - joinedCount
-      - totalCount
-    CallUsage:
-      type: object
-      properties:
-        allTime:
-          allOf:
-          - $ref: '#/components/schemas/CallStatistics'
-          description: All-time call usage
-        daily:
-          type: array
-          items:
-            $ref: '#/components/schemas/DailyCallStatistics'
-          description: Call usage per day
-        hourly:
-          type: array
-          items:
-            $ref: '#/components/schemas/HourlyCallStatistics'
-          description: Call counts by date and hour
-      required:
-      - allTime
-      - daily
-      - hourly
-    KeyPrefix:
-      type: object
-      properties:
-        prefix:
-          type: string
-          description: The prefix of the API key.
-      required:
-      - prefix
-    ConcurrencyBucket:
-      type: object
-      properties:
-        timestamp:
-          type: string
-          format: date-time
-          description: Start of the time bucket
-        maxTotalCalls:
-          type: integer
-          description: Peak total active calls in this bucket
-        maxJoinedCalls:
-          type: integer
-          description: Peak joined calls in this bucket
-        avgTotalCalls:
-          type: number
-          format: double
-          description: Average total active calls in this bucket
-        avgJoinedCalls:
-          type: number
-          format: double
-          description: Average joined calls in this bucket
-      required:
-      - avgJoinedCalls
-      - avgTotalCalls
-      - maxJoinedCalls
-      - maxTotalCalls
-      - timestamp
-    Invoice:
-      type: object
-      properties:
-        invoiceDate:
-          type: string
-          format: date-time
-          readOnly: true
-          description: When the invoice became effective.
-        amount:
-          type: integer
-          readOnly: true
-        billingReason:
-          allOf:
-          - $ref: '#/components/schemas/BillingReasonEnum'
-          readOnly: true
-        invoiceNumber:
-          type: string
-          readOnly: true
-        invoiceStatus:
-          allOf:
-          - $ref: '#/components/schemas/InvoiceStatusEnum'
-          readOnly: true
-        invoiceUrl:
-          type: string
+            $ref: '#/components/schemas/Invoice'
+        next:
+          type:
+          - string
+          - 'null'
           format: uri
+          readOnly: true
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+          readOnly: true
       required:
-      - amount
-      - billingReason
-      - invoiceDate
-      - invoiceNumber
-      - invoiceStatus
-      - invoiceUrl
+      - next
+      - previous
+      - results
   securitySchemes:
     apiKeyAuth:
       type: apiKey

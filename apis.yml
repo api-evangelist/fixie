@@ -56,7 +56,7 @@ tags:
 - Speech
 - Agents
 - Telephony
-- Machine-Learning
+- Machine Learning
 - SIP
 - Webhook
 tags_raw:
@@ -70,9 +70,10 @@ tags_raw:
 - Machine Learning
 - SIP
 - Webhooks
+- Machine-Learning
 apis:
 - aid: fixie:fixie-accounts-api
-  name: Fixie accounts API
+  name: Fixie Accounts API
   description: The accounts API from Fixie — 9 operation(s) for accounts.
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
@@ -102,7 +103,7 @@ apis:
   - type: Webhooks
     url: asyncapi/fixie-webhooks.yml
 - aid: fixie:fixie-agents-api
-  name: Fixie agents API
+  name: Fixie Agents API
   description: The agents API from Fixie — 9 operation(s) for agents.
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
@@ -132,7 +133,7 @@ apis:
   - type: Webhooks
     url: asyncapi/fixie-webhooks.yml
 - aid: fixie:fixie-api-keys-api
-  name: Fixie api_keys API
+  name: Fixie API Keys API
   description: The api_keys API from Fixie — 2 operation(s) for api_keys.
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
@@ -162,7 +163,7 @@ apis:
   - type: Webhooks
     url: asyncapi/fixie-webhooks.yml
 - aid: fixie:fixie-call-throttles-api
-  name: Fixie call_throttles API
+  name: Fixie Call Throttles API
   description: The call_throttles API from Fixie — 2 operation(s) for call_throttles.
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
@@ -191,7 +192,7 @@ apis:
   - type: Webhooks
     url: asyncapi/fixie-webhooks.yml
 - aid: fixie:fixie-calls-api
-  name: Fixie calls API
+  name: Fixie Calls API
   description: The calls API from Fixie — 13 operation(s) for calls.
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
@@ -221,7 +222,7 @@ apis:
   - type: Webhooks
     url: asyncapi/fixie-webhooks.yml
 - aid: fixie:fixie-corpora-api
-  name: Fixie corpora API
+  name: Fixie Corpora API
   description: The corpora API from Fixie — 8 operation(s) for corpora.
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
@@ -251,7 +252,7 @@ apis:
   - type: Webhooks
     url: asyncapi/fixie-webhooks.yml
 - aid: fixie:fixie-deleted-calls-api
-  name: Fixie deleted_calls API
+  name: Fixie Deleted Calls API
   description: The deleted_calls API from Fixie — 2 operation(s) for deleted_calls.
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
@@ -280,7 +281,7 @@ apis:
   - type: Webhooks
     url: asyncapi/fixie-webhooks.yml
 - aid: fixie:fixie-models-api
-  name: Fixie models API
+  name: Fixie Models API
   description: The models API from Fixie — 1 operation(s) for models.
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
@@ -310,7 +311,7 @@ apis:
   - type: Webhooks
     url: asyncapi/fixie-webhooks.yml
 - aid: fixie:fixie-schema-api
-  name: Fixie schema API
+  name: Fixie Schema API
   description: The schema API from Fixie — 1 operation(s) for schema.
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
@@ -340,7 +341,7 @@ apis:
   - type: Webhooks
     url: asyncapi/fixie-webhooks.yml
 - aid: fixie:fixie-sip-api
-  name: Fixie sip API
+  name: Fixie Sip API
   description: The sip API from Fixie — 3 operation(s) for sip.
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
@@ -370,7 +371,7 @@ apis:
   - type: Webhooks
     url: asyncapi/fixie-webhooks.yml
 - aid: fixie:fixie-telephony-configs-api
-  name: Fixie telephony_configs API
+  name: Fixie Telephony Configs API
   description: The telephony_configs API from Fixie — 3 operation(s) for telephony_configs.
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
@@ -399,7 +400,7 @@ apis:
   - type: Webhooks
     url: asyncapi/fixie-webhooks.yml
 - aid: fixie:fixie-tools-api
-  name: Fixie tools API
+  name: Fixie Tools API
   description: The tools API from Fixie — 4 operation(s) for tools.
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
@@ -429,7 +430,7 @@ apis:
   - type: Webhooks
     url: asyncapi/fixie-webhooks.yml
 - aid: fixie:fixie-voices-api
-  name: Fixie voices API
+  name: Fixie Voices API
   description: The voices API from Fixie — 4 operation(s) for voices.
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api
@@ -459,7 +460,7 @@ apis:
   - type: Webhooks
     url: asyncapi/fixie-webhooks.yml
 - aid: fixie:fixie-webhooks-api
-  name: Fixie webhooks API
+  name: Fixie Webhooks API
   description: The webhooks API from Fixie — 2 operation(s) for webhooks.
   humanURL: https://docs.ultravox.ai/
   baseURL: https://api.ultravox.ai/api

@@ -162,22 +162,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    CallThrottleRule:
-      type: object
-      properties:
-        maxCalls:
-          type: integer
-          maximum: 100
-          minimum: 1
-          description: Maximum number of calls allowed in the time window (max 100).
-        windowSeconds:
-          type: integer
-          maximum: 86400
-          minimum: 1
-          description: Duration of the sliding time window in seconds (max 86,400).
-      required:
-      - maxCalls
-      - windowSeconds
     CallThrottle:
       type: object
       properties:
@@ -201,6 +185,22 @@ components:
       - name
       - rules
       - throttleId
+    CallThrottleRule:
+      type: object
+      properties:
+        maxCalls:
+          type: integer
+          maximum: 100
+          minimum: 1
+          description: Maximum number of calls allowed in the time window (max 100).
+        windowSeconds:
+          type: integer
+          maximum: 86400
+          minimum: 1
+          description: Duration of the sliding time window in seconds (max 86,400).
+      required:
+      - maxCalls
+      - windowSeconds
     PatchedCallThrottle:
       type: object
       properties:

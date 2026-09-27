@@ -181,47 +181,6 @@ components:
       - expiryDate
       - name
       - prefix
-    APIKeyCreate:
-      type: object
-      properties:
-        prefix:
-          type: string
-          readOnly: true
-        created:
-          type: string
-          format: date-time
-          readOnly: true
-        creator:
-          type:
-          - string
-          - 'null'
-          readOnly: true
-        secret:
-          type: string
-          readOnly: true
-          description: The API key itself. Will be generated on creation but not returned in future requests.
-        revoked:
-          type: boolean
-          readOnly: true
-          description: If the API key is revoked, clients cannot use it anymore. (This cannot be undone.)
-        name:
-          type: string
-          description: A free-form name for the API key. Need not be unique. 50 characters max.
-          maxLength: 50
-        expiryDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          title: Expires
-          description: Once API key expires, clients cannot use it anymore.
-      required:
-      - created
-      - creator
-      - name
-      - prefix
-      - revoked
-      - secret
     PatchedAPIKey:
       type: object
       properties:
@@ -276,6 +235,47 @@ components:
         total:
           type: integer
           example: 123
+    APIKeyCreate:
+      type: object
+      properties:
+        prefix:
+          type: string
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        creator:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        secret:
+          type: string
+          readOnly: true
+          description: The API key itself. Will be generated on creation but not returned in future requests.
+        revoked:
+          type: boolean
+          readOnly: true
+          description: If the API key is revoked, clients cannot use it anymore. (This cannot be undone.)
+        name:
+          type: string
+          description: A free-form name for the API key. Need not be unique. 50 characters max.
+          maxLength: 50
+        expiryDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          title: Expires
+          description: Once API key expires, clients cannot use it anymore.
+      required:
+      - created
+      - creator
+      - name
+      - prefix
+      - revoked
+      - secret
   securitySchemes:
     apiKeyAuth:
       type: apiKey
