@@ -145,6 +145,30 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    PaginatedAPIKeyList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/APIKey'
+        total:
+          type: integer
+          example: 123
     APIKey:
       type: object
       properties:
@@ -211,30 +235,6 @@ components:
         revoked:
           type: boolean
           description: If the API key is revoked, clients cannot use it anymore. (This cannot be undone.)
-    PaginatedAPIKeyList:
-      type: object
-      required:
-      - results
-      properties:
-        next:
-          type:
-          - string
-          - 'null'
-          format: uri
-          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
-        previous:
-          type:
-          - string
-          - 'null'
-          format: uri
-          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/APIKey'
-        total:
-          type: integer
-          example: 123
     APIKeyCreate:
       type: object
       properties:

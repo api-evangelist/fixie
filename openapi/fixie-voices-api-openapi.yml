@@ -336,6 +336,56 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    OwnershipEnum:
+      enum:
+      - public
+      - private
+      type: string
+    PaginatedVoiceList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Voice'
+        total:
+          type: integer
+          example: 123
+    ultravox.v1.ElevenLabsVoice_PronunciationDictionaryReference:
+      type: object
+      properties:
+        dictionaryId:
+          type: string
+          description: The dictionary's ID.
+        versionId:
+          type: string
+          description: The dictionary's version.
+      description: A reference to a pronunciation dictionary within ElevenLabs.
+    ultravox.v1.GoogleVoice:
+      type: object
+      properties:
+        voiceId:
+          type: string
+          description: The ID (name) of the voice in Google, e.g. "en-US-Chirp3-HD-Charon".
+        speakingRate:
+          type: number
+          description: "The speaking rate. Must be between 0.25 and 2. Defaults to 1.\n See https://cloud.google.com/python/docs/reference/texttospeech/latest/google.cloud.texttospeech_v1.types.StreamingAudioConfig"
+          format: float
+      description: "Specification for a voice served by Google.\n This implementation uses bidirectional streaming, so voices prior to Chirp3 are not supported."
     ultravox.v1.InworldVoice:
       type: object
       properties:
@@ -357,55 +407,6 @@ components:
           type: boolean
           description: "Whether or not to apply text normalization. This should typically only be disabled if the\n agent is instructed to normalize text directly.\n See https://docs.inworld.ai/api-reference/ttsAPI/texttospeech/synthesize-speech-stream#body-apply-text-normalization."
       description: Specification for a voice served by Inworld.
-    ultravox.v1.LmntVoice:
-      type: object
-      properties:
-        voiceId:
-          type: string
-          description: The ID of the voice in LMNT.
-        model:
-          type: string
-          description: The LMNT model to use.
-        speed:
-          type: number
-          description: "The speaking rate. Must be between 0.25 and 2. Defaults to 1.\n See https://docs.lmnt.com/api-reference/speech/synthesize-speech-bytes#body-speed"
-          format: float
-        conversational:
-          type: boolean
-          description: See https://docs.lmnt.com/api-reference/speech/synthesize-speech-bytes#body-conversational
-      description: Specification for a voice served by LMNT.
-    ultravox.v1.ExternalVoice:
-      type: object
-      properties:
-        elevenLabs:
-          allOf:
-          - $ref: '#/components/schemas/ultravox.v1.ElevenLabsVoice'
-          description: A voice served by ElevenLabs.
-        cartesia:
-          allOf:
-          - $ref: '#/components/schemas/ultravox.v1.CartesiaVoice'
-          description: A voice served by Cartesia.
-        lmnt:
-          allOf:
-          - $ref: '#/components/schemas/ultravox.v1.LmntVoice'
-          description: A voice served by LMNT.
-        google:
-          allOf:
-          - $ref: '#/components/schemas/ultravox.v1.GoogleVoice'
-          description: "A voice served by Google, using bidirectional streaming.\n (For non-streaming or output-only streaming, use generic.)"
-        inworld:
-          allOf:
-          - $ref: '#/components/schemas/ultravox.v1.InworldVoice'
-          description: "A voice served by Inworld, using bidirectional streaming.\n (For non-streaming or output-only streaming, use generic.)"
-        respeecher:
-          allOf:
-          - $ref: '#/components/schemas/ultravox.v1.RespeecherVoice'
-          description: A voice served by Respeecher, using bidirectional streaming.
-        generic:
-          allOf:
-          - $ref: '#/components/schemas/ultravox.v1.GenericVoice'
-          description: A voice served by a generic REST-based TTS API.
-      description: "A voice not known to Ultravox Realtime that can nonetheless be used for a call.\n Such voices are significantly less validated than normal voices and you'll be\n responsible for your own TTS-related errors.\n Exactly one field must be set."
     ultravox.v1.GenericVoice:
       type: object
       properties:
@@ -443,201 +444,11 @@ components:
           description: "For JSON responses, how audio bytes are encoded into the json_audio_field_path string.\n Defaults to base64. Also supports hex."
           format: enum
       description: "Specification for a voice served by some generic REST-based TTS API. The API must\n accept an application/json POST request (as defined below) and return either WAV\n audio, raw PCM audio, or application/json with a base64 encoded audio data field\n that itself corresponds to WAV or raw PCM audio.\n Note that this simple API implies a lack of either input streaming or audio timing\n information, so more specific voice types are preferable when available."
-    PatchedVoice:
-      type: object
-      properties:
-        voiceId:
-          type: string
-          format: uuid
-          readOnly: true
-        name:
-          type: string
-          maxLength: 40
-        description:
-          type:
-          - string
-          - 'null'
-          maxLength: 240
-        primaryLanguage:
-          type:
-          - string
-          - 'null'
-          description: BCP47 language code for the primary language supported by this voice.
-          maxLength: 10
-        languageLabel:
-          type:
-          - string
-          - 'null'
-          readOnly: true
-          description: Human-readable language label with flag emoji and English name (e.g., '🇺🇸 English (United States)').
-        previewUrl:
-          format: uri
-          type: string
-          readOnly: true
-        ownership:
-          allOf:
-          - $ref: '#/components/schemas/OwnershipEnum'
-          readOnly: true
-        billingStyle:
-          allOf:
-          - $ref: '#/components/schemas/BillingStyleEnum'
-          readOnly: true
-          description: 'How billing works for this voice.
-
-            VOICE_BILLING_STYLE_INCLUDED - The cost of this voice is included in the call cost. There are no additional charges for it.
-
-            VOICE_BILLING_STYLE_EXTERNAL - This voice requires an API key for its provider, who will bill for usage separately.'
-        provider:
-          type:
-          - string
-          - 'null'
-          readOnly: true
-        definition:
-          $ref: '#/components/schemas/ultravox.v1.ExternalVoice'
-    ultravox.v1.CartesiaVoice:
-      type: object
-      properties:
-        voiceId:
-          type: string
-          description: The ID of the voice in Cartesia.
-        model:
-          type: string
-          description: The Cartesia model to use.
-        speed:
-          type: number
-          description: (Deprecated) The speaking rate. Must be between -1 and 1. Defaults to 0.
-          format: float
-        emotion:
-          type: string
-          description: (Deprecated) Use generation_config.emotion instead.
-        emotions:
-          type: array
-          items:
-            type: string
-          description: (Deprecated) Use generation_config.emotion instead.
-        generationConfig:
-          allOf:
-          - $ref: '#/components/schemas/ultravox.v1.CartesiaVoice_CartesiaGenerationConfig'
-          description: Configure the various attributes of the generated speech.
-      description: Specification for a voice served by Cartesia. See https://docs.cartesia.ai/api-reference/tts/websocket
-    ultravox.v1.ElevenLabsVoice_PronunciationDictionaryReference:
-      type: object
-      properties:
-        dictionaryId:
-          type: string
-          description: The dictionary's ID.
-        versionId:
-          type: string
-          description: The dictionary's version.
-      description: A reference to a pronunciation dictionary within ElevenLabs.
-    OwnershipEnum:
-      enum:
-      - public
-      - private
-      type: string
     BillingStyleEnum:
       enum:
       - VOICE_BILLING_STYLE_INCLUDED
       - VOICE_BILLING_STYLE_EXTERNAL
       type: string
-    ultravox.v1.RespeecherVoice:
-      type: object
-      properties:
-        voiceId:
-          type: string
-          description: The ID of the voice in Respeecher.
-        model:
-          type: string
-          description: "The model to use, e.g. \"/v1/public/tts/ua-rt\" or \"/v1/public/tts/en-rt\"\n Requests will be sent to wss://api.respeecher.com{model}/tts/websocket.\n If not set, defaults to \"/v1/public/tts/en-rt\" for calls with an English\n language hint and \"/v1/public/tts/ua-rt\" otherwise."
-        seed:
-          type: integer
-          description: Random seed for reproducible generation.
-          format: int32
-        temperature:
-          type: number
-          description: "Controls randomness of the output. Higher values produce more varied speech.\n If set, must be greater than or equal to 0.0."
-          format: float
-        topK:
-          type: integer
-          description: "Limits sampling to the top K most likely tokens.\n If set, must be exactly -1 or greater than 0."
-          format: int32
-        topP:
-          type: number
-          description: "Limits sampling to tokens with cumulative probability up to this value.\n If set, must be greater than 0 and less than or equal to 1.0."
-          format: float
-        minP:
-          type: number
-          description: "Minimum probability threshold for token sampling.\n If set, must be between 0.0 and 1.0, inclusive."
-          format: float
-        presencePenalty:
-          type: number
-          description: "Penalty for tokens already present in the context.\n If set, must be between 0 and 2, inclusive."
-          format: float
-        repetitionPenalty:
-          type: number
-          description: "Penalty for repeating tokens.\n If set, must be between 1 and 2, inclusive."
-          format: float
-        frequencyPenalty:
-          type: number
-          description: "Penalty based on token frequency.\n If set, must be between 0 and 2, inclusive."
-          format: float
-      description: "Specification for a voice served by Respeecher.\n See https://space.respeecher.com/docs/api/tts/sampling-params-guide\n for parameter guidance."
-    ultravox.v1.ElevenLabsVoice:
-      type: object
-      properties:
-        voiceId:
-          type: string
-          description: The ID of the voice in ElevenLabs.
-        model:
-          type: string
-          description: The ElevenLabs model to use.
-        speed:
-          type: number
-          description: "The speaking rate. Must be between 0.7 and 1.2. Defaults to 1.\n See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.speed"
-          format: float
-        useSpeakerBoost:
-          type: boolean
-          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.use_speaker_boost
-        style:
-          type: number
-          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.style
-          format: float
-        similarityBoost:
-          type: number
-          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.similarity_boost
-          format: float
-        stability:
-          type: number
-          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.stability
-          format: float
-        pronunciationDictionaries:
-          type: array
-          items:
-            $ref: '#/components/schemas/ultravox.v1.ElevenLabsVoice_PronunciationDictionaryReference'
-          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.pronunciation_dictionary_locators
-        optimizeStreamingLatency:
-          type: integer
-          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.query.optimize_streaming_latency.optimize_streaming_latency
-          format: int32
-        maxSampleRate:
-          type: integer
-          description: "The maximum sample rate Ultravox will try to use. ElevenLabs limits your allowed sample rate\n based on your tier. See https://elevenlabs.io/pricing#pricing-table (and click \"Show API details\")"
-          format: int32
-        enableSsmlParsing:
-          type: boolean
-          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/v-1-text-to-speech-voice-id-stream-input#request.query.enable_ssml_parsing
-      description: Specification for a voice served by ElevenLabs.
-    ultravox.v1.GoogleVoice:
-      type: object
-      properties:
-        voiceId:
-          type: string
-          description: The ID (name) of the voice in Google, e.g. "en-US-Chirp3-HD-Charon".
-        speakingRate:
-          type: number
-          description: "The speaking rate. Must be between 0.25 and 2. Defaults to 1.\n See https://cloud.google.com/python/docs/reference/texttospeech/latest/google.cloud.texttospeech_v1.types.StreamingAudioConfig"
-          format: float
-      description: "Specification for a voice served by Google.\n This implementation uses bidirectional streaming, so voices prior to Chirp3 are not supported."
     Voice:
       type: object
       properties:
@@ -698,30 +509,83 @@ components:
       - previewUrl
       - provider
       - voiceId
-    PaginatedVoiceList:
+    ultravox.v1.ExternalVoice:
       type: object
-      required:
-      - results
       properties:
-        next:
-          type:
-          - string
-          - 'null'
-          format: uri
-          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
-        previous:
-          type:
-          - string
-          - 'null'
-          format: uri
-          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
-        results:
+        elevenLabs:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.ElevenLabsVoice'
+          description: A voice served by ElevenLabs.
+        cartesia:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.CartesiaVoice'
+          description: A voice served by Cartesia.
+        lmnt:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.LmntVoice'
+          description: A voice served by LMNT.
+        google:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.GoogleVoice'
+          description: "A voice served by Google, using bidirectional streaming.\n (For non-streaming or output-only streaming, use generic.)"
+        inworld:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.InworldVoice'
+          description: "A voice served by Inworld, using bidirectional streaming.\n (For non-streaming or output-only streaming, use generic.)"
+        respeecher:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.RespeecherVoice'
+          description: A voice served by Respeecher, using bidirectional streaming.
+        generic:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.GenericVoice'
+          description: A voice served by a generic REST-based TTS API.
+      description: "A voice not known to Ultravox Realtime that can nonetheless be used for a call.\n Such voices are significantly less validated than normal voices and you'll be\n responsible for your own TTS-related errors.\n Exactly one field must be set."
+    ultravox.v1.ElevenLabsVoice:
+      type: object
+      properties:
+        voiceId:
+          type: string
+          description: The ID of the voice in ElevenLabs.
+        model:
+          type: string
+          description: The ElevenLabs model to use.
+        speed:
+          type: number
+          description: "The speaking rate. Must be between 0.7 and 1.2. Defaults to 1.\n See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.speed"
+          format: float
+        useSpeakerBoost:
+          type: boolean
+          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.use_speaker_boost
+        style:
+          type: number
+          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.style
+          format: float
+        similarityBoost:
+          type: number
+          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.similarity_boost
+          format: float
+        stability:
+          type: number
+          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.stability
+          format: float
+        pronunciationDictionaries:
           type: array
           items:
-            $ref: '#/components/schemas/Voice'
-        total:
+            $ref: '#/components/schemas/ultravox.v1.ElevenLabsVoice_PronunciationDictionaryReference'
+          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.pronunciation_dictionary_locators
+        optimizeStreamingLatency:
           type: integer
-          example: 123
+          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.query.optimize_streaming_latency.optimize_streaming_latency
+          format: int32
+        maxSampleRate:
+          type: integer
+          description: "The maximum sample rate Ultravox will try to use. ElevenLabs limits your allowed sample rate\n based on your tier. See https://elevenlabs.io/pricing#pricing-table (and click \"Show API details\")"
+          format: int32
+        enableSsmlParsing:
+          type: boolean
+          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/v-1-text-to-speech-voice-id-stream-input#request.query.enable_ssml_parsing
+      description: Specification for a voice served by ElevenLabs.
     ultravox.v1.CartesiaVoice_CartesiaGenerationConfig:
       type: object
       properties:
@@ -740,6 +604,142 @@ components:
           type: string
           description: "The ID of a pronunciation dictionary to use for the generation.\n Pronunciation dictionaries are supported by sonic-3 models and newer.\n See https://docs.cartesia.ai/build-with-cartesia/capability-guides/specify-custom-pronunciations"
       description: Cartesia generation configuration for Sonic-3 and later models.
+    ultravox.v1.RespeecherVoice:
+      type: object
+      properties:
+        voiceId:
+          type: string
+          description: The ID of the voice in Respeecher.
+        model:
+          type: string
+          description: "The model to use, e.g. \"/v1/public/tts/ua-rt\" or \"/v1/public/tts/en-rt\"\n Requests will be sent to wss://api.respeecher.com{model}/tts/websocket.\n If not set, defaults to \"/v1/public/tts/en-rt\" for calls with an English\n language hint and \"/v1/public/tts/ua-rt\" otherwise."
+        seed:
+          type: integer
+          description: Random seed for reproducible generation.
+          format: int32
+        temperature:
+          type: number
+          description: "Controls randomness of the output. Higher values produce more varied speech.\n If set, must be greater than or equal to 0.0."
+          format: float
+        topK:
+          type: integer
+          description: "Limits sampling to the top K most likely tokens.\n If set, must be exactly -1 or greater than 0."
+          format: int32
+        topP:
+          type: number
+          description: "Limits sampling to tokens with cumulative probability up to this value.\n If set, must be greater than 0 and less than or equal to 1.0."
+          format: float
+        minP:
+          type: number
+          description: "Minimum probability threshold for token sampling.\n If set, must be between 0.0 and 1.0, inclusive."
+          format: float
+        presencePenalty:
+          type: number
+          description: "Penalty for tokens already present in the context.\n If set, must be between 0 and 2, inclusive."
+          format: float
+        repetitionPenalty:
+          type: number
+          description: "Penalty for repeating tokens.\n If set, must be between 1 and 2, inclusive."
+          format: float
+        frequencyPenalty:
+          type: number
+          description: "Penalty based on token frequency.\n If set, must be between 0 and 2, inclusive."
+          format: float
+      description: "Specification for a voice served by Respeecher.\n See https://space.respeecher.com/docs/api/tts/sampling-params-guide\n for parameter guidance."
+    ultravox.v1.CartesiaVoice:
+      type: object
+      properties:
+        voiceId:
+          type: string
+          description: The ID of the voice in Cartesia.
+        model:
+          type: string
+          description: The Cartesia model to use.
+        speed:
+          type: number
+          description: (Deprecated) The speaking rate. Must be between -1 and 1. Defaults to 0.
+          format: float
+        emotion:
+          type: string
+          description: (Deprecated) Use generation_config.emotion instead.
+        emotions:
+          type: array
+          items:
+            type: string
+          description: (Deprecated) Use generation_config.emotion instead.
+        generationConfig:
+          allOf:
+          - $ref: '#/components/schemas/ultravox.v1.CartesiaVoice_CartesiaGenerationConfig'
+          description: Configure the various attributes of the generated speech.
+      description: Specification for a voice served by Cartesia. See https://docs.cartesia.ai/api-reference/tts/websocket
+    PatchedVoice:
+      type: object
+      properties:
+        voiceId:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 40
+        description:
+          type:
+          - string
+          - 'null'
+          maxLength: 240
+        primaryLanguage:
+          type:
+          - string
+          - 'null'
+          description: BCP47 language code for the primary language supported by this voice.
+          maxLength: 10
+        languageLabel:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+          description: Human-readable language label with flag emoji and English name (e.g., '🇺🇸 English (United States)').
+        previewUrl:
+          format: uri
+          type: string
+          readOnly: true
+        ownership:
+          allOf:
+          - $ref: '#/components/schemas/OwnershipEnum'
+          readOnly: true
+        billingStyle:
+          allOf:
+          - $ref: '#/components/schemas/BillingStyleEnum'
+          readOnly: true
+          description: 'How billing works for this voice.
+
+            VOICE_BILLING_STYLE_INCLUDED - The cost of this voice is included in the call cost. There are no additional charges for it.
+
+            VOICE_BILLING_STYLE_EXTERNAL - This voice requires an API key for its provider, who will bill for usage separately.'
+        provider:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        definition:
+          $ref: '#/components/schemas/ultravox.v1.ExternalVoice'
+    ultravox.v1.LmntVoice:
+      type: object
+      properties:
+        voiceId:
+          type: string
+          description: The ID of the voice in LMNT.
+        model:
+          type: string
+          description: The LMNT model to use.
+        speed:
+          type: number
+          description: "The speaking rate. Must be between 0.25 and 2. Defaults to 1.\n See https://docs.lmnt.com/api-reference/speech/synthesize-speech-bytes#body-speed"
+          format: float
+        conversational:
+          type: boolean
+          description: See https://docs.lmnt.com/api-reference/speech/synthesize-speech-bytes#body-conversational
+      description: Specification for a voice served by LMNT.
   securitySchemes:
     apiKeyAuth:
       type: apiKey

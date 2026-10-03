@@ -161,6 +161,74 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    PaginatedSipRegistrationList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/SipRegistration'
+        total:
+          type: integer
+          example: 123
+    PatchedSipConfig:
+      type: object
+      properties:
+        allowedCidrRanges:
+          type: array
+          items:
+            type: string
+            format: ipv4-cidr
+          description: The list of IPv4 CIDR ranges from which incoming SIP calls will be accepted.
+        allowAllAgents:
+          type: boolean
+          default: false
+          description: If true, adds an implicit allowance for requests matching agent_<agent_id>@<anydomain> for any of your agents.
+        allowedAgents:
+          type: array
+          items:
+            $ref: '#/components/schemas/AgentAllowance'
+          description: Calls must match a pattern for one of these agents (or the global agent pattern if allowAllAgents is true) to be accepted.
+          maxItems: 20
+        fallbackHandler:
+          allOf:
+          - $ref: '#/components/schemas/FallbackHandler'
+          description: If set, this webhook is consulted for any incoming SIP call that does not match an agent allowance (including the allowAllAgents allowance if set). The endpoint must respond promptly with a 200 status and a JSON body with exactly one of startAgentCall, startCall, or reject. The first two use the request body for the associated call creation endpoints plus agentId in the former case, while reject may include `sipRejectCode` (default 603) to pass along to the caller.
+        domain:
+          type: string
+          readOnly: true
+          description: The domain used for SIP invites for your account.
+    FallbackHandler:
+      type: object
+      properties:
+        url:
+          type: string
+          format: uri
+          description: The URL to which POSTs will be sent.
+        secrets:
+          type: array
+          items:
+            type: string
+            maxLength: 120
+          description: Shared secrets used to sign requests. A strong secret is auto-generated if omitted.
+          maxItems: 10
+          minItems: 1
+      required:
+      - url
     SipRegistration:
       type: object
       properties:
@@ -208,60 +276,6 @@ components:
       - registrationId
       - successful
       - username
-    SipConfig:
-      type: object
-      properties:
-        allowedCidrRanges:
-          type: array
-          items:
-            type: string
-            format: ipv4-cidr
-          description: The list of IPv4 CIDR ranges from which incoming SIP calls will be accepted.
-        allowAllAgents:
-          type: boolean
-          default: false
-          description: If true, adds an implicit allowance for requests matching agent_<agent_id>@<anydomain> for any of your agents.
-        allowedAgents:
-          type: array
-          items:
-            $ref: '#/components/schemas/AgentAllowance'
-          description: Calls must match a pattern for one of these agents (or the global agent pattern if allowAllAgents is true) to be accepted.
-          maxItems: 20
-        fallbackHandler:
-          allOf:
-          - $ref: '#/components/schemas/FallbackHandler'
-          description: If set, this webhook is consulted for any incoming SIP call that does not match an agent allowance (including the allowAllAgents allowance if set). The endpoint must respond promptly with a 200 status and a JSON body with exactly one of startAgentCall, startCall, or reject. The first two use the request body for the associated call creation endpoints plus agentId in the former case, while reject may include `sipRejectCode` (default 603) to pass along to the caller.
-        domain:
-          type: string
-          readOnly: true
-          description: The domain used for SIP invites for your account.
-      required:
-      - allowedAgents
-      - domain
-    PaginatedSipRegistrationList:
-      type: object
-      required:
-      - results
-      properties:
-        next:
-          type:
-          - string
-          - 'null'
-          format: uri
-          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
-        previous:
-          type:
-          - string
-          - 'null'
-          format: uri
-          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/SipRegistration'
-        total:
-          type: integer
-          example: 123
     PatchedSipRegistration:
       type: object
       properties:
@@ -302,7 +316,7 @@ components:
           - 'null'
           readOnly: true
           description: Whether the registration was successfully created and is now active. May be null if status is not available yet.
-    PatchedSipConfig:
+    SipConfig:
       type: object
       properties:
         allowedCidrRanges:
@@ -329,6 +343,9 @@ components:
           type: string
           readOnly: true
           description: The domain used for SIP invites for your account.
+      required:
+      - allowedAgents
+      - domain
     AgentAllowance:
       type: object
       properties:
@@ -342,23 +359,6 @@ components:
           maxLength: 200
       required:
       - agentId
-    FallbackHandler:
-      type: object
-      properties:
-        url:
-          type: string
-          format: uri
-          description: The URL to which POSTs will be sent.
-        secrets:
-          type: array
-          items:
-            type: string
-            maxLength: 120
-          description: Shared secrets used to sign requests. A strong secret is auto-generated if omitted.
-          maxItems: 10
-          minItems: 1
-      required:
-      - url
   securitySchemes:
     apiKeyAuth:
       type: apiKey
