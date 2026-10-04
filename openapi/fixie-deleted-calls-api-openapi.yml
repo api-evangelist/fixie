@@ -125,33 +125,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    PaginatedCallTombstoneList:
-      type: object
-      required:
-      - results
-      properties:
-        next:
-          type:
-          - string
-          - 'null'
-          format: uri
-          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
-        previous:
-          type:
-          - string
-          - 'null'
-          format: uri
-          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/CallTombstone'
-        total:
-          type: integer
-          example: 123
-    NullEnum:
-      enum:
-      - null
     CallTombstone:
       type: object
       properties:
@@ -216,6 +189,9 @@ components:
       - endReason
       - hadSummary
       - recordingEnabled
+    NullEnum:
+      enum:
+      - null
     EndReasonEnum:
       enum:
       - unjoined
@@ -236,6 +212,30 @@ components:
         * `connection_error` - Connection error
 
         * `system_error` - System error'
+    PaginatedCallTombstoneList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/CallTombstone'
+        total:
+          type: integer
+          example: 123
   securitySchemes:
     apiKeyAuth:
       type: apiKey

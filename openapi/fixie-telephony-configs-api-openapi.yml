@@ -214,107 +214,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    PatchedTwilioConfig:
-      type: object
-      properties:
-        callCreationAllowedAgentIds:
-          type: array
-          items:
-            type: string
-            format: uuid
-          description: List of agents for whom calls may be directly created by this telephony provider to facilitate incoming calls. May not be set if callCreationAllowAllAgents is true.
-          maxItems: 100
-        callCreationAllowAllAgents:
-          type: boolean
-          default: false
-          description: If true, calls may be directly created by this telephony provider for all agents. If false, only agents listed in callCreationAllowedAgentIds are allowed.
-        requestContextMapping:
-          type: object
-          additionalProperties:
-            type: string
-          description: Maps (dot separated) request fields to (dot separated) context fields for incoming call creation.
-        accountSid:
-          type: string
-          description: Your Twilio Account SID.
-        authToken:
-          type: string
-          writeOnly: true
-          description: Your Twilio Auth Token.
-        authTokenPrefix:
-          allOf:
-          - $ref: '#/components/schemas/KeyPrefix'
-          readOnly: true
-          description: The prefix of your Twilio Auth Token.
-    TwilioConfig:
-      type: object
-      properties:
-        callCreationAllowedAgentIds:
-          type: array
-          items:
-            type: string
-            format: uuid
-          description: List of agents for whom calls may be directly created by this telephony provider to facilitate incoming calls. May not be set if callCreationAllowAllAgents is true.
-          maxItems: 100
-        callCreationAllowAllAgents:
-          type: boolean
-          default: false
-          description: If true, calls may be directly created by this telephony provider for all agents. If false, only agents listed in callCreationAllowedAgentIds are allowed.
-        requestContextMapping:
-          type: object
-          additionalProperties:
-            type: string
-          description: Maps (dot separated) request fields to (dot separated) context fields for incoming call creation.
-        accountSid:
-          type: string
-          description: Your Twilio Account SID.
-        authToken:
-          type: string
-          writeOnly: true
-          description: Your Twilio Auth Token.
-        authTokenPrefix:
-          allOf:
-          - $ref: '#/components/schemas/KeyPrefix'
-          readOnly: true
-          description: The prefix of your Twilio Auth Token.
-      required:
-      - accountSid
-      - authToken
-      - authTokenPrefix
-    PlivoConfig:
-      type: object
-      properties:
-        callCreationAllowedAgentIds:
-          type: array
-          items:
-            type: string
-            format: uuid
-          description: List of agents for whom calls may be directly created by this telephony provider to facilitate incoming calls. May not be set if callCreationAllowAllAgents is true.
-          maxItems: 100
-        callCreationAllowAllAgents:
-          type: boolean
-          default: false
-          description: If true, calls may be directly created by this telephony provider for all agents. If false, only agents listed in callCreationAllowedAgentIds are allowed.
-        requestContextMapping:
-          type: object
-          additionalProperties:
-            type: string
-          description: Maps (dot separated) request fields to (dot separated) context fields for incoming call creation.
-        authId:
-          type: string
-          description: Your Plivo Auth ID.
-        authToken:
-          type: string
-          writeOnly: true
-          description: Your Plivo Auth Token.
-        authTokenPrefix:
-          allOf:
-          - $ref: '#/components/schemas/KeyPrefix'
-          readOnly: true
-          description: The prefix of your Plivo Auth Token.
-      required:
-      - authId
-      - authToken
-      - authTokenPrefix
     PatchedTelnyxConfig:
       type: object
       properties:
@@ -367,6 +266,138 @@ components:
           description: The prefix of the API key.
       required:
       - prefix
+    PatchedTwilioConfig:
+      type: object
+      properties:
+        callCreationAllowedAgentIds:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: List of agents for whom calls may be directly created by this telephony provider to facilitate incoming calls. May not be set if callCreationAllowAllAgents is true.
+          maxItems: 100
+        callCreationAllowAllAgents:
+          type: boolean
+          default: false
+          description: If true, calls may be directly created by this telephony provider for all agents. If false, only agents listed in callCreationAllowedAgentIds are allowed.
+        requestContextMapping:
+          type: object
+          additionalProperties:
+            type: string
+          description: Maps (dot separated) request fields to (dot separated) context fields for incoming call creation.
+        accountSid:
+          type: string
+          description: Your Twilio Account SID.
+        authToken:
+          type: string
+          writeOnly: true
+          description: Your Twilio Auth Token.
+        authTokenPrefix:
+          allOf:
+          - $ref: '#/components/schemas/KeyPrefix'
+          readOnly: true
+          description: The prefix of your Twilio Auth Token.
+    PlivoConfig:
+      type: object
+      properties:
+        callCreationAllowedAgentIds:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: List of agents for whom calls may be directly created by this telephony provider to facilitate incoming calls. May not be set if callCreationAllowAllAgents is true.
+          maxItems: 100
+        callCreationAllowAllAgents:
+          type: boolean
+          default: false
+          description: If true, calls may be directly created by this telephony provider for all agents. If false, only agents listed in callCreationAllowedAgentIds are allowed.
+        requestContextMapping:
+          type: object
+          additionalProperties:
+            type: string
+          description: Maps (dot separated) request fields to (dot separated) context fields for incoming call creation.
+        authId:
+          type: string
+          description: Your Plivo Auth ID.
+        authToken:
+          type: string
+          writeOnly: true
+          description: Your Plivo Auth Token.
+        authTokenPrefix:
+          allOf:
+          - $ref: '#/components/schemas/KeyPrefix'
+          readOnly: true
+          description: The prefix of your Plivo Auth Token.
+      required:
+      - authId
+      - authToken
+      - authTokenPrefix
+    TwilioConfig:
+      type: object
+      properties:
+        callCreationAllowedAgentIds:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: List of agents for whom calls may be directly created by this telephony provider to facilitate incoming calls. May not be set if callCreationAllowAllAgents is true.
+          maxItems: 100
+        callCreationAllowAllAgents:
+          type: boolean
+          default: false
+          description: If true, calls may be directly created by this telephony provider for all agents. If false, only agents listed in callCreationAllowedAgentIds are allowed.
+        requestContextMapping:
+          type: object
+          additionalProperties:
+            type: string
+          description: Maps (dot separated) request fields to (dot separated) context fields for incoming call creation.
+        accountSid:
+          type: string
+          description: Your Twilio Account SID.
+        authToken:
+          type: string
+          writeOnly: true
+          description: Your Twilio Auth Token.
+        authTokenPrefix:
+          allOf:
+          - $ref: '#/components/schemas/KeyPrefix'
+          readOnly: true
+          description: The prefix of your Twilio Auth Token.
+      required:
+      - accountSid
+      - authToken
+      - authTokenPrefix
+    PatchedPlivoConfig:
+      type: object
+      properties:
+        callCreationAllowedAgentIds:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: List of agents for whom calls may be directly created by this telephony provider to facilitate incoming calls. May not be set if callCreationAllowAllAgents is true.
+          maxItems: 100
+        callCreationAllowAllAgents:
+          type: boolean
+          default: false
+          description: If true, calls may be directly created by this telephony provider for all agents. If false, only agents listed in callCreationAllowedAgentIds are allowed.
+        requestContextMapping:
+          type: object
+          additionalProperties:
+            type: string
+          description: Maps (dot separated) request fields to (dot separated) context fields for incoming call creation.
+        authId:
+          type: string
+          description: Your Plivo Auth ID.
+        authToken:
+          type: string
+          writeOnly: true
+          description: Your Plivo Auth Token.
+        authTokenPrefix:
+          allOf:
+          - $ref: '#/components/schemas/KeyPrefix'
+          readOnly: true
+          description: The prefix of your Plivo Auth Token.
     TelnyxConfig:
       type: object
       properties:
@@ -418,37 +449,6 @@ components:
       - applicationSid
       - publicKey
       - publicKeyPrefix
-    PatchedPlivoConfig:
-      type: object
-      properties:
-        callCreationAllowedAgentIds:
-          type: array
-          items:
-            type: string
-            format: uuid
-          description: List of agents for whom calls may be directly created by this telephony provider to facilitate incoming calls. May not be set if callCreationAllowAllAgents is true.
-          maxItems: 100
-        callCreationAllowAllAgents:
-          type: boolean
-          default: false
-          description: If true, calls may be directly created by this telephony provider for all agents. If false, only agents listed in callCreationAllowedAgentIds are allowed.
-        requestContextMapping:
-          type: object
-          additionalProperties:
-            type: string
-          description: Maps (dot separated) request fields to (dot separated) context fields for incoming call creation.
-        authId:
-          type: string
-          description: Your Plivo Auth ID.
-        authToken:
-          type: string
-          writeOnly: true
-          description: Your Plivo Auth Token.
-        authTokenPrefix:
-          allOf:
-          - $ref: '#/components/schemas/KeyPrefix'
-          readOnly: true
-          description: The prefix of your Plivo Auth Token.
   securitySchemes:
     apiKeyAuth:
       type: apiKey

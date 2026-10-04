@@ -145,30 +145,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    PaginatedAPIKeyList:
-      type: object
-      required:
-      - results
-      properties:
-        next:
-          type:
-          - string
-          - 'null'
-          format: uri
-          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
-        previous:
-          type:
-          - string
-          - 'null'
-          format: uri
-          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/APIKey'
-        total:
-          type: integer
-          example: 123
     APIKey:
       type: object
       properties:
@@ -205,36 +181,6 @@ components:
       - expiryDate
       - name
       - prefix
-    PatchedAPIKey:
-      type: object
-      properties:
-        prefix:
-          type: string
-          readOnly: true
-        created:
-          type: string
-          format: date-time
-          readOnly: true
-        creator:
-          type:
-          - string
-          - 'null'
-          readOnly: true
-        name:
-          type: string
-          readOnly: true
-          description: A free-form name for the API key. Need not be unique. 50 characters max.
-        expiryDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          readOnly: true
-          title: Expires
-          description: Once API key expires, clients cannot use it anymore.
-        revoked:
-          type: boolean
-          description: If the API key is revoked, clients cannot use it anymore. (This cannot be undone.)
     APIKeyCreate:
       type: object
       properties:
@@ -276,6 +222,60 @@ components:
       - prefix
       - revoked
       - secret
+    PaginatedAPIKeyList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/APIKey'
+        total:
+          type: integer
+          example: 123
+    PatchedAPIKey:
+      type: object
+      properties:
+        prefix:
+          type: string
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        creator:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+          description: A free-form name for the API key. Need not be unique. 50 characters max.
+        expiryDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          readOnly: true
+          title: Expires
+          description: Once API key expires, clients cannot use it anymore.
+        revoked:
+          type: boolean
+          description: If the API key is revoked, clients cannot use it anymore. (This cannot be undone.)
   securitySchemes:
     apiKeyAuth:
       type: apiKey

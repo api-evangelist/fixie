@@ -164,17 +164,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    WebhookFailure:
-      type: object
-      properties:
-        timestamp:
-          type: string
-          format: date-time
-        failure:
-          type: string
-      required:
-      - failure
-      - timestamp
     WebhookStatusEnum:
       enum:
       - normal
@@ -183,90 +172,6 @@ components:
       description: '* `normal` - NORMAL
 
         * `unhealthy` - UNHEALTHY'
-    EventsEnum:
-      enum:
-      - call.started
-      - call.joined
-      - call.ended
-      - call.billed
-      type: string
-      description: '* `call.started` - Fired when a call starts
-
-        * `call.joined` - Fired when a call is joined
-
-        * `call.ended` - Fired when a call ends
-
-        * `call.billed` - Fired when a call is billed'
-    PatchedWebhook:
-      type: object
-      properties:
-        webhookId:
-          type: string
-          format: uuid
-          readOnly: true
-        agentId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-          description: If set, this webhook will be limited to calls with this agent.
-        created:
-          type: string
-          format: date-time
-          readOnly: true
-        url:
-          type: string
-          format: uri
-          maxLength: 200
-        secrets:
-          type: array
-          items:
-            type: string
-            maxLength: 120
-        events:
-          type: array
-          items:
-            $ref: '#/components/schemas/EventsEnum'
-        status:
-          allOf:
-          - $ref: '#/components/schemas/WebhookStatusEnum'
-          readOnly: true
-        lastStatusChange:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          readOnly: true
-        recentFailures:
-          type: array
-          items:
-            $ref: '#/components/schemas/WebhookFailure'
-          readOnly: true
-          description: A list of recent failures for this webhook, if any.
-    PaginatedWebhookList:
-      type: object
-      required:
-      - results
-      properties:
-        next:
-          type:
-          - string
-          - 'null'
-          format: uri
-          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
-        previous:
-          type:
-          - string
-          - 'null'
-          format: uri
-          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Webhook'
-        total:
-          type: integer
-          example: 123
     Webhook:
       type: object
       properties:
@@ -321,6 +226,101 @@ components:
       - status
       - url
       - webhookId
+    EventsEnum:
+      enum:
+      - call.started
+      - call.joined
+      - call.ended
+      - call.billed
+      type: string
+      description: '* `call.started` - Fired when a call starts
+
+        * `call.joined` - Fired when a call is joined
+
+        * `call.ended` - Fired when a call ends
+
+        * `call.billed` - Fired when a call is billed'
+    PaginatedWebhookList:
+      type: object
+      required:
+      - results
+      properties:
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+          example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Webhook'
+        total:
+          type: integer
+          example: 123
+    WebhookFailure:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        failure:
+          type: string
+      required:
+      - failure
+      - timestamp
+    PatchedWebhook:
+      type: object
+      properties:
+        webhookId:
+          type: string
+          format: uuid
+          readOnly: true
+        agentId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+          description: If set, this webhook will be limited to calls with this agent.
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        url:
+          type: string
+          format: uri
+          maxLength: 200
+        secrets:
+          type: array
+          items:
+            type: string
+            maxLength: 120
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventsEnum'
+        status:
+          allOf:
+          - $ref: '#/components/schemas/WebhookStatusEnum'
+          readOnly: true
+        lastStatusChange:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          readOnly: true
+        recentFailures:
+          type: array
+          items:
+            $ref: '#/components/schemas/WebhookFailure'
+          readOnly: true
+          description: A list of recent failures for this webhook, if any.
   securitySchemes:
     apiKeyAuth:
       type: apiKey
