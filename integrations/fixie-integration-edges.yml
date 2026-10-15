@@ -1,0 +1,24 @@
+edges:
+- partner_name: LiveKit Agents
+  partner: livekit
+  partner_match: framework
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://github.com/livekit/agents/tree/main/livekit-plugins/livekit-plugins-ultravox
+  coverage_role:
+  - realtime
+  framework_signals:
+    packages:
+    - livekit-plugins-ultravox
+    roles:
+    - realtime
+    vendor_domain: ultravox.ai
+  matched_by: verified-domain-table
+  detected_by: sweep-voice-ai.py
+  first_seen: '2026-10-15'
+generated: '2026-10-15'
+method: searched
+checked:
+- https://github.com/livekit/agents/tree/main/livekit-plugins
