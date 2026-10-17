@@ -164,14 +164,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    WebhookStatusEnum:
-      enum:
-      - normal
-      - unhealthy
-      type: string
-      description: '* `normal` - NORMAL
-
-        * `unhealthy` - UNHEALTHY'
     Webhook:
       type: object
       properties:
@@ -226,20 +218,6 @@ components:
       - status
       - url
       - webhookId
-    EventsEnum:
-      enum:
-      - call.started
-      - call.joined
-      - call.ended
-      - call.billed
-      type: string
-      description: '* `call.started` - Fired when a call starts
-
-        * `call.joined` - Fired when a call is joined
-
-        * `call.ended` - Fired when a call ends
-
-        * `call.billed` - Fired when a call is billed'
     PaginatedWebhookList:
       type: object
       required:
@@ -264,17 +242,6 @@ components:
         total:
           type: integer
           example: 123
-    WebhookFailure:
-      type: object
-      properties:
-        timestamp:
-          type: string
-          format: date-time
-        failure:
-          type: string
-      required:
-      - failure
-      - timestamp
     PatchedWebhook:
       type: object
       properties:
@@ -321,6 +288,39 @@ components:
             $ref: '#/components/schemas/WebhookFailure'
           readOnly: true
           description: A list of recent failures for this webhook, if any.
+    WebhookStatusEnum:
+      enum:
+      - normal
+      - unhealthy
+      type: string
+      description: '* `normal` - NORMAL
+
+        * `unhealthy` - UNHEALTHY'
+    WebhookFailure:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        failure:
+          type: string
+      required:
+      - failure
+      - timestamp
+    EventsEnum:
+      enum:
+      - call.started
+      - call.joined
+      - call.ended
+      - call.billed
+      type: string
+      description: '* `call.started` - Fired when a call starts
+
+        * `call.joined` - Fired when a call is joined
+
+        * `call.ended` - Fired when a call ends
+
+        * `call.billed` - Fired when a call is billed'
   securitySchemes:
     apiKeyAuth:
       type: apiKey

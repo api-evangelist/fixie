@@ -145,7 +145,7 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    APIKey:
+    PatchedAPIKey:
       type: object
       properties:
         prefix:
@@ -175,12 +175,6 @@ components:
         revoked:
           type: boolean
           description: If the API key is revoked, clients cannot use it anymore. (This cannot be undone.)
-      required:
-      - created
-      - creator
-      - expiryDate
-      - name
-      - prefix
     APIKeyCreate:
       type: object
       properties:
@@ -246,7 +240,7 @@ components:
         total:
           type: integer
           example: 123
-    PatchedAPIKey:
+    APIKey:
       type: object
       properties:
         prefix:
@@ -276,6 +270,12 @@ components:
         revoked:
           type: boolean
           description: If the API key is revoked, clients cannot use it anymore. (This cannot be undone.)
+      required:
+      - created
+      - creator
+      - expiryDate
+      - name
+      - prefix
   securitySchemes:
     apiKeyAuth:
       type: apiKey

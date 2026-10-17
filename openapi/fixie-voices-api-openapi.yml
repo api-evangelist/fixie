@@ -362,6 +362,79 @@ components:
           - $ref: '#/components/schemas/ultravox.v1.CartesiaVoice_CartesiaGenerationConfig'
           description: Configure the various attributes of the generated speech.
       description: Specification for a voice served by Cartesia. See https://docs.cartesia.ai/api-reference/tts/websocket
+    ultravox.v1.ElevenLabsVoice:
+      type: object
+      properties:
+        voiceId:
+          type: string
+          description: The ID of the voice in ElevenLabs.
+        model:
+          type: string
+          description: The ElevenLabs model to use.
+        speed:
+          type: number
+          description: "The speaking rate. Must be between 0.7 and 1.2. Defaults to 1.\n See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.speed"
+          format: float
+        useSpeakerBoost:
+          type: boolean
+          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.use_speaker_boost
+        style:
+          type: number
+          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.style
+          format: float
+        similarityBoost:
+          type: number
+          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.similarity_boost
+          format: float
+        stability:
+          type: number
+          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.stability
+          format: float
+        pronunciationDictionaries:
+          type: array
+          items:
+            $ref: '#/components/schemas/ultravox.v1.ElevenLabsVoice_PronunciationDictionaryReference'
+          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.pronunciation_dictionary_locators
+        optimizeStreamingLatency:
+          type: integer
+          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.query.optimize_streaming_latency.optimize_streaming_latency
+          format: int32
+        maxSampleRate:
+          type: integer
+          description: "The maximum sample rate Ultravox will try to use. ElevenLabs limits your allowed sample rate\n based on your tier. See https://elevenlabs.io/pricing#pricing-table (and click \"Show API details\")"
+          format: int32
+        enableSsmlParsing:
+          type: boolean
+          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/v-1-text-to-speech-voice-id-stream-input#request.query.enable_ssml_parsing
+      description: Specification for a voice served by ElevenLabs.
+    ultravox.v1.GoogleVoice:
+      type: object
+      properties:
+        voiceId:
+          type: string
+          description: The ID (name) of the voice in Google, e.g. "en-US-Chirp3-HD-Charon".
+        speakingRate:
+          type: number
+          description: "The speaking rate. Must be between 0.25 and 2. Defaults to 1.\n See https://cloud.google.com/python/docs/reference/texttospeech/latest/google.cloud.texttospeech_v1.types.StreamingAudioConfig"
+          format: float
+      description: "Specification for a voice served by Google.\n This implementation uses bidirectional streaming, so voices prior to Chirp3 are not supported."
+    ultravox.v1.LmntVoice:
+      type: object
+      properties:
+        voiceId:
+          type: string
+          description: The ID of the voice in LMNT.
+        model:
+          type: string
+          description: The LMNT model to use.
+        speed:
+          type: number
+          description: "The speaking rate. Must be between 0.25 and 2. Defaults to 1.\n See https://docs.lmnt.com/api-reference/speech/synthesize-speech-bytes#body-speed"
+          format: float
+        conversational:
+          type: boolean
+          description: See https://docs.lmnt.com/api-reference/speech/synthesize-speech-bytes#body-conversational
+      description: Specification for a voice served by LMNT.
     Voice:
       type: object
       properties:
@@ -459,42 +532,11 @@ components:
       - public
       - private
       type: string
-    ultravox.v1.InworldVoice:
-      type: object
-      properties:
-        voiceId:
-          type: string
-          description: The ID of the voice in Inworld.
-        modelId:
-          type: string
-          description: "The ID of the model to use for generations, e.g. \"inworld-tts-1-max\".\n See https://docs.inworld.ai/docs/tts/tts-models"
-        speakingRate:
-          type: number
-          description: "The speaking rate. Must be between 0.5 and 1.5. Defaults to 1.\n See https://docs.inworld.ai/api-reference/ttsAPI/texttospeech/synthesize-speech-stream#body-audio-config-speaking-rate"
-          format: float
-        temperature:
-          type: number
-          description: "How much randomness to use when sampling audio tokens. Must be between 0.0 and 2.0.\n See https://docs.inworld.ai/api-reference/ttsAPI/texttospeech/synthesize-speech-stream#body-temperature"
-          format: float
-        applyTextNormalization:
-          type: boolean
-          description: "Whether or not to apply text normalization. This should typically only be disabled if the\n agent is instructed to normalize text directly.\n See https://docs.inworld.ai/api-reference/ttsAPI/texttospeech/synthesize-speech-stream#body-apply-text-normalization."
-      description: Specification for a voice served by Inworld.
     BillingStyleEnum:
       enum:
       - VOICE_BILLING_STYLE_INCLUDED
       - VOICE_BILLING_STYLE_EXTERNAL
       type: string
-    ultravox.v1.ElevenLabsVoice_PronunciationDictionaryReference:
-      type: object
-      properties:
-        dictionaryId:
-          type: string
-          description: The dictionary's ID.
-        versionId:
-          type: string
-          description: The dictionary's version.
-      description: A reference to a pronunciation dictionary within ElevenLabs.
     ultravox.v1.RespeecherVoice:
       type: object
       properties:
@@ -588,6 +630,24 @@ components:
           readOnly: true
         definition:
           $ref: '#/components/schemas/ultravox.v1.ExternalVoice'
+    ultravox.v1.CartesiaVoice_CartesiaGenerationConfig:
+      type: object
+      properties:
+        volume:
+          type: number
+          description: Adjust the volume of the generated speech between 0.5x and 2.0x the original volume (default is 1.0x). Valid values are between [0.5, 2.0] inclusive.
+          format: float
+        speed:
+          type: number
+          description: Adjust the speed of the generated speech between 0.6x and 2.0x the original speed (default is 1.0x). Valid values are between [0.6, 1.5] inclusive.
+          format: float
+        emotion:
+          type: string
+          description: The primary emotions are neutral, calm, angry, content, sad, scared. For more options, see Prompting Sonic-3.
+        pronunciationDictId:
+          type: string
+          description: "The ID of a pronunciation dictionary to use for the generation.\n Pronunciation dictionaries are supported by sonic-3 models and newer.\n See https://docs.cartesia.ai/build-with-cartesia/capability-guides/specify-custom-pronunciations"
+      description: Cartesia generation configuration for Sonic-3 and later models.
     ultravox.v1.GenericVoice:
       type: object
       properties:
@@ -649,97 +709,37 @@ components:
         total:
           type: integer
           example: 123
-    ultravox.v1.ElevenLabsVoice:
+    ultravox.v1.InworldVoice:
       type: object
       properties:
         voiceId:
           type: string
-          description: The ID of the voice in ElevenLabs.
-        model:
+          description: The ID of the voice in Inworld.
+        modelId:
           type: string
-          description: The ElevenLabs model to use.
-        speed:
-          type: number
-          description: "The speaking rate. Must be between 0.7 and 1.2. Defaults to 1.\n See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.speed"
-          format: float
-        useSpeakerBoost:
-          type: boolean
-          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.use_speaker_boost
-        style:
-          type: number
-          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.style
-          format: float
-        similarityBoost:
-          type: number
-          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.similarity_boost
-          format: float
-        stability:
-          type: number
-          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.voice_settings.stability
-          format: float
-        pronunciationDictionaries:
-          type: array
-          items:
-            $ref: '#/components/schemas/ultravox.v1.ElevenLabsVoice_PronunciationDictionaryReference'
-          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.body.pronunciation_dictionary_locators
-        optimizeStreamingLatency:
-          type: integer
-          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/convert#request.query.optimize_streaming_latency.optimize_streaming_latency
-          format: int32
-        maxSampleRate:
-          type: integer
-          description: "The maximum sample rate Ultravox will try to use. ElevenLabs limits your allowed sample rate\n based on your tier. See https://elevenlabs.io/pricing#pricing-table (and click \"Show API details\")"
-          format: int32
-        enableSsmlParsing:
-          type: boolean
-          description: See https://elevenlabs.io/docs/api-reference/text-to-speech/v-1-text-to-speech-voice-id-stream-input#request.query.enable_ssml_parsing
-      description: Specification for a voice served by ElevenLabs.
-    ultravox.v1.LmntVoice:
-      type: object
-      properties:
-        voiceId:
-          type: string
-          description: The ID of the voice in LMNT.
-        model:
-          type: string
-          description: The LMNT model to use.
-        speed:
-          type: number
-          description: "The speaking rate. Must be between 0.25 and 2. Defaults to 1.\n See https://docs.lmnt.com/api-reference/speech/synthesize-speech-bytes#body-speed"
-          format: float
-        conversational:
-          type: boolean
-          description: See https://docs.lmnt.com/api-reference/speech/synthesize-speech-bytes#body-conversational
-      description: Specification for a voice served by LMNT.
-    ultravox.v1.CartesiaVoice_CartesiaGenerationConfig:
-      type: object
-      properties:
-        volume:
-          type: number
-          description: Adjust the volume of the generated speech between 0.5x and 2.0x the original volume (default is 1.0x). Valid values are between [0.5, 2.0] inclusive.
-          format: float
-        speed:
-          type: number
-          description: Adjust the speed of the generated speech between 0.6x and 2.0x the original speed (default is 1.0x). Valid values are between [0.6, 1.5] inclusive.
-          format: float
-        emotion:
-          type: string
-          description: The primary emotions are neutral, calm, angry, content, sad, scared. For more options, see Prompting Sonic-3.
-        pronunciationDictId:
-          type: string
-          description: "The ID of a pronunciation dictionary to use for the generation.\n Pronunciation dictionaries are supported by sonic-3 models and newer.\n See https://docs.cartesia.ai/build-with-cartesia/capability-guides/specify-custom-pronunciations"
-      description: Cartesia generation configuration for Sonic-3 and later models.
-    ultravox.v1.GoogleVoice:
-      type: object
-      properties:
-        voiceId:
-          type: string
-          description: The ID (name) of the voice in Google, e.g. "en-US-Chirp3-HD-Charon".
+          description: "The ID of the model to use for generations, e.g. \"inworld-tts-1-max\".\n See https://docs.inworld.ai/docs/tts/tts-models"
         speakingRate:
           type: number
-          description: "The speaking rate. Must be between 0.25 and 2. Defaults to 1.\n See https://cloud.google.com/python/docs/reference/texttospeech/latest/google.cloud.texttospeech_v1.types.StreamingAudioConfig"
+          description: "The speaking rate. Must be between 0.5 and 1.5. Defaults to 1.\n See https://docs.inworld.ai/api-reference/ttsAPI/texttospeech/synthesize-speech-stream#body-audio-config-speaking-rate"
           format: float
-      description: "Specification for a voice served by Google.\n This implementation uses bidirectional streaming, so voices prior to Chirp3 are not supported."
+        temperature:
+          type: number
+          description: "How much randomness to use when sampling audio tokens. Must be between 0.0 and 2.0.\n See https://docs.inworld.ai/api-reference/ttsAPI/texttospeech/synthesize-speech-stream#body-temperature"
+          format: float
+        applyTextNormalization:
+          type: boolean
+          description: "Whether or not to apply text normalization. This should typically only be disabled if the\n agent is instructed to normalize text directly.\n See https://docs.inworld.ai/api-reference/ttsAPI/texttospeech/synthesize-speech-stream#body-apply-text-normalization."
+      description: Specification for a voice served by Inworld.
+    ultravox.v1.ElevenLabsVoice_PronunciationDictionaryReference:
+      type: object
+      properties:
+        dictionaryId:
+          type: string
+          description: The dictionary's ID.
+        versionId:
+          type: string
+          description: The dictionary's version.
+      description: A reference to a pronunciation dictionary within ElevenLabs.
   securitySchemes:
     apiKeyAuth:
       type: apiKey
