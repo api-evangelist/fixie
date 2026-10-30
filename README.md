@@ -64,6 +64,160 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Fixie is a company surfaced as a portfolio company of redpoint-ventures and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Fixie is the company behind Ultravox Realtime, a speech-native voice AI platform for building natural, low-latency conversational voice agents. Rather than transcribing speech to text first, Ultravox processes audio directly to preserve tone, cadence, and pitch while cutting latency. The Ultravox Realtime REST API (api.ultravox.ai) lets developers create reusable agents, start and manage calls, define custom and built-in tools, clone and manage voices, build RAG corpora, wire telephony (Twilio, Telnyx, Plivo, SIP), and subscribe to call-lifecycle webhooks. Client SDKs ship for JavaScript, Python, Flutter/Dart, React Native, Kotlin/Android, and Swift/iOS. Fixie was backed by Redpoint Ventures; fixie.ai now redirects to ultravox.ai and its open models are published under the fixie-ai organization on Hugging Face.
 
-Backed by: redpoint-ventures — https://www.fixie.ai/
+**Areas:** Company · Voice AI · Conversational AI · Real-Time · Speech · Agents · Telephony · Machine Learning · SIP · Webhook
+
+## Fixie on APIs.io
+
+Everything profiled for Fixie is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/fixie/](https://apis.io/providers/fixie/)** — or go straight to one of the APIs or properties below.
+
+### APIs (14)
+
+- [Fixie Accounts API](https://apis.io/apis/fixie/fixie-accounts-api/) — The accounts API from Fixie — 9 operation(s) for accounts.
+- [Fixie Agents API](https://apis.io/apis/fixie/fixie-agents-api/) — The agents API from Fixie — 9 operation(s) for agents.
+- [Fixie API Keys API](https://apis.io/apis/fixie/fixie-api-keys-api/) — The api_keys API from Fixie — 2 operation(s) for api_keys.
+- [Fixie Call Throttles API](https://apis.io/apis/fixie/fixie-call-throttles-api/) — The call_throttles API from Fixie — 2 operation(s) for call_throttles.
+- [Fixie Calls API](https://apis.io/apis/fixie/fixie-calls-api/) — The calls API from Fixie — 13 operation(s) for calls.
+- [Fixie Corpora API](https://apis.io/apis/fixie/fixie-corpora-api/) — The corpora API from Fixie — 8 operation(s) for corpora.
+- [Fixie Deleted Calls API](https://apis.io/apis/fixie/fixie-deleted-calls-api/) — The deleted_calls API from Fixie — 2 operation(s) for deleted_calls.
+- [Fixie Models API](https://apis.io/apis/fixie/fixie-models-api/) — The models API from Fixie — 1 operation(s) for models.
+- [Fixie Schema API](https://apis.io/apis/fixie/fixie-schema-api/) — The schema API from Fixie — 1 operation(s) for schema.
+- [Fixie Sip API](https://apis.io/apis/fixie/fixie-sip-api/) — The sip API from Fixie — 3 operation(s) for sip.
+- [Fixie Telephony Configs API](https://apis.io/apis/fixie/fixie-telephony-configs-api/) — The telephony_configs API from Fixie — 3 operation(s) for telephony_configs.
+- [Fixie Tools API](https://apis.io/apis/fixie/fixie-tools-api/) — The tools API from Fixie — 4 operation(s) for tools.
+- [Fixie Voices API](https://apis.io/apis/fixie/fixie-voices-api/) — The voices API from Fixie — 4 operation(s) for voices.
+- [Fixie Webhooks API](https://apis.io/apis/fixie/fixie-webhooks-api/) — The webhooks API from Fixie — 2 operation(s) for webhooks.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Fixie Webhooks](https://apis.io/asyncapis/fixie/fixie-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [fixie-ultravox](https://apis.io/servers/fixie/fixie-ultravox/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Fixie Agentic Access](https://apis.io/agentic-access/fixie/fixie-agentic-access/)
+
+#### Collections (14)
+
+Postman and Open Collection request collections.
+
+- [Ultravox accounts API](https://apis.io/collections/fixie/open-fixie-accounts-api/)
+- [Ultravox accounts agents API](https://apis.io/collections/fixie/open-fixie-agents-api/)
+- [Ultravox accounts api_keys API](https://apis.io/collections/fixie/open-fixie-api-keys-api/)
+- [Ultravox accounts call_throttles API](https://apis.io/collections/fixie/open-fixie-call-throttles-api/)
+- [Ultravox accounts calls API](https://apis.io/collections/fixie/open-fixie-calls-api/)
+- [Ultravox accounts corpora API](https://apis.io/collections/fixie/open-fixie-corpora-api/)
+- [Ultravox accounts deleted_calls API](https://apis.io/collections/fixie/open-fixie-deleted-calls-api/)
+- [Ultravox accounts models API](https://apis.io/collections/fixie/open-fixie-models-api/)
+- [Ultravox accounts schema API](https://apis.io/collections/fixie/open-fixie-schema-api/)
+- [Ultravox accounts sip API](https://apis.io/collections/fixie/open-fixie-sip-api/)
+- [Ultravox accounts telephony_configs API](https://apis.io/collections/fixie/open-fixie-telephony-configs-api/)
+- [Ultravox accounts tools API](https://apis.io/collections/fixie/open-fixie-tools-api/)
+- [Ultravox accounts voices API](https://apis.io/collections/fixie/open-fixie-voices-api/)
+- [Ultravox accounts webhooks API](https://apis.io/collections/fixie/open-fixie-webhooks-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Fixie Ultravox Overlay](https://apis.io/overlays/fixie/fixie-ultravox-overlay/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Fixie Authentication](https://apis.io/security/fixie/fixie-authentication/)
+- [Fixie Domain Security](https://apis.io/security/fixie/fixie-domain-security/)
+- [Fixie Trust Center](https://apis.io/security/fixie/fixie-trust-center/)
+
+#### Plans and pricing (2)
+
+Published plans, tiers and prices.
+
+- [Fixie Plans Pricing](https://apis.io/plans/fixie/fixie-plans-pricing/)
+- [Fixie Price Estimates](https://apis.io/plans/fixie/fixie-price-estimates/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://ultravox.ai/)
+- [Documentation](https://docs.ultravox.ai/)
+- [Getting started](https://docs.ultravox.ai/gettingstarted/quickstart/agent-console)
+- [API reference](https://docs.ultravox.ai/api-reference)
+- [Pricing](https://ultravox.ai/pricing)
+- [Sign up](https://app.ultravox.ai)
+- [Blog](https://ultravox.ai/blog)
+- [Terms of service](https://ultravox.ai/terms)
+- [Privacy policy](https://ultravox.ai/privacy)
+- [GitHub](https://github.com/fixie-ai)
+- [Status](https://status.ultravox.ai)
+
+## API Evangelist rating
+
+**Kin Score 57.6** — strong · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 53.9 |
+| Contract governance | 4.5 |
+| Operational transparency | 42.1 |
+| Developer ergonomics | 66.1 |
+| Access clarity | 84.2 |
+
+**Agent readiness 28.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | partial |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 27.3** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/fixie/](https://apis.io/providers/fixie/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Fixie: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/fixie/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
